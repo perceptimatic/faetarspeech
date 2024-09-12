@@ -2,6 +2,9 @@
 layout: default
 ---
 
+##### Table of Contents  
+[Header 1](#Header_1)  
+
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
 [Link to another page](./another-page.html).
