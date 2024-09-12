@@ -22,7 +22,7 @@ title: The Faetar benchmark and challenge - Speech recognition in a very under-r
 email: faetar.benchmark@utoronto.ca
 description: >- # this means to ignore newlines until "baseurl:"
   The Faetar speech recognition benchmark and challenge.
-baseurl: "/faetarspeech" # the subpath of your site, e.g. /blog
+baseurl: # the subpath of your site, e.g. /blog
 url: "https://perceptimatic.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
