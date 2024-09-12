@@ -21,6 +21,7 @@
 title: The Faetar benchmark and challenge - Speech recognition in a very under-resourced language
 email: faetar.benchmark@utoronto.ca
 description: The Faetar speech recognition benchmark and challenge.
+baseurl:
 url: "https://perceptimatic.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
