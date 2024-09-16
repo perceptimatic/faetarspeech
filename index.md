@@ -174,7 +174,7 @@ interspeech 2025 paper submission deadline - feb 12
 # Leaderboards
 ## Constrained Models
 <fieldset>
-	<select id="csubmission_names">
+	<select id="csubmission_names" onchange="drop_filter('csubmission_names', 'cLeader')">
   	<option>Submission Names</option>
 	</select>
 </fieldset>
@@ -186,7 +186,7 @@ interspeech 2025 paper submission deadline - feb 12
     <th onclick="sortTable(2, 'cLeader')">PER</th>
   </tr>
   <tr>
-		<td>baseline</td> 
+		<td>aAA</td> 
     <td>HMM-GMM Mono + 5-gram</td>
     <td>62.6</td>
   </tr>
@@ -214,21 +214,23 @@ interspeech 2025 paper submission deadline - feb 12
 
 ## All Models
 <fieldset>
-	<select id="all_submission_names">
+<div>
+	<select id="all_submission_names" onchange="drop_box_filter('all_submission_names', 'Leader')">
   	<option>Submission Names</option>
 	</select>
+</div>
 <div>
-	<input type="checkbox" id="constrained" name="constrained" onclick="filter('Leader')"/>
+	<input type="checkbox" id="constrained" name="constrained" onclick="drop_box_filter('all_submission_names', 'Leader')"/>
 	<label for="constrained">Constrained</label>
 </div>
 
 <div>
-	<input type="checkbox" id="unlab" name="unlab" onclick="filter('Leader')"/>
+	<input type="checkbox" id="unlab" name="unlab" onclick="drop_box_filter('all_submission_names', 'Leader')"/>
 	<label for="unlab">Unlab</label>
 </div>
 
 <div>
-	<input type="checkbox" id="extra_docs" name="extra_docs" onclick="filter('Leader')"/>
+	<input type="checkbox" id="extra_docs" name="extra_docs" onclick="drop_box_filter('all_submission_names', 'Leader')"/>
 	<label for="extra_docs">Extra Docs</label>
 </div>
 </fieldset>
@@ -358,22 +360,51 @@ function sortTable(n, table_id) {
     }
   }
 }
-function filter(table_id) {
-        let cb1 = document.getElementById('constrained').checked;    
-        let cb2 = document.getElementById('unlab').checked; 
-        let cb3 = document.getElementById('extra_docs').checked; 
-        
-        var table = document.getElementById(table_id);
-        
-        for (var i = 1, row; row = table.rows[i]; i++) {
-           if ((cb1 && row.cells[3].innerText !== 'x') || (cb2 && row.cells[4].innerText !== 'x') || (cb3 && row.cells[5].innerText !== 'x')) {
-             row.style = "display:none";
-           }
-           else {
-             row.style = "display:table-row";
-           }
 
-        }            
+function drop_box_filter(dropdown_id, table_id) {
+
+	let cb1 = document.getElementById('constrained').checked;    
+    let cb2 = document.getElementById('unlab').checked; 
+    let cb3 = document.getElementById('extra_docs').checked;
+   	let selection = document.getElementById(dropdown_id);
+
+    var table = document.getElementById(table_id);
+        
+    for (var i = 1, row; row = table.rows[i]; i++) {
+    	if ((cb1 && row.cells[3].innerText !== 'x') || (cb2 && row.cells[4].innerText !== 'x') || (cb3 && row.cells[5].innerText !== 'x')) {
+			row.style = "display:none";
+     	}
+             else {
+             if (selection.options[selection.selectedIndex].value == "Submission Names") {
+			row.style = "display:table-row";
+	   		}
+               else if (row.cells[0].innerText !== selection.options[selection.selectedIndex].value) {
+	     	  row.style = "display:none";
+	   		}
+	   		else {
+	     	  row.style = "display:table-row";
+	   		}  
+             }
+        }     
+        
+}
+
+function drop_filter(dropdown_id, table_id) {
+	let selection = document.getElementById(dropdown_id);
+	var table = document.getElementById(table_id);
+	for (var i = 1, row; row = table.rows[i]; i++) {
+	   if (selection.options[selection.selectedIndex].value == "Submission Names") {
+			row.style = "display:table-row";
+	   }
+	   else {
+		if (row.cells[0].innerText !== selection.options[selection.selectedIndex].value) {
+	     	  row.style = "display:none";
+	   	}
+	   	else {
+	     	  row.style = "display:table-row";
+	   	}   
+	   }
+	}
 }
 
 function run_sort(table_id) {
