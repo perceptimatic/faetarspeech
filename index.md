@@ -224,30 +224,80 @@ unconstrained leaderboard
     <th>Name</th>
     <th onclick="sortTable(1, Leader)">PER</th>
     <th onclick="filter(2, Leader)">Constrained</th>
+		<th onclick="filter(3, Leader)">Unlab</th>
+		<th onclick="filter(4, Leader)">Extra Docs</th>
   </tr>
   <tr>
     <td>HMM-GMM Mono + 5-gram (baseline)</td>
     <td>62.6</td>
+    <td>x</td>
+		<td></td>
+		<td></td>
   </tr>
   <tr>
     <td>HMM-GMM Tri + 5-gram (baseline)</td>
     <td>56.7</td>
+		<td>x</td>
+		<td></td>
+		<td></td>
   </tr>
   <tr>
     <td>ESPnet train (baseline)</td>
     <td>35.9</td>
+		<td>x</td>
+		<td></td>
+		<td></td>
   </tr>
   <tr>
     <td>ESPnet 1hr (baseline)</td>
     <td>37.4</td>
+		<td>x</td>
+		<td></td>
+		<td></td>
   </tr>
   <tr>
     <td>ESPnet 10min (baseline)</td>
     <td>45.1</td>
+		<td>x</td>
+		<td></td>
+		<td></td>
+  </tr>
+  <tr>
+    <td>MMS FT (baseline)</td>
+    <td>33.0</td>
+		<td></td>
+		<td></td>
+		<td></td>
+  </tr>
+	<tr>
+    <td>mHubert FT (baseline)</td>
+    <td>33.6</td>
+		<td></td>
+		<td></td>
+		<td></td>
+  </tr>
+	<tr>
+    <td>MMS PT + FT (baseline)</td>
+    <td>31.5</td>
+		<td></td>
+		<td>x</td>
+		<td></td>
+  </tr>
+	<tr>
+    <td>MMS ST (baseline)</td>
+    <td>31.0</td>
+		<td></td>
+		<td>x</td>
+		<td></td>
+  </tr>
+	<tr>
+    <td>MMS PT + ST (baseline)</td>
+    <td>30.5</td>
+		<td></td>
+		<td>x</td>
+		<td></td>
   </tr>
 </table>
-
-
 
 <script>
 function sortTable(n, table_id) {
@@ -285,13 +335,13 @@ function sortTable(n, table_id) {
 }
 function filter(n, table_id) {
   var table, tr, td, i, txtValue;
-  table = document.getElementById("myTable");
+  table = document.getElementById(table_id);
   tr = table.getElementsByTagName("tr");
   for (i = 0; i < tr.length; i++) {
     td = tr[i].getElementsByTagName("td")[0];
     if (td) {
       txtValue = td.textContent || td.innerText;
-      if (txtValue.indexOf(filter) > -1) {
+      if (txtValue.indexOf("x") > -1) {
         tr[i].style.display = "";
       } else {
         tr[i].style.display = "none";
