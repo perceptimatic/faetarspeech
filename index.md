@@ -32,7 +32,7 @@ We split the aligned data into _train_, _dev_, and _test_, ensuring a reasonable
 .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
   padding:10px 5px;word-break:normal;}
 .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  font-weight:normal;padding:10px 5px;word-break:normal;background-color:lightblue;color:black;}
+  font-weight:normal;padding:10px 5px;word-break:normal;background-color:lightblue;color:black;cursor:pointer;}
 .tg th, .tg td {text-align:center;vertical-align:middle}
 </style>
 
@@ -176,27 +176,33 @@ name   constraints   per
 constrained leaderboard
 <table id="cLeader">
   <tr>
-    <th>Name</th>
-    <th onclick="sortTable(1, cLeader)">PER</th>
+    <th>Submission</th>
+    <th>Description</th>
+    <th onclick="sortTable(1, 'cLeader')">PER</th>
   </tr>
   <tr>
-    <td>HMM-GMM Mono + 5-gram (baseline)</td>
+		<td>baseline</td> 
+    <td>HMM-GMM Mono + 5-gram</td>
     <td>62.6</td>
   </tr>
   <tr>
-    <td>HMM-GMM Tri + 5-gram (baseline)</td>
+		<td>baseline</td> 
+    <td>HMM-GMM Tri + 5-gram</td>
     <td>56.7</td>
   </tr>
   <tr>
-    <td>ESPnet train (baseline)</td>
+		<td>baseline</td> 
+    <td>ESPnet train</td>
     <td>35.9</td>
   </tr>
   <tr>
-    <td>ESPnet 1hr (baseline)</td>
+		<td>baseline</td> 
+    <td>ESPnet 1hr</td>
     <td>37.4</td>
   </tr>
   <tr>
-    <td>ESPnet 10min (baseline)</td>
+		<td>baseline</td> 
+    <td>ESPnet 10min</td>
     <td>45.1</td>
   </tr>
 </table>
@@ -221,77 +227,88 @@ unconstrained leaderboard
 
 <table id="Leader">
   <tr>
-    <th>Name</th>
-    <th onclick="sortTable(1, Leader)">PER</th>
-    <th onclick="filter(2, Leader)">Constrained</th>
-		<th onclick="filter(3, Leader)">Unlab</th>
-		<th onclick="filter(4, Leader)">Extra Docs</th>
+    <th>Submission</th>
+		<th>Description</th>
+    <th onclick="sortTable(1, 'Leader')">PER</th>
+    <th>Constrained</th>
+		<th>Unlab</th>
+		<th>Extra Docs</th>
   </tr>
   <tr>
-    <td>HMM-GMM Mono + 5-gram (baseline)</td>
+		<td>baseline</td> 
+    <td>HMM-GMM Mono + 5-gram</td>
     <td>62.6</td>
     <td>x</td>
 		<td></td>
 		<td></td>
   </tr>
   <tr>
-    <td>HMM-GMM Tri + 5-gram (baseline)</td>
+		<td>baseline</td> 
+    <td>HMM-GMM Tri + 5-gram</td>
     <td>56.7</td>
 		<td>x</td>
 		<td></td>
 		<td></td>
   </tr>
   <tr>
-    <td>ESPnet train (baseline)</td>
+		<td>baseline</td> 
+    <td>ESPnet train</td>
     <td>35.9</td>
 		<td>x</td>
 		<td></td>
 		<td></td>
   </tr>
   <tr>
-    <td>ESPnet 1hr (baseline)</td>
+		<td>baseline</td> 
+    <td>ESPnet 1hr</td>
     <td>37.4</td>
 		<td>x</td>
 		<td></td>
 		<td></td>
   </tr>
   <tr>
-    <td>ESPnet 10min (baseline)</td>
+		<td>baseline</td> 
+    <td>ESPnet 10min</td>
     <td>45.1</td>
 		<td>x</td>
 		<td></td>
 		<td></td>
   </tr>
   <tr>
-    <td>MMS FT (baseline)</td>
+		<td>baseline</td> 
+    <td>MMS FT</td>
     <td>33.0</td>
 		<td></td>
 		<td></td>
 		<td></td>
   </tr>
 	<tr>
-    <td>mHubert FT (baseline)</td>
+		<td>baseline</td> 
+    <td>mHubert FT</td>
     <td>33.6</td>
 		<td></td>
 		<td></td>
 		<td></td>
   </tr>
 	<tr>
-    <td>MMS PT + FT (baseline)</td>
+		<td>baseline</td> 
+    <td>MMS PT + FT</td>
     <td>31.5</td>
 		<td></td>
 		<td>x</td>
 		<td></td>
   </tr>
 	<tr>
-    <td>MMS ST (baseline)</td>
+		<td>baseline</td> 
+    <td>MMS ST</td>
     <td>31.0</td>
 		<td></td>
 		<td>x</td>
 		<td></td>
   </tr>
 	<tr>
-    <td>MMS PT + ST (baseline)</td>
+		<td>baseline</td> 
+    <td>MMS PT + ST</td>
     <td>30.5</td>
 		<td></td>
 		<td>x</td>
@@ -333,21 +350,22 @@ function sortTable(n, table_id) {
     }
   }
 }
-function filter(n, table_id) {
-  var table, tr, td, i, txtValue;
-  table = document.getElementById(table_id);
-  tr = table.getElementsByTagName("tr");
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[0];
-    if (td) {
-      txtValue = td.textContent || td.innerText;
-      if (txtValue.indexOf("x") > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    }       
-  }
+function filter(table_id) {
+        let cb1 = document.getElementById('constrained').checked;    
+        let cb2 = document.getElementsByClassName('unlab').checked; 
+        let cb3 = document.getElementsByClassName('extra_docs').checked;  
+        
+        var match = 1;
+        
+        var table = document.getElementById(table_id);
+        for (var i = 1, row; row = table.rows[i]; i++) {
+           if (cb1 && row.cells[2].innerText !== 'x') {
+               row.style = "display:none";
+           }                 
+           else {
+               row.style = "display:table-row";
+           }
+        }            
 }
 <body onload = function() {
 	(table = document.getElementById("cLeader");
