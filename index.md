@@ -210,17 +210,17 @@ constrained leaderboard
 unconstrained leaderboard
 <fieldset>
 <div>
-	<input type="checkbox" id="constrained" name="constrained"/>
+	<input type="checkbox" id="constrained" name="constrained" onclick="filter('Leader')"/>
 	<label for="constrained">Constrained</label>
 </div>
 
 <div>
-	<input type="checkbox" id="unlab" name="unlab" />
+	<input type="checkbox" id="unlab" name="unlab" onclick="filter('Leader')"/>
 	<label for="unlab">Unlab</label>
 </div>
 
 <div>
-	<input type="checkbox" id="extra_docs" name="extra_docs" />
+	<input type="checkbox" id="extra_docs" name="extra_docs" onclick="filter('Leader')"/>
 	<label for="extra_docs">Extra Docs</label>
 </div>
 </fieldset>
@@ -352,25 +352,21 @@ function sortTable(n, table_id) {
 }
 function filter(table_id) {
         let cb1 = document.getElementById('constrained').checked;    
-        let cb2 = document.getElementsByClassName('unlab').checked; 
-        let cb3 = document.getElementsByClassName('extra_docs').checked;  
-        
-        var match = 1;
+        let cb2 = document.getElementById('unlab').checked; 
+        let cb3 = document.getElementById('extra_docs').checked; 
         
         var table = document.getElementById(table_id);
+        
         for (var i = 1, row; row = table.rows[i]; i++) {
-           if (cb1 && row.cells[2].innerText !== 'x') {
-               row.style = "display:none";
-           }                 
-           else {
-               row.style = "display:table-row";
+           if ((cb1 && row.cells[3].innerText !== 'x') || (cb2 && row.cells[4].innerText !== 'x') || (cb3 && row.cells[5].innerText !== 'x')) {
+             row.style = "display:none";
            }
+           else {
+             row.style = "display:table-row";
+           }
+
         }            
 }
-<body onload = function() {
-	(table = document.getElementById("cLeader");
-		table.getElementsByTagName("th")[1]).click();
-    };>
 </script>
 
 
