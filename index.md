@@ -3,14 +3,16 @@ layout: default
 ---
 
 ##### Table of Contents  
-[Summary](#summary)\
-[Data](#data)\
-[Ground Rules](#ground-rules)\
-[Timeline](#timeline)\
-[Submission Instructions](#submission-instructions)\
-[Leaderboard](#leaderboard)\
-[Organizers](#organizers)\
-[References](#references)
+- [Summary](#summary)
+- [Data](#data)
+- [Ground Rules](#ground-rules)
+- [Timeline](#timeline)
+- [Submission Instructions](#submission-instructions)
+- [Leaderboards](#leaderboards)
+	- [Constrained Models](#constrained-models)
+	- [All Models](#all-models)
+- [Organizers](#organizers)
+- [References](#references)
 
 # Summary
 
@@ -169,11 +171,8 @@ intervals).
 challenge results submission deadline - XXXXXXX \
 interspeech 2025 paper submission deadline - feb 12
 # Submission Instructions
-# Leaderboard
-add results of baseline models
-name   constraints   per
-
-constrained leaderboard
+# Leaderboards
+## Constrained Models
 <table id="cLeader">
   <tr>
     <th>Submission</th>
@@ -207,7 +206,7 @@ constrained leaderboard
   </tr>
 </table>
 
-unconstrained leaderboard
+## All Models
 <fieldset>
 <div>
 	<input type="checkbox" id="constrained" name="constrained" onclick="filter('Leader')"/>
