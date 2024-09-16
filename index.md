@@ -173,17 +173,11 @@ interspeech 2025 paper submission deadline - feb 12
 add results of baseline models
 name   constraints   per
 
-<style>
-th {
-  cursor: pointer;
-}
-</style>
-
 constrained leaderboard
 <table id="cLeader">
   <tr>
     <th>Name</th>
-    <th onclick="sortTable(1)">PER</th>
+    <th onclick="sortTable(1, cLeader)">PER</th>
   </tr>
   <tr>
     <td>HMM-GMM Mono + 5-gram (baseline)</td>
@@ -207,10 +201,58 @@ constrained leaderboard
   </tr>
 </table>
 
+unconstrained leaderboard
+<fieldset>
+<div>
+	<input type="checkbox" id="constrained" name="constrained"/>
+	<label for="constrained">Constrained</label>
+</div>
+
+<div>
+	<input type="checkbox" id="unlab" name="unlab" />
+	<label for="unlab">Unlab</label>
+</div>
+
+<div>
+	<input type="checkbox" id="extra_docs" name="extra_docs" />
+	<label for="extra_docs">Extra Docs</label>
+</div>
+</fieldset>
+
+<table id="Leader">
+  <tr>
+    <th>Name</th>
+    <th onclick="sortTable(1, Leader)">PER</th>
+    <th onclick="filter(2, Leader)">Constrained</th>
+  </tr>
+  <tr>
+    <td>HMM-GMM Mono + 5-gram (baseline)</td>
+    <td>62.6</td>
+  </tr>
+  <tr>
+    <td>HMM-GMM Tri + 5-gram (baseline)</td>
+    <td>56.7</td>
+  </tr>
+  <tr>
+    <td>ESPnet train (baseline)</td>
+    <td>35.9</td>
+  </tr>
+  <tr>
+    <td>ESPnet 1hr (baseline)</td>
+    <td>37.4</td>
+  </tr>
+  <tr>
+    <td>ESPnet 10min (baseline)</td>
+    <td>45.1</td>
+  </tr>
+</table>
+
+
+
 <script>
-function sortTable(n) {
+function sortTable(n, table_id) {
   var table, rows, switching, i, x, y, shouldSwitch;
-  table = document.getElementById("cLeader");
+  table = document.getElementById(table_id);
   switching = true;
   /* Make a loop that will continue until
   no switching has been done: */
@@ -241,9 +283,26 @@ function sortTable(n) {
     }
   }
 }
-window.onload = function() {
-	(document.getElementsByTagName("th")[1]).click();
-    };
+function filter(n, table_id) {
+  var table, tr, td, i, txtValue;
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+<body onload = function() {
+	(table = document.getElementById("cLeader");
+		table.getElementsByTagName("th")[1]).click();
+    };>
 </script>
 
 
@@ -254,123 +313,3 @@ vs the rest checkboxes for unlab / extra docs / unconstrained
 # References
 - \[1\] N. Nagy, “A multilingual corpus to explore variation in language contact
 situations,” _RILA_, pp. 65–84, 2011.
-
-Text can be **bold**, _italic_, or ~~strikethrough~~.
-
-[Link to another page](./another-page.html).
-
-There should be whitespace between paragraphs.
-
-There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
-
-# Header 1
-
-This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
-
-## Header 2
-
-> This is a blockquote following a header.
->
-> When something is important enough, you do it even if the odds are not in your favor.
-
-### Header 3
-
-```js
-// Javascript code with syntax highlighting.
-var fun = function lang(l) {
-  dateformat.i18n = require('./lang/' + l)
-  return true;
-}
-```
-
-```ruby
-# Ruby code with syntax highlighting
-GitHubPages::Dependencies.gems.each do |gem, version|
-  s.add_dependency(gem, "= #{version}")
-end
-```
-
-#### Header 4
-
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-
-##### Header 5
-
-1.  This is an ordered list following a header.
-2.  This is an ordered list following a header.
-3.  This is an ordered list following a header.
-
-###### Header 6
-
-| head1        | head two          | three |
-|:-------------|:------------------|:------|
-| ok           | good swedish fish | nice  |
-| out of stock | good and plenty   | nice  |
-| ok           | good `oreos`      | hmm   |
-| ok           | good `zoute` drop | yumm  |
-
-### There's a horizontal rule below this.
-
-* * *
-
-### Here is an unordered list:
-
-*   Item foo
-*   Item bar
-*   Item baz
-*   Item zip
-
-### And an ordered list:
-
-1.  Item one
-1.  Item two
-1.  Item three
-1.  Item four
-
-### And a nested list:
-
-- level 1 item
-  - level 2 item
-  - level 2 item
-    - level 3 item
-    - level 3 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-
-### Small image
-
-![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
-
-### Large image
-
-![Branching](https://guides.github.com/activities/hello-world/branching.png)
-
-
-### Definition lists can be used with HTML syntax.
-
-<dl>
-<dt>Name</dt>
-<dd>Godzilla</dd>
-<dt>Born</dt>
-<dd>1952</dd>
-<dt>Birthplace</dt>
-<dd>Japan</dd>
-<dt>Color</dt>
-<dd>Green</dd>
-</dl>
-
-```
-Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
-```
-
-```
-The final element.
-```
