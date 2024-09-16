@@ -3,7 +3,32 @@ layout: default
 ---
 
 ##### Table of Contents  
-[Header 1](#Header_1)  
+[Summary](#Summary)  
+[Data](#Data)
+[Ground Rules](#Ground_Rules)
+[Timeline](#Timeline)
+[Submission Instructions](#Submission_Instructions)
+[Leaderboard](#Leaderboard)
+[Organizers](#Organizers)
+
+# Summary
+# Data
+description from the paper of data condensed
+
+time distributions
+
+# Ground Rules
+# Timeline 
+challenge results submission deadline 
+interspeech 2025 paper submission deadline - feb 12
+# Submission Instructions
+# Leaderboard
+add results of baseline models
+name   constraints   per
+constrained leaderboard
+vs the rest checkboxes for unlab / extra docs / unconstrained
+
+# Organizers
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
