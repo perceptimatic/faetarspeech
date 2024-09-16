@@ -178,7 +178,7 @@ constrained leaderboard
   <tr>
     <th>Submission</th>
     <th>Description</th>
-    <th onclick="sortTable(1, 'cLeader')">PER</th>
+    <th onclick="sortTable(2, 'cLeader')">PER</th>
   </tr>
   <tr>
 		<td>baseline</td> 
@@ -229,7 +229,7 @@ unconstrained leaderboard
   <tr>
     <th>Submission</th>
 		<th>Description</th>
-    <th onclick="sortTable(1, 'Leader')">PER</th>
+    <th onclick="sortTable(2, 'Leader')">PER</th>
     <th>Constrained</th>
 		<th>Unlab</th>
 		<th>Extra Docs</th>
@@ -368,9 +368,6 @@ function filter(table_id) {
         }            
 }
 </script>
-
-
-vs the rest checkboxes for unlab / extra docs / unconstrained
 
 # Organizers
 
