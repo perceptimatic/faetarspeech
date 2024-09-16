@@ -381,8 +381,9 @@ function run_sort(table_id) {
 		table.getElementsByTagName("th")[2].click();
 	}
 
-function get_submissions(dropdown_id) {
+function get_submissions(dropdown_id, table_id) {
   	let select = document.getElementById(dropdown_id);
+    var table = document.getElementById(table_id);
 	let submission_set = new Set();
     for (var i = 1, row; row = table.rows[i]; i++) {
       submission_name = row.cells[0].innerText;
@@ -396,7 +397,7 @@ function get_submissions(dropdown_id) {
       select.appendChild(el)
     }
 }
-  window.onload = run_sort('cLeader'); run_sort('Leader'); get_submissions('csubmission_names'); get_submissions('all_submission_names');
+  window.onload = run_sort('cLeader'); run_sort('Leader'); get_submissions('csubmission_names', 'cLeader'); get_submissions('all_submission_names', 'Leader');
 </script>
 
 # Organizers
