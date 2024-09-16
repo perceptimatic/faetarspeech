@@ -3,13 +3,13 @@ layout: default
 ---
 
 ##### Table of Contents  
-[Summary](#Summary)  
-[Data](#Data)
-[Ground Rules](#Ground_Rules)
-[Timeline](#Timeline)
-[Submission Instructions](#Submission_Instructions)
-[Leaderboard](#Leaderboard)
-[Organizers](#Organizers)
+[Summary](#summary)\
+[Data](#data)\
+[Ground Rules](#ground-rules)\
+[Timeline](#timeline)\
+[Submission Instructions](#submission-instructions)\
+[Leaderboard](#leaderboard)\
+[Organizers](#organizers)
 
 # Summary
 # Data
