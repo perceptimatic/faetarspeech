@@ -208,6 +208,9 @@ interspeech 2025 paper submission deadline - feb 12
 
 ## All Models
 <fieldset>
+	<select id="submission_names">
+  	<option>Submission Names</option>
+	</select>
 <div>
 	<input type="checkbox" id="constrained" name="constrained" onclick="filter('Leader')"/>
 	<label for="constrained">Constrained</label>
@@ -371,8 +374,23 @@ function run_sort(table_id) {
 		table = document.getElementById(table_id);
 		table.getElementsByTagName("th")[2].click();
 	}
-	
-window.onload = run_sort('cLeader'); run_sort('Leader');
+
+function get_submissions(dropdown_id) {
+  	let select = document.getElementById(dropdown_id);
+	let submission_set = new Set();
+    for (var i = 1, row; row = table.rows[i]; i++) {
+      submission_name = row.cells[0].innerText;
+      submission_set.add(submission_name);
+
+    }
+    for (const submission of submission_set) {
+      let el = document.createElement("option");
+      el.textContent = submission;
+      el.value = submission;
+      select.appendChild(el)
+    }
+}
+  window.onload = run_sort('cLeader'); run_sort('Leader'); get_submissions('submission_names');
 </script>
 
 # Organizers
