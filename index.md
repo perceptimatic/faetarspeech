@@ -173,6 +173,12 @@ interspeech 2025 paper submission deadline - feb 12
 # Submission Instructions
 # Leaderboards
 ## Constrained Models
+<fieldset>
+	<select id="csubmission_names">
+  	<option>Submission Names</option>
+	</select>
+</fieldset>
+
 <table id="cLeader">
   <tr>
     <th>Submission</th>
@@ -208,7 +214,7 @@ interspeech 2025 paper submission deadline - feb 12
 
 ## All Models
 <fieldset>
-	<select id="submission_names">
+	<select id="all_submission_names">
   	<option>Submission Names</option>
 	</select>
 <div>
@@ -390,7 +396,7 @@ function get_submissions(dropdown_id) {
       select.appendChild(el)
     }
 }
-  window.onload = run_sort('cLeader'); run_sort('Leader'); get_submissions('submission_names');
+  window.onload = run_sort('cLeader'); run_sort('Leader'); get_submissions('csubmission_names'); get_submissions('all_submission_names');
 </script>
 
 # Organizers
