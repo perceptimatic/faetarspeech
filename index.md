@@ -24,95 +24,92 @@ time distributions
 .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
   overflow:hidden;padding:10px 5px;word-break:normal;}
 .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-cly1{text-align:left;vertical-align:middle}
-.tg .tg-lboi{border-color:inherit;text-align:left;vertical-align:middle}
-.tg .tg-9wq8{border-color:inherit;text-align:center;vertical-align:middle}
-.tg .tg-nrix{text-align:center;vertical-align:middle}
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal; background-color: lightblue;}
+.tg th, .tg td {text-align:center;vertical-align:middle}
 </style>
 
 <table class="tg"><thead>
   <tr>
-    <th class="tg-nrix" colspan="2" rowspan="2"></th>
-    <th class="tg-nrix" colspan="2">Homeland</th>
-    <th class="tg-nrix" colspan="2">Heritage</th>
-    <th class="tg-nrix" rowspan="2">Total</th>
+    <th colspan="2" rowspan="2"></th>
+    <th colspan="2">Homeland</th>
+    <th colspan="2">Heritage</th>
+    <th rowspan="2">Total</th>
   </tr>
   <tr>
-    <th class="tg-nrix">M</th>
-    <th class="tg-nrix">F</th>
-    <th class="tg-nrix">M</th>
-    <th class="tg-nrix">F</th>
+    <th>M</th>
+    <th>F</th>
+    <th>M</th>
+    <th>F</th>
   </tr></thead>
 <tbody>
   <tr>
-    <td class="tg-nrix">dev</td>
-    <td class="tg-nrix">Int.</td>
-    <td class="tg-nrix">8:43</td>
-    <td class="tg-nrix">0:31</td>
-    <td class="tg-nrix">0:00</td>
-    <td class="tg-nrix">2:35</td>
-    <td class="tg-nrix">11:49</td>
+    <td>dev</td>
+    <td>Int.</td>
+    <td>8:43</td>
+    <td>0:31</td>
+    <td>0:00</td>
+    <td>2:35</td>
+    <td>11:49</td>
   </tr>
   <tr>
-    <td class="tg-nrix">test</td>
-    <td class="tg-nrix">Int.</td>
-    <td class="tg-nrix">13:10</td>
-    <td class="tg-nrix">13:33</td>
-    <td class="tg-nrix">10:54</td>
-    <td class="tg-nrix">9:16</td>
-    <td class="tg-nrix">46:54</td>
+    <td>test</td>
+    <td>Int.</td>
+    <td>13:10</td>
+    <td>13:33</td>
+    <td>10:54</td>
+    <td>9:16</td>
+    <td>46:54</td>
   </tr>
   <tr>
-    <td class="tg-nrix" rowspan="2">train</td>
-    <td class="tg-nrix">Words</td>
-    <td class="tg-nrix">42:31</td>
-    <td class="tg-nrix">58:29</td>
-    <td class="tg-nrix">51:44</td>
-    <td class="tg-nrix">9:07</td>
-    <td class="tg-nrix" rowspan="2">4:30:17</td>
+    <td rowspan="2">train</td>
+    <td>Words</td>
+    <td>42:31</td>
+    <td>58:29</td>
+    <td>51:44</td>
+    <td>9:07</td>
+    <td rowspan="2">4:30:17</td>
   </tr>
   <tr>
-    <td class="tg-nrix">Int.</td>
-    <td class="tg-nrix">15:58</td>
-    <td class="tg-nrix">27:56</td>
-    <td class="tg-nrix">32:49</td>
-    <td class="tg-nrix">14:41</td>
+    <td>Int.</td>
+    <td>15:58</td>
+    <td>27:56</td>
+    <td>32:49</td>
+    <td>14:41</td>
   </tr>
   <tr>
-    <td class="tg-nrix">1h</td>
-    <td class="tg-nrix">Int.</td>
-    <td class="tg-nrix">11:08</td>
-    <td class="tg-nrix">13:44</td>
-    <td class="tg-nrix">32:50</td>
-    <td class="tg-nrix">0:51</td>
-    <td class="tg-nrix">58:34</td>
+    <td>1h</td>
+    <td>Int.</td>
+    <td>11:08</td>
+    <td>13:44</td>
+    <td>32:50</td>
+    <td>0:51</td>
+    <td>58:34</td>
   </tr>
   <tr>
-    <td class="tg-nrix">10min</td>
-    <td class="tg-nrix">Int.</td>
-    <td class="tg-nrix">0:00</td>
-    <td class="tg-nrix">4:25</td>
-    <td class="tg-nrix">5:00</td>
-    <td class="tg-nrix">0:24</td>
-    <td class="tg-nrix">9:49</td>
+    <td>10min</td>
+    <td>Int.</td>
+    <td>0:00</td>
+    <td>4:25</td>
+    <td>5:00</td>
+    <td>0:24</td>
+    <td>9:49</td>
   </tr>
   <tr>
-    <td class="tg-nrix" rowspan="3">unlab</td>
-    <td class="tg-nrix">Words</td>
-    <td class="tg-nrix" colspan="2">7:29:11</td>
-    <td class="tg-nrix" colspan="2">0:05:24</td>
-    <td class="tg-nrix" rowspan="3">19:55:21</td>
+    <td rowspan="3">unlab</td>
+    <td>Words</td>
+    <td colspan="2">7:29:11</td>
+    <td colspan="2">0:05:24</td>
+    <td rowspan="3">19:55:21</td>
   </tr>
   <tr>
-    <td class="tg-nrix">Int.</td>
-    <td class="tg-nrix" colspan="2">8:23:18</td>
-    <td class="tg-nrix" colspan="2">0:51:31</td>
+    <td>Int.</td>
+    <td colspan="2">8:23:18</td>
+    <td colspan="2">0:51:31</td>
   </tr>
   <tr>
-    <td class="tg-nrix">Mixed</td>
-    <td class="tg-nrix" colspan="2">2:12:47</td>
-    <td class="tg-nrix" colspan="2">0:53:09</td>
+    <td>Mixed</td>
+    <td colspan="2">2:12:47</td>
+    <td colspan="2">0:53:09</td>
   </tr>
 </tbody></table>
 
