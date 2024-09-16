@@ -367,6 +367,13 @@ function filter(table_id) {
 
         }            
 }
+
+function run_sort(table_id) {
+		table = document.getElementById(table_id);
+		table.getElementsByTagName("th")[2].click();
+	}
+	
+window.onload = run_sort('cLeader'); run_sort('Leader');
 </script>
 
 # Organizers
