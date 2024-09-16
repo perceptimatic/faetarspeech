@@ -172,13 +172,19 @@ interspeech 2025 paper submission deadline - feb 12
 # Leaderboard
 add results of baseline models
 name   constraints   per
+
+<style>
+th {
+  cursor: pointer;
+}
+</style>
+
 constrained leaderboard
 <table id="cLeader">
-<table class="tg"><thead>
   <tr>
     <th>Name</th>
-    <th onload="sortTable()">PER</th>
-  </tr></thead>
+    <th onclick="sortTable(1)">PER</th>
+  </tr>
   <tr>
     <td>HMM-GMM Mono + 5-gram (baseline)</td>
     <td>62.6</td>
@@ -203,11 +209,9 @@ constrained leaderboard
 
 <script>
 function sortTable(n) {
-  var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+  var table, rows, switching, i, x, y, shouldSwitch;
   table = document.getElementById("cLeader");
   switching = true;
-  // Set the sorting direction to ascending:
-  dir = "asc";
   /* Make a loop that will continue until
   no switching has been done: */
   while (switching) {
@@ -221,28 +225,25 @@ function sortTable(n) {
       shouldSwitch = false;
       /* Get the two elements you want to compare,
       one from current row and one from the next: */
-      x = rows[i].getElementsByTagName("TD")[n];
-      y = rows[i + 1].getElementsByTagName("TD")[n];
-      /* Check if the two rows should switch place,
-      based on the direction, asc or desc: */
-      if (dir == "asc") {
-        if (Number(x.innerHTML) > Number(y.innerHTML)) {
-          // If so, mark as a switch and break the loop:
-          shouldSwitch = true;
-          break;
-        }
-      } 
+      x = rows[i].getElementsByTagName("td")[n];
+      y = rows[i + 1].getElementsByTagName("td")[n];
+      if (Number(x.innerHTML) > Number(y.innerHTML)) {
+        // If so, mark as a switch and break the loop:
+        shouldSwitch = true;
+        break;
+      }
     }
     if (shouldSwitch) {
       /* If a switch has been marked, make the switch
       and mark that a switch has been done: */
       rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
       switching = true;
-      // Each time a switch is done, increase this count by 1:
-      switchcount ++;
     }
   }
 }
+window.onload = function() {
+	(document.getElementsByTagName("th")[1]).click();
+    };
 </script>
 
 
