@@ -186,7 +186,7 @@ interspeech 2025 paper submission deadline - feb 12
     <th onclick="sortTable(2, 'cLeader')">PER</th>
   </tr>
   <tr>
-		<td>aAA</td> 
+		<td>baseline</td> 
     <td>HMM-GMM Mono + 5-gram</td>
     <td>62.6</td>
   </tr>
