@@ -225,13 +225,39 @@ interspeech 2025 paper submission deadline - feb 12
 </div>
 
 <div>
+	<input type="checkbox" id="unconstrained" name="unconstrained" onclick="drop_box_filter('all_submission_names', 'Leader')"/>
+	<label for="unconstrained">Unconstrained</label>
+</div>
+
+<hr> 
+
+<div>
+	<input type="checkbox" id="train_default" name="train_default" onclick="drop_box_filter('all_submission_names', 'Leader')"/>
+	<label for="train_default">Default Train (no Unlab or Unclean)</label>
+</div>
+
+<hr> 
+
+<div>
 	<input type="checkbox" id="unlab" name="unlab" onclick="drop_box_filter('all_submission_names', 'Leader')"/>
 	<label for="unlab">Unlab</label>
 </div>
 
 <div>
+	<input type="checkbox" id="lab" name="lab" onclick="drop_box_filter('all_submission_names', 'Leader')"/>
+	<label for="lab">Labelled</label>
+</div>
+
+<hr> 
+
+<div>
 	<input type="checkbox" id="extra_docs" name="extra_docs" onclick="drop_box_filter('all_submission_names', 'Leader')"/>
-	<label for="extra_docs">Extra Docs</label>
+	<label for="extra_docs">Unclean</label>
+</div>
+
+<div>
+	<input type="checkbox" id="no_extras" name="no_extras" onclick="drop_box_filter('all_submission_names', 'Leader')"/>
+	<label for="no_extras">Clean</label>
 </div>
 </fieldset>
 
@@ -366,12 +392,19 @@ function drop_box_filter(dropdown_id, table_id) {
 	let cb1 = document.getElementById('constrained').checked;    
     let cb2 = document.getElementById('unlab').checked; 
     let cb3 = document.getElementById('extra_docs').checked;
+    
+    let cb4 = document.getElementById('unconstrained').checked;    
+    let cb5 = document.getElementById('lab').checked; 
+    let cb6 = document.getElementById('no_extras').checked;
+    
+    let cb7 = document.getElementById('train_default').checked;
+    
    	let selection = document.getElementById(dropdown_id);
 
     var table = document.getElementById(table_id);
         
     for (var i = 1, row; row = table.rows[i]; i++) {
-    	if ((cb1 && row.cells[3].innerText !== 'x') || (cb2 && row.cells[4].innerText !== 'x') || (cb3 && row.cells[5].innerText !== 'x')) {
+    	if ((cb1 && row.cells[3].innerText !== 'x') || (cb2 && row.cells[4].innerText !== 'x') || (cb3 && row.cells[5].innerText !== 'x') || (cb4 && row.cells[3].innerText === 'x') || (cb5 && row.cells[4].innerText === 'x') || (cb6 && row.cells[5].innerText === 'x') || (cb7 && (row.cells[4].innerText === 'x' || row.cells[5].innerText === 'x'))) {
 			row.style = "display:none";
      	}
              else {
