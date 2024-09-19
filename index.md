@@ -3,7 +3,7 @@ layout: default
 ---
 
 ##### Table of Contents  
-- [Summary](#summary)
+- [Challenge Summary](#challenge-summary)
 - [Data](#data)
 - [Ground Rules](#ground-rules)
 - [Timeline](#timeline)
@@ -14,7 +14,23 @@ layout: default
 - [Organizers](#organizers)
 - [References](#references)
 
-# Summary
+# Challenge Summary
+The main goal of this challenge is to determine the effect of ASR architecture on the recognition of speech in real-world \(i.e. noisy\) conditions. In order to accomplish this goal, we provide transcriptions and audio \(the benchmark\) extracted from field work done on the endangered Franco-Provençal language Faetar. The standard benchmark data provided comes from a single corpus \(which comprises the majority of existing Faetar data\) and the transcribed portions consist exclusively of a single language. Additionally, the benchmark has limited amounts of transcribed speech, with only ~5 hours of transcribed speech and ~20 hours of untranscribed speech. 
+Since the benchmark data is relatively small and is in a language with \(almost\) no other sources of data, we posit that any differences in performance between different ASR systems in this challenge is due to differences in their architecture. Using a single corpus and a single language also eliminates the possible confounding factors of multiple corpora and languages. We believe that the insights gained through this work will be generalizable to other endangered languages, since most audio of endangered languages is also noisy, with relatively limited transcriptions. 
+Since Faetar is endangered, another goal of this challenge is to create ASR systems capable of transcribing Faetar recordings in order to help preserve the language for future generations. We believe that posing this challenge to the community will help speed both the development of ASR for Faetar and the discovery of new insights into ASR architecture. 
+The benchmark, including baseline and evaluation code, is freely available subject to the provided data-sharing agreement. The challenge will last roughly 8 months, from **FILL IN DATES HERE**. During the challenge, the reference transcriptions for the test set will only be available to the organizers. Following the challenge, the entire benchmark will be released.
+
+
+
+Speech technology for low-resource languages has been accelerated by foundation models trained  multilingually or on related languages. %  At the same time, training neural automatic speech recognition (ASR) models has gotten substantially easier.
+However, for the most part, demonstrations of the benefits of pre-training or cross-language transfer approaches for low-resource automatic speech recognition (ASR) have been broad-coverage evaluations aggregated over many languages and corpora at once \cite{shiFindings2023MLSUPERB2023}. This masks vast performance differences. The value of human linguistic diversity makes it important for the next era of speech recognition to deal with limited data, and speech in difficult conditions. % While ASR research has addressed many individual low-resource languages in a focused way, the languages and corpora used for evaluation differ radically from one another, making it difficult to compare approaches.
+
+We introduce a new benchmark corpus to the community in the form of a challenge. The corpus is of Faetar, a variety of the Franco-Provençal language which developed in isolation in Italy, far from other speakers of Franco-Provençal, and in close contact with Italian and its dialects \cite{nagy1996language,nagy2000faetar}. Faetar has less than 1000 speakers around the world, in Italy and in the diaspora \cite{zulato2017overview}. The benchmark data represents the majority of all archived speech recordings of Faetar in existence, and it is not available from any other source.
+
+The language has no standard written form. However, as it is endangered, preservation, learning, and documentation are a priority for many community members. As such, automatic speech recognition would provide the valuable ability to transcribe and index Faetar recordings. We believe this situation is typical of many languages, as is the quantity and quality of the data set, which consists of around five hours of labelled speech (transcribed quasi-phonetically), and around 20 hours of unlabelled speech. All come from field recordings, generally noisy, of semi-spontaneous speech. 
+
+We believe exploration and advances can be made quickly by drawing the community's attention to a common problem. As data of this kind is  typical in many languages (noisy recordings, with only a few hours transcribed), we believe  important, generalizable lessons can be drawn from comparing approaches on this data set.
+The benchmark, including baseline and evaluation code, is freely available subject to an online data-sharing agreement.\footnote{\url{https://perceptimatic.github.io/faetarspeech}} We release the benchmark in two phases: an embargoed phase, during which the reference transcriptions for the test set are only available to the organizers. This period will last roughly eight months and is intended to allow us to generate interest in the task by proposing it in the form of a challenge. Following this, the entire benchmark will be released.
 
 # Data
 ***
