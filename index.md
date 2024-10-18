@@ -2,6 +2,13 @@
 layout: default
 ---
 
+<!--
+
+Anything marked with TODO is currently just copy/pasted from somewhere else and
+needs to be tailored a bit.
+
+-->
+
 ##### Table of Contents  
 - [Challenge Summary](#challenge-summary)
 - [Data](#data)
@@ -15,117 +22,88 @@ layout: default
 - [Organizers](#organizers)
 - [References](#references)
 
-# Challenge Summary
+### Challenge Summary
+
+<!-- TODO -->
+
+We are organizing a challenge targeting a specific language for ASR with very
+limited, low-quality data, which would run from November 2024 to February 2025
+(3 months), culminating in a (proposed) special session at Interspeech 2025.
+The overall motivation is that, although we already have lots of breadth in the
+evaluation of ASR across languages (e.g., ML-SUPERB), we need more depth. A
+challenge task will allow participants to pay close attention to a single
+problem, and we are hoping this will allow us to more fully understand some of
+the techniques, both old and new, that participants apply.
 
 The main goal of this challenge is to determine the effect of ASR architecture
-on the recognition of speech in real-world \(i.e. noisy\) conditions. In order
-to accomplish this goal, we provide transcriptions and audio \(the benchmark\)
-extracted from field work done on the endangered Franco-Provençal language
-Faetar. The standard benchmark data provided comes from a single corpus \(which
-comprises the majority of existing Faetar data\) and the transcribed portions
-consist exclusively of a single language. Additionally, the benchmark has
-limited amounts of transcribed speech, with only ~5 hours of transcribed speech
-and ~20 hours of untranscribed speech.\
+on the recognition of speech in real-world (i.e. noisy) conditions. We provide
+transcriptions and audio (the benchmark) from a single corpus extracted
+from field work done on the endangered Franco-Provençal language Faetar.
+<!-- What do participants need to do? -->
 
-Since the benchmark data is relatively small and is in a language with
-\(almost\) no other sources of data, we posit that any differences in
-performance between different ASR systems in this challenge is due to
-differences in their architecture. Using a single corpus and a single language
-also eliminates the possible confounding factors of multiple corpora and
-languages. We believe that the insights gained through this work will be
-generalizable to other endangered languages, since most audio of endangered
-languages is also noisy, with relatively limited transcriptions.\
+### Language
 
-Since Faetar is endangered, another goal of this challenge is to create ASR
-systems capable of transcribing Faetar recordings in order to help preserve the
-language for future generations. We believe that posing this challenge to the
-community will help speed both the development of ASR for Faetar and the
-discovery of new insights into ASR architecture.\
+<!-- TODO -->
+The language is Faetar, a variety of Franco-Provençal (Romance language,
+related to French but quite different from both French and other varieties of
+Franco-Provençal) spoken in Italy, with lots of influence, both lexical and
+phonological, from Italian. 
 
+### Motivation
+
+<!-- TODO -->
+The benchmark data is relatively small, is in a language with (almost) no other
+sources of data, and is a single language corpus. We posit, due to these
+factors, that any differences in performance between different ASR systems in
+this challenge are due to differences in their architecture, and the insights
+gained through this work will be generalizable to other endangered languages
+with low quality recordings.
+
+Another goal of this challenge is to create ASR systems capable of transcribing
+Faetar recordings in order to help preserve the language for future
+generations. We believe that posing this challenge to the community will help
+speed both the development of ASR for Faetar and the discovery of new insights
+into ASR architecture.
+
+### Data
+
+<!-- This is an important point, we should put it in a box -->
 During the challenge, the reference transcriptions for the test set will only
 be available to the organizers. Following the challenge, the entire benchmark
 will be released. See below for registration.
 
-# Data
-
-***
-
 Data were extracted from the Faetar collection of the Heritage Language
-Variation and Change in Toronto (HLVC) corpus \[1\]. The corpus contains 184
+Variation and Change in Toronto (HLVC) corpus. The corpus contains 184
 recordings of native Faetar speakers collected in Faeto between 1992 and 1994
 (the _Homeland_ subset) and 37 recordings of first- and second-generation
-heritage Faetar speakers collected in Toronto between 2009 and 2010  (the
-_Heritage_ subset) \[1\]. Some of the recordings were interviews (_Interview_),
-designed to elicit spontaneous speech, and, in others, participants were asked
-to describe scenes and objects from a picture book (_Words_). The recordings
-were saved at a 44.1 kHz sampling rate (in the case of the Homeland recordings,
-this is the sampling rate of the digitization from analog cassette tapes).
-Recordings can be noisy, with considerable background noise, back-channels, and
-interruptions.
+heritage Faetar speakers collected in Toronto between 2009 and 2010 (the
+_Heritage_ subset) [[1]](#1).
 
-The source data set consisted of long-form recordings, of which 68 of the
-Homeland recordings, and 26 of the Heritage recordings, had been at least
-partially phonetically transcribed at the utterance level. Some of the
-transcriptions (mostly those in the Heritage subset) were extracted from ELAN
-annotation files, which had utterance-level alignments
-\cite{brugmanAnnotatingMultimediaMultimodal2004}, while the remainder were
-extracted from Microsoft Word files, by manually mapping numerical values from
-each of the two fonts used (PalPhon or IPAPhon) to modern UTF-8 encodings, and
-removing anything that did not look like a transcription (English glosses,
-identifiers, _etc._). 
-
-For the portion which was transcribed but not aligned, we adapted the JHU
-Arabic MGB-3 recipe for segmentation and alignment
-\cite{manoharJHUKaldiSystem2017}, built on Kaldi
-\cite{poveyKaldiSpeechRecognition2011}. This splits recordings and
-recording-level transcriptions by i-vector speaker diarization, splits each
-diarized segment into smaller, overlapping segments, aligns each overlapping
-segment to the text (allowing for minor changes to the text) with a seed ASR
-system, and  stitches the overlapping segments back together using string
-matching. We trained the seed ASR system on the aligned part of the data. To
-generate our automatic alignments, we used a monophone, speaker-independent
-Gaussian mixture model-Hidden Markov model (GMM-HMM) system. We found this
-worked better than triphone or speaker-dependent models, presumably because of
-the very limited aligned data we had available for training.  We then used
-PyAnnote 3.0 \cite{Plaquet23,Bredin23} to adjust utterance boundaries according
-to voice-activity detection and label them with speaker diarization. Because
-the pipeline is error-prone, we  manually threw out  utterances whose
-boundaries were clearly misaligned or whose transcriptions were very clearly
-wrong. On the test set (see below), we made a second, more rigorous, manual
-pass to correct alignments. 
+A portion of the recordings had been at least partially phonetically
+transcribed at the utterance level. Some of the transcriptions had
+utterance-level alignments, while the remainder were extracted from Microsoft
+Word files, automatically segmented and aligned. We then automatically adjusted
+utterance boundaries according to voice-activity detection and labeled them
+with speaker diarization. Because the pipeline is error-prone, we  manually
+threw out utterances whose boundaries were clearly misaligned or whose
+transcriptions were very clearly wrong. On the test set, we made a second, more
+rigorous, manual pass to correct alignments. 
 
 After obtaining time-alignments for the whole data set, further filtering was
 performed to remove the interviewer's speech (generally clearly marked), to
-remove utterances with duration less than 500~ms, and to remove utterances in
-Italian or English.  While code-switching is common in Faetar speech (and thus,
-a recognizer should deal with it) removing utterances with substantial parts of
-Italian or English did not result in a major loss of data.  As such, we take it
-that the (simpler) problem we propose, which consists of transcribing Faetar
-with minimal code-switching, is a reasonable approximation to the real problem.
-For the purposes of ASR research, it will be easier to interpret the results in
-a more homogeneous corpus. Nevertheless, as Faetar has been in contact with
-Italian for a long time, and substantially longer than it has been in contact
-with English (English only appears in the Heritage portion of the corpus), we
-took a more lenient approach to identifying Italian utterances. To identify
-English utterances, the presence of a single English word, drawn from a closed
-list that were clearly not words in Faetar, was sufficient to mark an utterance
-as English. On the other hand, for Italian, we required that there be three
-words in a row, again from a closed list.
+remove utterances with duration less than 500ms, and to remove utterances in
+Italian or English.
+
+#### Splits
 
 We split the aligned data into _train_, _dev_, and _test_, ensuring a
 reasonable balance between male and female speakers, and between Homeland and
-Heritage subsets, in both \emph{train} and \emph{test}. We do not include the
-\emph{Words} subset in the \emph{dev} or \emph{test} splits, as we take it that
-this is too easy an evaluation: many of the utterances consist of individual
-words, often the same word. Anticipating compatibility with the ML-SUPERB
-benchmark \cite{shiFindings2023MLSUPERB2023}, we also construct  \emph{1h} and
-\emph{10min} subsets of \emph{train}. We distribute the remainder of the data,
-for which we did not have transcriptions, or for which the (long-form) file
-could not be time-aligned, as an \emph{unlab}elled set, after obtaining VAD and
-speaker diarization using PyAnnote 3.0. Because we determined that many of the
-shorter utterances extracted in this way were not speech, we discarded all
-unlabelled utterances less than 1.5 seconds. Table \ref{tab:hours} shows the
-distribution of data in the corpus. ***
+Heritage subsets. We distribute the remainder of the data, for which we did not
+have transcriptions, or for which the (long-form) file could not be
+time-aligned, as an unlabelled set (_unlab_), after obtaining VAD and speaker
+diarization. Table ==ref{tab:hours}== shows the distribution of data in the
+corpus.
+
 
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}
@@ -222,54 +200,73 @@ distribution of data in the corpus. ***
   </tr>
 </tbody></table>
 
-# Ground Rules
+### Ground Rules
 
-We consider unconstrained and constrained baseline systems, where by
-“constrained” we mean that the model is not trained on data sets other than
-train and unlab, including pre-trained models trained on other languages.
-Considering constrained approaches separately allows us to focus on questions
-of model architecture, rather than on pre-training. As far as constrained
-models go, as discussed in Section III-B, force-alignment of transcriptions to
-audio was performed with Kaldi [27], initially using a monophone,
-speaker-independent HMM- GMM model, and then refined at the end using a
-triphone, speaker- dependent model; both were composed with a 5-gram,
-character- level, modified Kneser-Ney language model [30] trained on the (post
-alignment) transcriptions from the train partition. We report the performance
-for these models in Table III, ± the half width of a 95% bootstrap confidence
-interval calculated using K = 10000 samples. Alternatively, we train using the
-ML-SUPERB recipe [1] from ESPNet [31] using filterbanks, keeping all
-hyperparameters as-is except to set the effective batch size to 4. The model
-consists of a single convolutional layer followed by two transformer layers,
-trained using CTC. This was substantially better than the HMM- GMM model.3
-Decoding with a 5-gram language model trained on train did not improve PERs,
-presumably because the neural model already exhausted what can be learned from
-train. For comparison with ML-SUPERB, we also include results for the
-restricted 1hr and 10min training conditions. In the unconstrained condition,
-we fine-tune existing multilingual models MMS [32] and mHuBERT [33] on the
-train set. Both are masked prediction models; MMS is a wav2vec 2.0 model that
-takes a language-specific adapter, head, and fine-tuning strategy. Rather than
-initializing the adapter layers from scratch, we initialize the adapters and
-head with a model fine-tuned on Italian. mHuBERT takes an iterative refinement
-approach, training first on classification according to classes derived from
-k-means clustering on spectral features, then, after the first iteration, on
-targets derived from clustering the internal representations of the previous
-one. As [33] obtained best results with three iterations, we fine-tune the
-third iteration. For both models, we use a linear schedule with peak learning
-rate of 1e−5 for 200 epochs of which ten are warmup, dropout of 10%, and
-effective batch size of 8. Both give substantially better results than ESPnet,
-and the differences in performance between the two are minor, with MMS having a
-slight advantage (within the overlap of the confidence intervals).
+<!-- TODO -->
 
-# Timeline 
+We consider two kinds of baseline systems:
+- Unconstrained
+- Constrained
+
+  The model is not trained on data sets other than
+  _train_ and _unlab_, including pre-trained models trained on other languages.
+
+We are envisioning four suggested themes for participants to explore:
+
+    Constrained ASR: no use of pre-trained acoustic models or any external
+    resources, no use of the unlabelled data set - the goal is to concentrate
+    on tweaking ASR architectures so that they work better under the difficult
+    circumstances presented by this corpus
+
+    Pre-trained acoustic models and language models: while participants are
+    very unlikely to find useful resources in the language itself, questions
+    about how best to use related languages, or benefit from multi-lingual
+    training, in low-resource settings, represent an unresolved, current theme
+    in the literature
+
+    Unlabelled data - the benchmark contains around 20 hours of unlabelled
+    speech data - while this is additional data, it represents a small fraction
+    of the amount of data typically used to pre-train speech foundation models;
+    how to best make use of this additional data?
+
+    Dirty data - The transcribed part of the corpus was constructed primarily
+    from long-form audio files with paired transcripts in Microsoft Word, using
+    an imperfect cleaning and alignment pipeline. This is a very common
+    scenario. We will make available an additional set of "dirty" data,
+    consisting of the source files for the train and unlabelled partitions.
+    Participants can experiment with improving upon these data sets using their
+    own pipelines.
+
+### Timeline 
+
+<!-- TODO -->
+
+A rough proposed timeline is as follows:
+
+    October 14, 2024 - Submission of challenge proposal to Interspeech
+
+    Late October 2024 - Pre-release of challenge data with hidden test
+    transcriptions
+
+    November 18th 2024 - Acceptance/rejection of challenge session at
+    Interspeech (if rejected, we encourage participants to submit to the
+    regular Interspeech sessions)
+
+    End of January/beginning of February 2025 - participants should submit
+    their results for evaluation on test
+
+    February 12th, 2025 - Interspeech paper deadline
+    
+    August 17-25, 2025 - Interspeech conference
 
 challenge results submission deadline - XXXXXXX \
 interspeech 2025 paper submission deadline - feb 12
 
-# Submission Instructions
+### Submission Instructions
 
-# Leaderboards
+### Leaderboards
 
-## Constrained Models
+#### Constrained Models
 
 <fieldset>
 	<select id="csubmission_names"
@@ -311,7 +308,7 @@ interspeech 2025 paper submission deadline - feb 12
   </tr>
 </table>
 
-## All Models
+#### All Models
 
 <fieldset>
 <div>
@@ -589,7 +586,7 @@ get_submissions('all_submission_names', 'Leader');
 
 </script>
 
-# Registration
+### Registration
 
 <iframe width="640px" height="480px"
     src="https://forms.office.com/r/qanCB2sjbM?embed=true" frameborder="0"
@@ -597,9 +594,12 @@ get_submissions('all_submission_names', 'Leader');
     style="border: none; max-width:100%; max-height:100vh" allowfullscreen
     webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
 
-# Organizers
+<!-- Missing HLVC funding attribution -->
 
-# References
+### Organizers
 
-- \[1\] N. Nagy, “A multilingual corpus to explore variation in language
-  contact situations,” _RILA_, pp. 65–84, 2011.
+### References
+
+<a id="1">[1]</a> N. Nagy, "A multilingual corpus to explore variation in
+language contact situations," _RILA_, pp. 65–84, 2011.
+
