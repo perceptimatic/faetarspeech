@@ -24,34 +24,23 @@ needs to be tailored a bit.
 
 ### Challenge Summary
 
-<!-- TODO -->
-
-We are organizing a challenge targeting a specific language for ASR with very
-limited, low-quality data, which would run from November 2024 to February 2025
-(3 months), culminating in a (proposed) special session at Interspeech 2025.
-The overall motivation is that, although we already have lots of breadth in the
-evaluation of ASR across languages (e.g., ML-SUPERB), we need more depth. A
-challenge task will allow participants to pay close attention to a single
-problem, and we are hoping this will allow us to more fully understand some of
-the techniques, both old and new, that participants apply.
-
 The main goal of this challenge is to determine the effect of ASR architecture
 on the recognition of speech in real-world (i.e. noisy) conditions. We provide
-transcriptions and audio (the benchmark) from a single corpus extracted
-from field work done on the endangered Franco-Provençal language Faetar.
-<!-- What do participants need to do? -->
+transcriptions and audio (the benchmark) from a single corpus extracted from
+field work done on the endangered Franco-Provençal language Faetar. Faetar has
+very limited, low-quality data.
 
-### Language
-
-<!-- TODO -->
-The language is Faetar, a variety of Franco-Provençal (Romance language,
-related to French but quite different from both French and other varieties of
-Franco-Provençal) spoken in Italy, with lots of influence, both lexical and
-phonological, from Italian. 
+We anticipate the challenge to run from November 2024 to February 2025 (3
+months), culminating in a (proposed) special session at Interspeech 2025.
 
 ### Motivation
 
-<!-- TODO -->
+Although we already have lots of breadth in the evaluation of ASR across
+languages (e.g., ML-SUPERB), we need more depth. A challenge task will allow
+participants to pay close attention to a single problem, and we are hoping this
+will allow us to more fully understand some of the techniques, both old and
+new, that participants apply.
+
 The benchmark data is relatively small, is in a language with (almost) no other
 sources of data, and is a single language corpus. We posit, due to these
 factors, that any differences in performance between different ASR systems in
@@ -67,10 +56,11 @@ into ASR architecture.
 
 ### Data
 
-<!-- This is an important point, we should put it in a box -->
+{% include important.html content="
 During the challenge, the reference transcriptions for the test set will only
 be available to the organizers. Following the challenge, the entire benchmark
 will be released. See below for registration.
+" %}
 
 Data were extracted from the Faetar collection of the Heritage Language
 Variation and Change in Toronto (HLVC) corpus. The corpus contains 184
@@ -101,7 +91,7 @@ reasonable balance between male and female speakers, and between Homeland and
 Heritage subsets. We distribute the remainder of the data, for which we did not
 have transcriptions, or for which the (long-form) file could not be
 time-aligned, as an unlabelled set (_unlab_), after obtaining VAD and speaker
-diarization. Table ==ref{tab:hours}== shows the distribution of data in the
+diarization. Table 1 shows the distribution of data in the
 corpus.
 
 
@@ -204,63 +194,51 @@ corpus.
 
 <!-- TODO -->
 
-We consider two kinds of baseline systems:
-- Unconstrained
-- Constrained
-
-  The model is not trained on data sets other than
-  _train_ and _unlab_, including pre-trained models trained on other languages.
 
 We are envisioning four suggested themes for participants to explore:
 
-    Constrained ASR: no use of pre-trained acoustic models or any external
-    resources, no use of the unlabelled data set - the goal is to concentrate
-    on tweaking ASR architectures so that they work better under the difficult
-    circumstances presented by this corpus
+* **Constrained**: no use of pre-trained acoustic models or any external
+  resources, no use of the unlabelled data set - the goal is to concentrate on
+  tweaking ASR architectures so that they work better under the difficult
+  circumstances presented by this corpus
 
-    Pre-trained acoustic models and language models: while participants are
-    very unlikely to find useful resources in the language itself, questions
-    about how best to use related languages, or benefit from multi-lingual
-    training, in low-resource settings, represent an unresolved, current theme
-    in the literature
+* **Unconstrained**: pre-trained acoustic models and language models are
+  allowed; while participants are very unlikely to find useful resources in the
+  language itself, questions about how best to use related languages, or
+  benefit from multi-lingual training, in low-resource settings, represent an
+  unresolved, current theme in the literature
 
-    Unlabelled data - the benchmark contains around 20 hours of unlabelled
-    speech data - while this is additional data, it represents a small fraction
-    of the amount of data typically used to pre-train speech foundation models;
-    how to best make use of this additional data?
+* **Unlabelled data**: the benchmark contains around 20 hours of unlabelled
+  speech data - while this is additional data, it represents a small fraction
+  of the amount of data typically used to pre-train speech foundation models;
+  how do we best make use of this additional data?
 
-    Dirty data - The transcribed part of the corpus was constructed primarily
-    from long-form audio files with paired transcripts in Microsoft Word, using
-    an imperfect cleaning and alignment pipeline. This is a very common
-    scenario. We will make available an additional set of "dirty" data,
-    consisting of the source files for the train and unlabelled partitions.
-    Participants can experiment with improving upon these data sets using their
-    own pipelines.
+* **Dirty data**: the transcribed part of the corpus was constructed primarily
+  from long-form audio files with paired transcripts in Microsoft Word, using
+  an imperfect cleaning and alignment pipeline. This is a very common scenario.
+  We will make available an additional set of "dirty" data, consisting of the
+  source files for the train and unlabelled partitions. Participants can
+  experiment with improving upon these data sets using their own pipelines.
 
 ### Timeline 
 
-<!-- TODO -->
-
 A rough proposed timeline is as follows:
 
-    October 14, 2024 - Submission of challenge proposal to Interspeech
+* October 14, 2024 - Submission of challenge proposal to Interspeech
 
-    Late October 2024 - Pre-release of challenge data with hidden test
-    transcriptions
+* Late October 2024 - Pre-release of challenge data with hidden test
+  transcriptions
 
-    November 18th 2024 - Acceptance/rejection of challenge session at
-    Interspeech (if rejected, we encourage participants to submit to the
-    regular Interspeech sessions)
+* November 18th 2024 - Acceptance/rejection of challenge session at Interspeech
+  (if rejected, we encourage participants to submit to the regular Interspeech
+  sessions)
 
-    End of January/beginning of February 2025 - participants should submit
-    their results for evaluation on test
+* End of January/beginning of February 2025 - participants should submit their
+  results for evaluation on test
 
-    February 12th, 2025 - Interspeech paper deadline
+* February 12th, 2025 - Interspeech paper deadline
     
-    August 17-25, 2025 - Interspeech conference
-
-challenge results submission deadline - XXXXXXX \
-interspeech 2025 paper submission deadline - feb 12
+* August 17-25, 2025 - Interspeech conference
 
 ### Submission Instructions
 
