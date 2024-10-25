@@ -18,14 +18,18 @@ title: The Faetar ASR Challenge: Speech Recognition in a Very Under-Resourced La
 
 ### Challenge Summary
 
-The main goal of this challenge is to determine the effect of ASR architecture
-on the recognition of speech in real-world (i.e. noisy) conditions. We provide
-transcriptions and audio (the benchmark) from a single corpus extracted from
-field work done on the endangered Franco-Provençal language Faetar. Faetar has
-very limited, low-quality data.
+Low-resource speech recognition has gained substantial attention in recent years, particularly with the advent of large multilingual speech foundation models and language models. This is welcome, as there are thousands of languages for which no ASR exists, and, for many of them, small collections of field or found recordings, often partially transcribed, do exist. Such technology would be transformative for linguists, educators, and  for many of the minoritized communities worldwide facing challenges to the survival of their language and culture, allowing them to valorize and make more accessible recorded speech, for the benefit of current and future speakers of the language. However, a clear picture of best practices when developing ASR systems in very low-resource contexts has not yet emerged.
 
-We anticipate the challenge to run from November 2024 to February 2025 (3
-months), culminating in a (proposed) special session at Interspeech 2025.
+The Faetar ASR Challenge aims to focus researchers’ attention on several issues which are common to many archival collections of speech data:
+
+* **noisy** field recordings
+* **only a few hours** of transcribed data
+* a somewhat larger collection of** untranscribed data**
+* **no easy source of additional data** in the language
+* **“dirty” transcriptions** in documents containing matter that needs to be filtered out
+
+By focusing multiple research groups on a single corpus of this kind, we aim to gain deeper insights into these problems than can be achieved otherwise.
+
 
 ### Motivation
 
