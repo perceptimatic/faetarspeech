@@ -1,13 +1,7 @@
 ---
 layout: default
+title: The Faetar ASR Challenge: Speech Recognition in a Very Under-Resourced Language
 ---
-
-<!--
-
-Anything marked with TODO is currently just copy/pasted from somewhere else and
-needs to be tailored a bit.
-
--->
 
 ##### Table of Contents  
 - [Challenge Summary](#challenge-summary)
