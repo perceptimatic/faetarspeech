@@ -3,7 +3,6 @@ layout: default
 title: The Faetar Low-Resource ASR Challenge
 ---
 
-- [Challenge Summary](#challenge-summary)
 - [The Faetar Language](#the-faetar-language)
 - [Ground Rules](#ground-rules)
 - [Tracks](#tracks)
@@ -17,7 +16,6 @@ title: The Faetar Low-Resource ASR Challenge
 - [Organizers](#organizers)
 - [References](#references)
 
-### Challenge Summary
 
 Low-resource speech recognition has gained substantial attention in recent years, particularly with the advent of large multilingual speech foundation models and language models. This is welcome, as there are thousands of languages for which no ASR exists, and, for many of them, small collections of field or found recordings, often partially transcribed, do exist. Such technology would be transformative for linguists, educators, and  for many of the minoritized communities worldwide facing challenges to the survival of their language and culture, allowing them to valorize and make more accessible recorded speech, for the benefit of current and future speakers of the language. However, a clear picture of best practices when developing ASR systems in very low-resource contexts has not yet emerged.
 
@@ -175,7 +173,23 @@ The **dirty data** collection consists of the original source files for a subset
 - **May 21st, 2025:** Interspeech paper acceptance notification
 - **August 17-25, 2025:** Interspeech conference
 
-### Submission Instructions
+### How to Participate
+
+#### Dev Kit
+
+Please access the dev kit, permitting you to evaluate your system and replicate baselines here (does not include the data) at [https://github.com/perceptimatic/faetar-dev-kit](https://github.com/perceptimatic/faetar-dev-kit).
+
+#### Registering/requesting data access
+
+*Requests for access to the data will be responded to within 24 hrs. You will receive a download link if your request is approved.*
+
+<iframe width="640px" height="480px"
+    src="https://forms.office.com/r/qanCB2sjbM?embed=true" frameborder="0"
+    marginwidth="0" marginheight="0"
+    style="border: none; max-width:100%; max-height:100vh" allowfullscreen
+    webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
+
+#### How to Submit
 
 *To be announced*
 
@@ -500,18 +514,6 @@ get_submissions('csubmission_names', 'cLeader');
 get_submissions('all_submission_names', 'Leader');
 
 </script>
-
-### How to Participate
-
-**FIXME**
-
-Dev kit
-
-<iframe width="640px" height="480px"
-    src="https://forms.office.com/r/qanCB2sjbM?embed=true" frameborder="0"
-    marginwidth="0" marginheight="0"
-    style="border: none; max-width:100%; max-height:100vh" allowfullscreen
-    webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
 
 ### Contact
 
