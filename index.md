@@ -1,19 +1,18 @@
 ---
 layout: default
-title: The Faetar ASR Challenge: Speech Recognition in a Very Under-Resourced Language
+title: The Faetar ASR Challenge
 ---
 
-<!--
-##### Table of Contents  
 - [Challenge Summary](#challenge-summary)
+- [The Faetar Language](#the-faetar-language)
 - [Ground Rules](#ground-rules)
-- [Data](#data)
+- [Tracks](#tracks)
+- [Criteria for Judging Submissions](#criteria-for-judging-submissions)
+- [Data and Licensing](#data-and-licensing)
 - [Timeline](#timeline)
 - [Submission Instructions](#submission-instructions)
 - [Leaderboards](#leaderboards)
-	- [Constrained Models](#constrained-models)
-	- [All Models](#all-models)
-- [Registration](#registration)
+- [How to Participate](#how-to-participate)
 - [Organizers](#organizers)
 - [References](#references)
 -->
@@ -142,36 +141,6 @@ Table 1 shows the distribution of data in the corpus, which consists of a **trai
 Additionally, the challenge data comes with a set of alternative splits within 
 
 Dirty data
-
-### Baselines
-
-## Baselines
-
-**FIXME**
-
-Baseline models (code included in the dev kit) obtain a best PER of 30.4% on test. A number of other baselines are available, including:
-
-**Constrained:**
-
-ESPnet (model used in ML-SUPERB [5]):	35.8% (±0.8 - limits of 95% bootstrap CI)
-
-**Pre-trained models:**
-
-MMS [6]:					33.0% (±0.8)
-
-mHubert-147 [14]:				33.6% (±0.8)
-
-**Use of unlabelled data:**
-
-MMS Continued pre-training 			31.5% (±0.8)
-
-
-    MMS Self-training 				31.0% (±0.8)
-
-
-    MMS Both (Cont. PT+ST)			30.4% (±0.8)
-
-More details can be found in the paper describing the benchmark corpus, Ong et al (2024), “The Faetar Benchmark: Speech Recognition in a Very Under-Resourced Language” ([https://arxiv.org/abs/2409.08103](https://arxiv.org/abs/2409.08103)).
 
 ### Timeline 
 **FIXME**
@@ -532,9 +501,11 @@ get_submissions('all_submission_names', 'Leader');
 
 </script>
 
-### Registration
+### How to Participate
 
 **FIXME**
+
+Dev kit
 
 <iframe width="640px" height="480px"
     src="https://forms.office.com/r/qanCB2sjbM?embed=true" frameborder="0"
