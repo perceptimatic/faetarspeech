@@ -138,7 +138,6 @@ Because the **test** set is unavailable to challenge participants during the dur
   </tr>
 </thead>
 <tbody>
-
 <tr>
     <th>10 minutes</th>
     <th><em>Hold out to use as additional validation/development data; or use as alternate train set to explore extreme low-data settings</em></th>
@@ -520,7 +519,11 @@ get_submissions('all_submission_names', 'Leader');
 Questions should be directed to <em>faetarasrchallenge at gmail dot com</em>.
 
 ### Organizers
-**FIXME**
+
+- Ewan Dunbar, University of Toronto
+- Michael Ong, University of Toronto
+- Leo Peckham, University of Toronto
+- Naomi Nagy, University of Toronto
 
 ### References
 
