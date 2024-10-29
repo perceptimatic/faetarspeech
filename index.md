@@ -99,7 +99,7 @@ Table 1 shows the distribution of data in the corpus, which consists of a **trai
 <tbody>
   <tr>
     <td>train</td>
-    <td><em>Training models (all tracks); <b>Constrained</b> track: no data beyond this set can be used for training</em></td>
+    <td><em>Training set (all tracks); <strong>Constrained ASR</strong> track: no data beyond this set can be used for training</em></td>
     <td>4:30:17</td>
   </tr>
   <tr>
@@ -109,7 +109,7 @@ Table 1 shows the distribution of data in the corpus, which consists of a **trai
   </tr>
   <tr>
     <td>unlab</td>
-    <td><em>Additional resource in <b>Unlabelled data</b> track.</em></td>
+    <td><em>Additional resource in <strong>Unlabelled data</strong> track.</em></td>
     <td>19:55:21</td>
   </tr>
   <tr>
@@ -134,17 +134,17 @@ Because the **test** set is unavailable to challenge participants during the dur
 </thead>
 <tbody>
 <tr>
-    <td>10 minutes</td>
-    <td><em>Hold out to use as additional validation/development data; <b>or</b> use as alternate train set to explore extreme low-data settings</em></td>
-    <td>9:49</td>
-</tr>
-<tr>
-    <td>{1 hour} - {10 minutes}</td>
-    <td><em>Hold out to use as additional validation/development data; <b>or</b> use as alternate train set to evaluate lower-data circumstances</em></td>
+    <td>50 minutes</td>
+    <td><em>Hold out to use as additional validation/development data; <strong>or</strong> use as alternate train set to evaluate lower-data circumstances</em></td>
     <td>48:45</td>
 </tr>
 <tr>
-    <td>{train} - {1 hour} - {10 minutes}</td>
+    <td>10 minutes</td>
+    <td><em>Hold out to use as additional validation/development data; <strong>or</strong> use as alternate train set to explore extreme low-data settings</em></td>
+    <td>9:49</td>
+</tr>
+<tr>
+    <td>Reduced train</td>
     <td><em>Use as alternate train set when evaluating on the above alternate split(s)</em></td>
     <td>3:40:32</td>
 </tr>
