@@ -58,7 +58,7 @@ Participants in the **Constrained ASR track** may not use any external resources
 
 - **Using pre-trained acoustic models or language models.** Participants focus on the most effective way to make use of models pre-trained on other languages.
 - **Using unlabelled data.** The challenge data also includes ~20 hrs of unlabelled data. Participants focus on finding the most effective way to make use of it.
-- **Dirty data.** The training data was extracted and automatically aligned from long-form audio and partial transcriptions in “cluttered” word processor files, relying on (error-prone) VAD, scraping, and alignment. Participants focus on improving the pipeline for extracting useful training data, with the ultimate goal of improving performance.
+- **Dirty data.** The training data was extracted and automatically aligned from long-form audio and partial transcriptions in “cluttered” word processor files, relying on (error-prone) VAD, scraping, and alignment. Participants focus on improving the pipeline for extracting useful training data, with the ultimate goal of improving performance. *Participants seeking to participate in the Dirty Data challenge should indicate this on the registration form.**
 
 
 ###  Criteria for judging submissions
@@ -68,7 +68,7 @@ Submissions will be evaluated on phone error rate (PER) on the test set. Partici
 
 ### Data and licensing
 
-**Please see [Ong et al. 2024](https://arxiv.org/abs/2409.08103) for more details about the Faetar ASR Benchmark Corpus.**
+**Please see [Ong et al. 2024](https://arxiv.org/abs/2409.08103) for more details about the Faetar ASR Benchmark Corpus and a more detailed breakdown of the corpus.**
 
 The Faetar ASR Benchmark Corpus data used in the challenge is available without cost **under a restrictive license that prohibits re-distribution, among other things.** Please see the **Registration** section below to request access.
 
@@ -86,52 +86,34 @@ Table 1 shows the distribution of data in the corpus, which consists of a **trai
 **Table 1.** Distribution of data in (hh:)mm:ss.
 <table class="tg"><thead>
   <tr>
-    <th colspan="2" rowspan="2"></th>
-    <th colspan="2">Homeland</th>
-    <th colspan="2">Heritage</th>
-    <th rowspan="2">Total</th>
+    <th>Usage in the challenge</th>
+    <th>Amount</th>
   </tr>
-  <tr>
-    <th>M</th>
-    <th>F</th>
-    <th>M</th>
-    <th>F</th>
-  </tr></thead>
+</thead>
 <tbody>
   <tr>
     <td>dev</td>
-    <td>Int.</td>
-    <td>8:43</td>
-    <td>0:31</td>
-    <td>0:00</td>
-    <td>2:35</td>
+    <td>11:49</td>
     <td>11:49</td>
   </tr>
   <tr>
     <td>test</td>
-    <td>Int.</td>
-    <td>13:10</td>
-    <td>13:33</td>
-    <td>10:54</td>
-    <td>9:16</td>
+    <td>46:54</td>
     <td>46:54</td>
   </tr>
   <tr>
-    <td rowspan="2">train</td>
-    <td>Words</td>
-    <td>42:31</td>
-    <td>58:29</td>
-    <td>51:44</td>
-    <td>9:07</td>
-    <td rowspan="2">4:30:17</td>
+    <td>train</td>
+    <td>4:30:17</td>
+    <td>4:30:17</td>
   </tr>
   <tr>
-    <td>Int.</td>
-    <td>15:58</td>
-    <td>27:56</td>
-    <td>32:49</td>
-    <td>14:41</td>
+    <td>unlab</td>
+    <td>19:55:21</td>
+    <td>19:55:21</td>
   </tr>
+</tbody></table>
+
+<!--
   <tr>
     <td>1h</td>
     <td>Int.</td>
@@ -150,27 +132,11 @@ Table 1 shows the distribution of data in the corpus, which consists of a **trai
     <td>0:24</td>
     <td>9:49</td>
   </tr>
-  <tr>
-    <td rowspan="3">unlab</td>
-    <td>Words</td>
-    <td colspan="2">7:29:11</td>
-    <td colspan="2">0:05:24</td>
-    <td rowspan="3">19:55:21</td>
-  </tr>
-  <tr>
-    <td>Int.</td>
-    <td colspan="2">8:23:18</td>
-    <td colspan="2">0:51:31</td>
-  </tr>
-  <tr>
-    <td>Mixed</td>
-    <td colspan="2">2:12:47</td>
-    <td colspan="2">0:53:09</td>
-  </tr>
-</tbody></table>
+-->
 
 Additionally, the challenge data comes with a set of alternative splits within 
 
+Dirty data
 
 ### Baselines
 
