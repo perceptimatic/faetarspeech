@@ -3,10 +3,11 @@ layout: default
 title: The Faetar ASR Challenge: Speech Recognition in a Very Under-Resourced Language
 ---
 
+<!--
 ##### Table of Contents  
 - [Challenge Summary](#challenge-summary)
-- [Data](#data)
 - [Ground Rules](#ground-rules)
+- [Data](#data)
 - [Timeline](#timeline)
 - [Submission Instructions](#submission-instructions)
 - [Leaderboards](#leaderboards)
@@ -15,6 +16,7 @@ title: The Faetar ASR Challenge: Speech Recognition in a Very Under-Resourced La
 - [Registration](#registration)
 - [Organizers](#organizers)
 - [References](#references)
+-->
 
 ### Challenge Summary
 
@@ -24,74 +26,53 @@ The Faetar ASR Challenge aims to focus researchers’ attention on several issue
 
 * **noisy** field recordings
 * **only a few hours** of transcribed data
-* a somewhat larger collection of** untranscribed data**
-* **no easy source of additional data** in the language
+* a larger collection of **untranscribed data**
+* **no additional data** in the language (textual or speech) that's easily available
 * **“dirty” transcriptions** in documents containing matter that needs to be filtered out
 
 By focusing multiple research groups on a single corpus of this kind, we aim to gain deeper insights into these problems than can be achieved otherwise.
 
+### The Faetar language
 
-### Motivation
+**Please see [Ong et al. 2024](https://arxiv.org/abs/2409.08103) for more details about the Faetar ASR Benchmark Corpus.**
 
-Although we already have lots of breadth in the evaluation of ASR across
-languages (e.g., ML-SUPERB), we need more depth. A challenge task will allow
-participants to pay close attention to a single problem, and we are hoping this
-will allow us to more fully understand some of the techniques, both old and
-new, that participants apply.
+The challenge uses the Faetar ASR Benchmark Corpus. Faetar (pronounced [fajdar]) is a variety of the Franco-Provençal language which developed in isolation in Italy, far from other speakers of Franco-Provençal, and in close contact with Italian. Faetar has less than 1000 speakers around the world, in Italy and in the diaspora. It is endangered, and preservation, learning, and documentation are a priority for many community members. The benchmark data represents the majority of all archived speech recordings of Faetar in existence, and it is not available from any other source.
 
-The benchmark data is relatively small, is in a language with (almost) no other
-sources of data, and is a single language corpus. We posit, due to these
-factors, that any differences in performance between different ASR systems in
-this challenge are due to differences in their architecture, and the insights
-gained through this work will be generalizable to other endangered languages
-with low quality recordings.
+Faetar has no standard written form. The data set is transcribed quasi-phonetically for linguistic purposes in IPA. The transcriptions are not always consistent, as different parts of the data set were transcribed for different purposes: sometimes the transcription is narrow and phonetic, while at other times the transcription is broad and phonemic.
 
-Another goal of this challenge is to create ASR systems capable of transcribing
-Faetar recordings in order to help preserve the language for future
-generations. We believe that posing this challenge to the community will help
-speed both the development of ASR for Faetar and the discovery of new insights
-into ASR architecture.
+Data were extracted from the Faetar collection of the Heritage Language Variation and Change in Toronto (HLVC) corpus [1]. The corpus contains 184 recordings of native Faetar speakers collected in Italy between 1992 and 1994 (the Homeland subset) and 37 recordings of first- and second-generation heritage Faetar speakers collected in Toronto between 2009 and 2010 (the Heritage subset). All come from field recordings, generally noisy, of semi-spontaneous speech. 
 
-### Data
 
-{% include important.html content="
-During the challenge, the reference transcriptions for the test set will only
-be available to the organizers. Following the challenge, the entire benchmark
-will be released. See below for registration.
-" %}
+### Ground Rules
 
-Data were extracted from the Faetar collection of the Heritage Language
-Variation and Change in Toronto (HLVC) corpus. The corpus contains 184
-recordings of native Faetar speakers collected in Faeto between 1992 and 1994
-(the _Homeland_ subset) and 37 recordings of first- and second-generation
-heritage Faetar speakers collected in Toronto between 2009 and 2010 (the
-_Heritage_ subset) [[1]](#1).
+- Participants will make use of the training data provided (~4.5 hrs) and will submit phone-level decodings for train, dev and test audio.
+- Participants will not have access to the test transcriptions during the period of the challenge and organizers will perform the final evaluation on the test set.
+- Participants are provided with a dev kit that allows them to calculate scores on the dev and train sets.
+- To ensure that participants can be confident in their results before submission, while maintaining comparability across participants, we also propose standardized alternative splits within the train set, which participants can use to do held-out evaluations without relying only on the small dev set.
+- Participants must sign a data agreement preventing redistribution before accessing the data set.
 
-A portion of the recordings had been at least partially phonetically
-transcribed at the utterance level. Some of the transcriptions had
-utterance-level alignments, while the remainder were extracted from Microsoft
-Word files, automatically segmented and aligned. We then automatically adjusted
-utterance boundaries according to voice-activity detection and labeled them
-with speaker diarization. Because the pipeline is error-prone, we  manually
-threw out utterances whose boundaries were clearly misaligned or whose
-transcriptions were very clearly wrong. On the test set, we made a second, more
-rigorous, manual pass to correct alignments. 
+### Tracks
 
-After obtaining time-alignments for the whole data set, further filtering was
-performed to remove the interviewer's speech (generally clearly marked), to
-remove utterances with duration less than 500ms, and to remove utterances in
-Italian or English.
+Participants in the **Constrained ASR track** may not use any external resources beyond the training data, including pre-trained acoustic models, language models, or the unlabelled portion of the Faetar challenge data set.
 
-#### Splits
 
-We split the aligned data into _train_, _dev_, and _test_, ensuring a
-reasonable balance between male and female speakers, and between Homeland and
-Heritage subsets. We distribute the remainder of the data, for which we did not
-have transcriptions, or for which the (long-form) file could not be
-time-aligned, as an unlabelled set (_unlab_), after obtaining VAD and speaker
-diarization. Table 1 shows the distribution of data in the
-corpus.
+- **Using pre-trained acoustic models or language models.** Participants focus on the most effective way to make use of models pre-trained on other languages.
+- **Using unlabelled data.** The challenge data also includes ~20 hrs of unlabelled data. Participants focus on finding the most effective way to make use of it.
+- **Dirty data.** The training data was extracted and automatically aligned from long-form audio and partial transcriptions in “cluttered” word processor files, relying on (error-prone) VAD, scraping, and alignment. Participants focus on improving the pipeline for extracting useful training data, with the ultimate goal of improving performance.
 
+
+###  Criteria for judging submissions
+
+Submissions will be evaluated on phone error rate (PER) on the test set. Participants are provided with a dev kit allowing them to calculate the PER on dev and train, as well as reproduce the baselines. Bootstrap confidence intervals can also be calculated using the dev kit to demonstrate robustness. All submissions falling within a 95% confidence interval of the submission with the highest score will be considered to have won. The submission with the highest score will be awarded a special “best of the best” status.
+
+
+### Data and licensing
+
+**Please see [Ong et al. 2024](https://arxiv.org/abs/2409.08103) for more details about the Faetar ASR Benchmark Corpus.**
+
+The Faetar ASR Benchmark Corpus data used in the challenge is available without cost **under a restrictive license that prohibits re-distribution, among other things.** Please see the **Registration** section below to request access.
+
+Table 1 shows the distribution of data in the corpus, which consists of a **train** set, a **test** set, a small **dev** set, and an **unlab**elled set. 
 
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}
@@ -188,37 +169,53 @@ corpus.
   </tr>
 </tbody></table>
 
-### Ground Rules
-
-<!-- TODO -->
+Additionally, the challenge data comes with a set of alternative splits within 
 
 
-We are envisioning four suggested themes for participants to explore:
+### Baselines
 
-* **Constrained**: no use of pre-trained acoustic models or any external
-  resources, no use of the unlabelled data set - the goal is to concentrate on
-  tweaking ASR architectures so that they work better under the difficult
-  circumstances presented by this corpus
+## Baselines
 
-* **Unconstrained**: pre-trained acoustic models and language models are
-  allowed; while participants are very unlikely to find useful resources in the
-  language itself, questions about how best to use related languages, or
-  benefit from multi-lingual training, in low-resource settings, represent an
-  unresolved, current theme in the literature
+**FIXME**
 
-* **Unlabelled data**: the benchmark contains around 20 hours of unlabelled
-  speech data - while this is additional data, it represents a small fraction
-  of the amount of data typically used to pre-train speech foundation models;
-  how do we best make use of this additional data?
+Baseline models (code included in the dev kit) obtain a best PER of 30.4% on test. A number of other baselines are available, including:
 
-* **Dirty data**: the transcribed part of the corpus was constructed primarily
-  from long-form audio files with paired transcripts in Microsoft Word, using
-  an imperfect cleaning and alignment pipeline. This is a very common scenario.
-  We will make available an additional set of "dirty" data, consisting of the
-  source files for the train and unlabelled partitions. Participants can
-  experiment with improving upon these data sets using their own pipelines.
+**Constrained:**
+
+ESPnet (model used in ML-SUPERB [5]):	35.8% (±0.8 - limits of 95% bootstrap CI)
+
+**Pre-trained models:**
+
+MMS [6]:					33.0% (±0.8)
+
+mHubert-147 [14]:				33.6% (±0.8)
+
+**Use of unlabelled data:**
+
+MMS Continued pre-training 			31.5% (±0.8)
+
+
+    MMS Self-training 				31.0% (±0.8)
+
+
+    MMS Both (Cont. PT+ST)			30.4% (±0.8)
+
+More details can be found in the paper describing the benchmark corpus, Ong et al (2024), “The Faetar Benchmark: Speech Recognition in a Very Under-Resourced Language” ([https://arxiv.org/abs/2409.08103](https://arxiv.org/abs/2409.08103)).
 
 ### Timeline 
+**FIXME**
+
+October 31, 2024: Release of data, opening of challenge
+February 1st, 2025: Participants must submit system description(s) and test decodings
+February 5th, 2025: Participants receive test scores from organizers, winners announced
+
+
+February 12th, 2025: Interspeech paper submission deadline
+February 19th, 2025: Interspeech paper update deadline
+May 21st, 2025: Interspeech paper acceptance notification
+August 17-25, 2025: Interspeech conference
+
+
 
 A rough proposed timeline is as follows:
 
@@ -239,8 +236,10 @@ A rough proposed timeline is as follows:
 * August 17-25, 2025 - Interspeech conference
 
 ### Submission Instructions
+**FIXME**
 
 ### Leaderboards
+**FIXME**
 
 #### Constrained Models
 
@@ -564,15 +563,17 @@ get_submissions('all_submission_names', 'Leader');
 
 ### Registration
 
+**FIXME**
+
 <iframe width="640px" height="480px"
     src="https://forms.office.com/r/qanCB2sjbM?embed=true" frameborder="0"
     marginwidth="0" marginheight="0"
     style="border: none; max-width:100%; max-height:100vh" allowfullscreen
     webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
 
-<!-- Missing HLVC funding attribution -->
 
 ### Organizers
+**FIXME**
 
 ### References
 
