@@ -85,14 +85,12 @@ The Faetar ASR Benchmark Corpus data used in the challenge is available without 
 
 Table 1 shows the distribution of data in the corpus, which consists of a **train** set, a **test** set, a small **dev** set, and an **unlab**elled set. 
 
-<!--
 <style type="text/css">
 .tg {border-collapse:collapse;border-spacing:0;}
 .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;word-break:normal;}
 .tg thead th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;word-break:normal;background-color:lightblue;color:black;cursor:pointer;}
 .tg th, .tg td {text-align:center;vertical-align:middle}
 </style>
--->
 
 <table><thead>
   <tr>
@@ -139,12 +137,12 @@ Because the **test** set is unavailable to challenge participants during the dur
 <tbody>
 <tr>
     <td>10 minutes</td>
-    <td><em>Hold out to use as additional validation/development data; or use as alternate train set to explore extreme low-data settings</em></td>
+    <td><em>Hold out to use as additional validation/development data; <b>or</b> use as alternate train set to explore extreme low-data settings</em></td>
     <td>9:49</td>
 </tr>
 <tr>
     <td>{1 hour} - {10 minutes}</td>
-    <td><em>Hold out to use as additional validation/development data; or use as alternate train set to evaluate lower-data circumstances</em></td>
+    <td><em>Hold out to use as additional validation/development data; <b>or</b> use as alternate train set to evaluate lower-data circumstances</em></td>
     <td>48:45</td>
 </tr>
 <tr>
