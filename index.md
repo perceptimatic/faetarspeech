@@ -153,7 +153,7 @@ Because the **test** set is unavailable to challenge participants during the dur
 
 #### Dirty data
 
-The benchmark corpus was extracted and automatically aligned from long-form audio and (incomplete) transcriptions that were scraped from word processor files that often contained other, irrelevant material, then aligned to the utterance level (see [Ong et al. 2024](https://arxiv.org/abs/2409.08103) for more details). Participants in the **Dirty data** track will seek to improve on the process (scraping, segmenting, aligning), with the goal of **improving the quality of the train set**.
+The benchmark corpus was extracted and automatically aligned from long-form audio and (incomplete) transcriptions that were scraped from word processor files that often contained other, irrelevant material, then aligned to the utterance level (see [Ong et al. 2024](https://arxiv.org/abs/2409.08103) for more details). Participants in the **Dirty data** track will seek to improve on the process (scraping, segmenting, aligning), with the goal of **improving the quality of the train set**. The ultimate goal remains the same, of improving PER on the test set.
 
 The **dirty data** collection consists of the original source files for a subset of **train** that does not overlap with **test** or **dev**, along with the scripts that we used for the first stages of extraction. Please request the dirty data set on the registration form if you intend to use it. Baseline results for training on this subset will be provided (*to come*).
 
