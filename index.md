@@ -99,8 +99,7 @@ Table 1 shows the distribution of data in the corpus, which consists of a **trai
     <th>Split</th>
     <th>Usage in the challenge</th>
     <th>Amount</th>
-  </tr>
-</thead>
+  </tr></thead>
 <tbody>
   <tr>
     <td>train</td>
@@ -139,19 +138,19 @@ Because the **test** set is unavailable to challenge participants during the dur
 </thead>
 <tbody>
 <tr>
-    <th>10 minutes</th>
-    <th><em>Hold out to use as additional validation/development data; or use as alternate train set to explore extreme low-data settings</em></th>
-    <th>9:49</th>
+    <td>10 minutes</td>
+    <td><em>Hold out to use as additional validation/development data; or use as alternate train set to explore extreme low-data settings</em></td>
+    <td>9:49</td>
 </tr>
 <tr>
-    <th>{1 hour} - {10 minutes}</th>
-    <th><em>Hold out to use as additional validation/development data; or use as alternate train set to evaluate lower-data circumstances</em></th>
-    <th>48:45</th>
+    <td>{1 hour} - {10 minutes}</td>
+    <td><em>Hold out to use as additional validation/development data; or use as alternate train set to evaluate lower-data circumstances</em></td>
+    <td>48:45</td>
 </tr>
 <tr>
-    <th>{train} - {1 hour} - {10 minutes}</th>
-    <th><em>Use as alternate train set when evaluating on the above alternate split(s)</em></th>
-    <th>3:40:32</th>
+    <td>{train} - {1 hour} - {10 minutes}</td>
+    <td><em>Use as alternate train set when evaluating on the above alternate split(s)</em></td>
+    <td>3:40:32</td>
 </tr>
 </tbody>
 </table>
