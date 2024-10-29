@@ -67,7 +67,9 @@ The three other tracks are not mutually exclusive:
 
 ###  Criteria for judging submissions
 
-Submissions will be evaluated on phone error rate (PER) on the test set. Participants are provided with a dev kit allowing them to calculate the PER on dev and train, as well as reproduce the baselines. Bootstrap confidence intervals can also be calculated using the dev kit to demonstrate robustness. All submissions falling within a 95% confidence interval of the submission with the highest score will be considered to have won. The submission with the highest score will be awarded a special “best of the best” status.
+Submissions will be evaluated on phone error rate (PER) on the test set. Participants are provided with a dev kit allowing them to calculate the PER on dev and train, as well as reproduce the baselines. Bootstrap confidence intervals can also be calculated using the dev kit to demonstrate robustness.
+
+A winner or tie will be declared over all tracks: all submissions falling within a 95% confidence interval of the submission with the lowest PER will be considered to have won, with the submission having the numerically lowest PER being awarded a special distinction. The results of the challenge will also indicate the best approaches within each track.
 
 
 ### Data and licensing
