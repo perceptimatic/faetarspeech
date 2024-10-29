@@ -26,6 +26,9 @@ url: "https://perceptimatic.github.io" # the base hostname & protocol for your s
 # Build settings
 theme: jekyll-theme-slate
 
+github:
+  is_project_page: false
+
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
