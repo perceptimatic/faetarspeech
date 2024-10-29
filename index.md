@@ -86,9 +86,8 @@ The Faetar ASR Benchmark Corpus data used in the challenge is available without 
 Table 1 shows the distribution of data in the corpus, which consists of a **train** set, a **test** set, a small **dev** set, and an **unlab**elled set. 
 
 <style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  padding:10px 5px;word-break:normal;}
+.tg {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;word-break:normal;}
 .tg thead th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;word-break:normal;background-color:lightblue;color:black;cursor:pointer;}
 .tg th, .tg td {text-align:center;vertical-align:middle}
 </style>
@@ -127,6 +126,13 @@ Table 1 shows the distribution of data in the corpus, which consists of a **trai
 #### Alternate splits
 
 Because the **test** set is unavailable to challenge participants during the duration of the challenge, we recommend that participants not rely entirely on **dev** for held-out evaluation. To this end, we will also provide benchmark results (*to come*) based on the following alternative splits within **train** (provided):
+
+<style type="text/css">
+.tg {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;word-break:normal;}
+.tg thead th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;word-break:normal;background-color:lightblue;color:black;cursor:pointer;}
+.tg th, .tg td {text-align:center;vertical-align:middle}
+</style>
 
 <table class="tg">
 <thead>
