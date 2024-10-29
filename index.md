@@ -25,6 +25,7 @@ Low-resource speech recognition has gained substantial attention in recent years
 The Faetar ASR Challenge aims to focus researchers’ attention on several issues which are common to many archival collections of speech data:
 
 * **noisy** field recordings
+* lack of standard orthography leading **noise in the transcriptions** in the form of transcriber inconsistencies
 * **only a few hours** of transcribed data
 * a larger collection of **untranscribed data**
 * **no additional data** in the language (textual or speech) that's easily available
@@ -38,9 +39,11 @@ By focusing multiple research groups on a single corpus of this kind, we aim to 
 
 The challenge uses the Faetar ASR Benchmark Corpus. Faetar (pronounced [fajdar]) is a variety of the Franco-Provençal language which developed in isolation in Italy, far from other speakers of Franco-Provençal, and in close contact with Italian. Faetar has less than 1000 speakers around the world, in Italy and in the diaspora. It is endangered, and preservation, learning, and documentation are a priority for many community members. The benchmark data represents the majority of all archived speech recordings of Faetar in existence, and it is not available from any other source.
 
+Data were extracted from the Faetar collection of the Heritage Language Variation and Change in Toronto (HLVC) corpus [1]. The corpus contains 184 recordings of native Faetar speakers collected in Italy between 1992 and 1994 (the Homeland subset) and 37 recordings of first- and second-generation heritage Faetar speakers collected in Toronto between 2009 and 2010 (the Heritage subset). All come from field recordings, generally noisy, of semi-spontaneous speech. 
+
 Faetar has no standard written form. The data set is transcribed quasi-phonetically for linguistic purposes in IPA. The transcriptions are not always consistent, as different parts of the data set were transcribed for different purposes: sometimes the transcription is narrow and phonetic, while at other times the transcription is broad and phonemic.
 
-Data were extracted from the Faetar collection of the Heritage Language Variation and Change in Toronto (HLVC) corpus [1]. The corpus contains 184 recordings of native Faetar speakers collected in Italy between 1992 and 1994 (the Homeland subset) and 37 recordings of first- and second-generation heritage Faetar speakers collected in Toronto between 2009 and 2010 (the Heritage subset). All come from field recordings, generally noisy, of semi-spontaneous speech. 
+
 
 
 ### Ground Rules
@@ -53,12 +56,14 @@ Data were extracted from the Faetar collection of the Heritage Language Variatio
 
 ### Tracks
 
-Participants in the **Constrained ASR track** may not use any external resources beyond the training data, including pre-trained acoustic models, language models, or the unlabelled portion of the Faetar challenge data set.
 
+1. **Constrained ASR.** Participants should focus on the challenge of improving ASR architectures to work with small, poor-quality sets. May not use any external resources beyond the **train** set. No external pre-trained acoustic models or language models are allowed. The unlabelled portion of the Faetar challenge data set is not allowed either.
 
-- **Using pre-trained acoustic models or language models.** Participants focus on the most effective way to make use of models pre-trained on other languages.
-- **Using unlabelled data.** The challenge data also includes ~20 hrs of unlabelled data. Participants focus on finding the most effective way to make use of it.
-- **Dirty data.** The training data was extracted and automatically aligned from long-form audio and partial transcriptions in “cluttered” word processor files, relying on (error-prone) VAD, scraping, and alignment. Participants focus on improving the pipeline for extracting useful training data, with the ultimate goal of improving performance. *Participants seeking to participate in the Dirty Data challenge should indicate this on the registration form.**
+The three other tracks are not mutually exclusive:
+
+2. **Using pre-trained acoustic models or language models.** Participants focus on the most effective way to make use of models pre-trained on other languages.
+3. **Using unlabelled data.** The challenge data also includes ~20 hrs of unlabelled data. Participants focus on finding the most effective way to make use of it.
+4. **Dirty data.** The training data was extracted and automatically aligned from long-form audio and partial transcriptions in “cluttered” word processor files, relying on (error-prone) VAD, scraping, and alignment. Participants focus on improving the pipeline for extracting useful training data, with the ultimate goal of improving performance. *Participants seeking to participate in the Dirty Data challenge should indicate this on the registration form.*
 
 
 ###  Criteria for judging submissions
@@ -83,14 +88,19 @@ Table 1 shows the distribution of data in the corpus, which consists of a **trai
 .tg th, .tg td {text-align:center;vertical-align:middle}
 </style>
 
-**Table 1.** Distribution of data in (hh:)mm:ss.
 <table class="tg"><thead>
   <tr>
+    <th>Split</th>
     <th>Usage in the challenge</th>
     <th>Amount</th>
   </tr>
 </thead>
 <tbody>
+  <tr>
+    <td>train</td>
+    <td><em>Training models (all tracks); <s>Constrained</s> track: no data beyond this set can be used for training</em></td>
+    <td>4:30:17</td>
+  </tr>
   <tr>
     <td>dev</td>
     <td>11:49</td>
@@ -100,11 +110,6 @@ Table 1 shows the distribution of data in the corpus, which consists of a **trai
     <td>test</td>
     <td>46:54</td>
     <td>46:54</td>
-  </tr>
-  <tr>
-    <td>train</td>
-    <td>4:30:17</td>
-    <td>4:30:17</td>
   </tr>
   <tr>
     <td>unlab</td>
