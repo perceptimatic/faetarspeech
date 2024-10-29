@@ -1,6 +1,6 @@
 ---
 layout: default
-title: The Faetar ASR Challenge
+title: The Faetar Low-Resource ASR Challenge
 ---
 
 - [Challenge Summary](#challenge-summary)
@@ -13,15 +13,15 @@ title: The Faetar ASR Challenge
 - [Submission Instructions](#submission-instructions)
 - [Leaderboards](#leaderboards)
 - [How to Participate](#how-to-participate)
+- [Contact](#contact)
 - [Organizers](#organizers)
 - [References](#references)
--->
 
 ### Challenge Summary
 
 Low-resource speech recognition has gained substantial attention in recent years, particularly with the advent of large multilingual speech foundation models and language models. This is welcome, as there are thousands of languages for which no ASR exists, and, for many of them, small collections of field or found recordings, often partially transcribed, do exist. Such technology would be transformative for linguists, educators, and  for many of the minoritized communities worldwide facing challenges to the survival of their language and culture, allowing them to valorize and make more accessible recorded speech, for the benefit of current and future speakers of the language. However, a clear picture of best practices when developing ASR systems in very low-resource contexts has not yet emerged.
 
-The Faetar ASR Challenge aims to focus researchers’ attention on several issues which are common to many archival collections of speech data:
+The Faetar Low-Resource ASR Challenge aims to focus researchers’ attention on several issues which are common to many archival collections of speech data:
 
 * **noisy** field recordings
 * lack of standard orthography leading **noise in the transcriptions** in the form of transcriber inconsistencies
@@ -513,6 +513,9 @@ Dev kit
     style="border: none; max-width:100%; max-height:100vh" allowfullscreen
     webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
 
+### Contact
+
+Questions should be directed to <em>faetarasrchallenge at gmail dot com</em>.
 
 ### Organizers
 **FIXME**

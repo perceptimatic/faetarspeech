@@ -18,8 +18,8 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: The Faetar benchmark and challenge - Speech recognition in a very under-resourced language
-email: faetar.benchmark@utoronto.ca
+title: The Faetar Low-Resource ASR Challenge 2025
+email: faetarasrchallenge@gmail.com
 baseurl: /faetarspeech
 url: "https://perceptimatic.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
