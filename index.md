@@ -189,6 +189,8 @@ Please access the dev kit, permitting you to evaluate your system and replicate 
 
 ### Leaderboards
 
+At the outset of the challenge, these will contain only the baseline model results.  **Please see [Ong et al. 2024](https://arxiv.org/abs/2409.08103) for details about the baseline models.**
+
 #### Constrained Models only
 
 <fieldset>
@@ -200,33 +202,39 @@ Please access the dev kit, permitting you to evaluate your system and replicate 
 
 <table id="cLeader">
   <tr>
-    <th>Submission</th>
+    <th>Research group</th>
     <th>Description</th>
-    <th onclick="sortTable(2, 'cLeader')">PER</th>
+    <th>Training set</th>
+    <th onclick="sortTable(2, 'cLeader')">PER on test</th>
   </tr>
   <tr>
-		<td>baseline</td> 
-    <td>HMM-GMM Mono + 5-gram</td>
+		<td>Organizers</td> 
+    <td>Kaldi HMM-GMM Mono + 5-gram</td>
+    <td>train</td>
     <td>62.6</td>
   </tr>
   <tr>
-		<td>baseline</td> 
-    <td>HMM-GMM Tri + 5-gram</td>
+		<td>Organizers</td> 
+    <td>Kaldi HMM-GMM Tri + 5-gram</td>
+    <td>train</td>
     <td>56.7</td>
   </tr>
   <tr>
-		<td>baseline</td> 
-    <td>ESPnet train</td>
+		<td>Organizers</td> 
+    <td>ESPnet ML-SUPERB []</td>
+    <td>train</td>
     <td>35.9</td>
   </tr>
   <tr>
-		<td>baseline</td> 
-    <td>ESPnet 1hr</td>
+		<td>Organizers</td> 
+    <td>ESPnet ML-SUPERB []</td>
+    <td>1hr (=50min + 10min)</td>
     <td>37.4</td>
   </tr>
   <tr>
-		<td>baseline</td> 
-    <td>ESPnet 10min</td>
+		<td>Organizers</td> 
+    <td>ESPnet ML-SUPERB []</td>
+    <td>10min</td>
     <td>45.1</td>
   </tr>
 </table>
