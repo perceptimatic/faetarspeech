@@ -187,9 +187,11 @@ Please access the dev kit, permitting you to evaluate your system and replicate 
 
 *To be announced*
 
-### Leaderboards
+### Leaderboard
 
-At the outset of the challenge, these will contain only the baseline model results.  **Please see [Ong et al. 2024](https://arxiv.org/abs/2409.08103) for details about the baseline models.**
+At the outset of the challenge, this will contain only the baseline model results.  **Please see [Ong et al. 2024](https://arxiv.org/abs/2409.08103) for details about the baseline models.**
+
+<!--
 
 #### Constrained Models only
 
@@ -208,52 +210,54 @@ At the outset of the challenge, these will contain only the baseline model resul
     <th onclick="sortTable(2, 'cLeader')">PER on test</th>
   </tr>
   <tr>
-		<td>Organizers</td> 
-    <td>Kaldi HMM-GMM Mono + 5-gram</td>
+		<td>Organizers (baseline)</td> 
+    <td>Kaldi [] HMM-GMM Mono + 5-gram</td>
     <td>train</td>
     <td>62.6</td>
   </tr>
   <tr>
-		<td>Organizers</td> 
-    <td>Kaldi HMM-GMM Tri + 5-gram</td>
+		<td>Organizers (baseline)</td> 
+    <td>Kaldi [] HMM-GMM Tri + 5-gram</td>
     <td>train</td>
     <td>56.7</td>
   </tr>
   <tr>
-		<td>Organizers</td> 
+		<td>Organizers (baseline)</td> 
     <td>ESPnet ML-SUPERB []</td>
     <td>train</td>
     <td>35.9</td>
   </tr>
   <tr>
-		<td>Organizers</td> 
+		<td>Organizers (baseline)</td> 
     <td>ESPnet ML-SUPERB []</td>
     <td>1hr (=50min + 10min)</td>
     <td>37.4</td>
   </tr>
   <tr>
-		<td>Organizers</td> 
+		<td>Organizers (baseline)</td> 
     <td>ESPnet ML-SUPERB []</td>
     <td>10min</td>
     <td>45.1</td>
   </tr>
 </table>
 
-#### All Models
+-->
 
 <fieldset>
+<!--
 <div>
 	<select id="all_submission_names"
         onchange="drop_box_filter('all_submission_names', 'Leader')">
   	<option>Submission Names</option>
 	</select>
 </div>
+-->
 <div>
 	<input type="checkbox" id="constrained" name="constrained"
-        onclick="drop_box_filter('all_submission_names', 'Leader')"/>
+        onclick="drop_box_filter('Leader')"/>
 	<label for="constrained">Constrained</label>
 </div>
-
+<!--
 <div>
 	<input type="checkbox" id="unconstrained" name="unconstrained"
         onclick="drop_box_filter('all_submission_names', 'Leader')"/>
@@ -267,122 +271,141 @@ At the outset of the challenge, these will contain only the baseline model resul
         onclick="drop_box_filter('all_submission_names', 'Leader')"/>
 	<label for="train_default">Default Train (no Unlab or Unclean)</label>
 </div>
+-->
 
-<hr> 
+<div>
+	<input type="checkbox" id="extr" name="extr"
+        onclick="drop_box_filter('Leader')"/>
+	<label for="extr">External pre-trained AM/LM</label>
+</div>
+
 
 <div>
 	<input type="checkbox" id="unlab" name="unlab"
-        onclick="drop_box_filter('all_submission_names', 'Leader')"/>
-	<label for="unlab">Unlab</label>
+        onclick="drop_box_filter('Leader')"/>
+	<label for="unlab">Uses unlab</label>
 </div>
+
 
 <div>
-	<input type="checkbox" id="lab" name="lab"
-        onclick="drop_box_filter('all_submission_names', 'Leader')"/>
-	<label for="lab">Labelled</label>
+	<input type="checkbox" id="dirty" name="dirty"
+        onclick="drop_box_filter('Leader')"/>
+	<label for="dirty">Dirty data challenge</label>
 </div>
 
-<hr> 
-
-<div>
-	<input type="checkbox" id="extra_docs" name="extra_docs"
-        onclick="drop_box_filter('all_submission_names', 'Leader')"/>
-	<label for="extra_docs">Unclean</label>
-</div>
-
+<!--
 <div>
 	<input type="checkbox" id="no_extras" name="no_extras"
         onclick="drop_box_filter('all_submission_names', 'Leader')"/>
 	<label for="no_extras">Clean</label>
 </div>
+-->
 </fieldset>
 
 <table id="Leader">
   <tr>
-    <th>Submission</th>
+    <th>Research group</th>
 		<th>Description</th>
-    <th onclick="sortTable(2, 'Leader')">PER</th>
-    <th>Constrained</th>
-		<th>Unlab</th>
-		<th>Unclean</th>
+		<th>Training set</th>
+        <th>Constrained</th>
+		<th>External pre-trained AM/LM</th>
+		<th>Uses unlab</th>
+		<th>Dirty data challenge</th>
+    <th onclick="sortTable(2, 'Leader')">PER on test</th>
   </tr>
   <tr>
-		<td>baseline</td> 
-    <td>HMM-GMM Mono + 5-gram</td>
-    <td>62.6</td>
+		<td>Organizers (baseline)</td> 
+    <td>Kaldi [] HMM-GMM Mono + 5-gram</td>
+    <td>train</td>
     <td>x</td>
 		<td></td>
 		<td></td>
+		<td></td>
+    <td>62.6</td>
   </tr>
   <tr>
 		<td>baseline</td> 
-    <td>HMM-GMM Tri + 5-gram</td>
+		<td>Organizers (baseline)</td> 
+    <td>Kaldi [] HMM-GMM Tri + 5-gram</td>
+    <td>train</td>
+		<td>x</td>
+		<td></td>
+		<td></td>
+		<td></td>
     <td>56.7</td>
+  </tr>
+  <tr>
+		<td>Organizers (baseline)</td> 
+    <td>ESPnet ML-SUPERB []</td>
+    <td>train</td>
 		<td>x</td>
 		<td></td>
 		<td></td>
-  </tr>
-  <tr>
-		<td>baseline</td> 
-    <td>ESPnet train</td>
+		<td></td>
     <td>35.9</td>
+  </tr>
+  <tr>
+		<td>Organizers (baseline)</td> 
+    <td>ESPnet ML-SUPERB []</td>
+    <td>1hr (=50m + 10m)</td>
 		<td>x</td>
 		<td></td>
 		<td></td>
-  </tr>
-  <tr>
-		<td>baseline</td> 
-    <td>ESPnet 1hr</td>
+		<td></td>
     <td>37.4</td>
+  </tr>
+  <tr>
+		<td>Organizers (baseline)</td> 
+    <td>ESPnet ML-SUPERB []</td>
+    <td>10m</td>
 		<td>x</td>
 		<td></td>
 		<td></td>
-  </tr>
-  <tr>
-		<td>baseline</td> 
-    <td>ESPnet 10min</td>
+		<td></td>
     <td>45.1</td>
-		<td>x</td>
-		<td></td>
-		<td></td>
   </tr>
   <tr>
-		<td>baseline</td> 
-    <td>MMS FT</td>
-    <td>33.0</td>
-		<td></td>
-		<td></td>
-		<td></td>
-  </tr>
-	<tr>
-		<td>baseline</td> 
-    <td>mHubert FT</td>
-    <td>33.6</td>
-		<td></td>
-		<td></td>
-		<td></td>
-  </tr>
-	<tr>
-		<td>baseline</td> 
-    <td>MMS PT + FT</td>
-    <td>31.5</td>
+		<td>Organizers (baseline)</td> 
+    <td>MMS []</td>
 		<td></td>
 		<td>x</td>
 		<td></td>
+		<td></td>
+    <td>33.0</td>
   </tr>
 	<tr>
-		<td>baseline</td> 
-    <td>MMS ST</td>
+		<td>Organizers (baseline)</td> 
+    <td>mHubert-147 []</td>
+		<td></td>
+		<td>x</td>
+		<td></td>
+		<td></td>
+    <td>33.6</td>
+  </tr>
+	<tr>
+		<td>Organizers (baseline)</td> 
+    <td>MMS [] continued pre-training</td>
+		<td></td>
+		<td>x</td>
+		<td>x</td>
+		<td></td>
+    <td>31.5</td>
+  </tr>
+	<tr>
+		<td>Organizers (baseline)</td> 
+    <td>MMS [] self-training</td>
     <td>31.0</td>
 		<td></td>
 		<td>x</td>
+		<td>x</td>
 		<td></td>
   </tr>
 	<tr>
-		<td>baseline</td> 
-    <td>MMS PT + ST</td>
+		<td>Organizers (baseline)</td> 
+    <td>MMS [] pre-training + self-training</td>
     <td>30.5</td>
 		<td></td>
+		<td>x</td>
 		<td>x</td>
 		<td></td>
   </tr>
@@ -424,70 +447,29 @@ function sortTable(n, table_id) {
   }
 }
 
-function drop_box_filter(dropdown_id, table_id) {
+function drop_box_filter(table_id) {
 
-    let cb1 = document.getElementById('constrained').checked;    
-    let cb2 = document.getElementById('unlab').checked; 
-    let cb3 = document.getElementById('extra_docs').checked;
+    let cb_const = document.getElementById('constrained').checked;    
+    let cb_extr = document.getElementById('extrinsic').checked; 
+    let cb_unlab = document.getElementById('unlab').checked; 
+    let cb_dirty = document.getElementById('dirty').checked; 
     
-    let cb4 = document.getElementById('unconstrained').checked;    
-    let cb5 = document.getElementById('lab').checked; 
-    let cb6 = document.getElementById('no_extras').checked;
-    
-    let cb7 = document.getElementById('train_default').checked;
-    
-   	let selection = document.getElementById(dropdown_id);
-
     var table = document.getElementById(table_id);
         
     for (var i = 1, row; row = table.rows[i]; i++) {
-    	if ((cb1 && row.cells[3].innerText !== 'x')
-            || (cb2 && row.cells[4].innerText !== 'x')
-            || (cb3 && row.cells[5].innerText !== 'x')
-            || (cb4 && row.cells[3].innerText === 'x')
-            || (cb5 && row.cells[4].innerText === 'x')
-            || (cb6 && row.cells[5].innerText === 'x')
-            || (cb7 && (row.cells[4].innerText === 'x'
-                        || row.cells[5].innerText === 'x'))) {
+    	if ((cb_const && row.cells[3].innerText !== 'x')
+            || (cb_extr && row.cells[4].innerText !== 'x')
+            || (cb_unlab && row.cells[5].innerText !== 'x')
+            || (cb_dirty && row.cells[6].innerText !== 'x')
+            ) {
             row.style = "display:none";
         }
         else {
-            if (selection.options[selection.selectedIndex].value
-                    == "Submission Names") {
-                row.style = "display:table-row";
-            }
-            else if (row.cells[0].innerText !==
-                    selection.options[selection.selectedIndex].value) {
-                row.style = "display:none";
-            }
-            else {
-                row.style = "display:table-row";
-            }  
+            row.style = "display:table-row";
         }
     }     
 
 }
-
-function drop_filter(dropdown_id, table_id) {
-    let selection = document.getElementById(dropdown_id);
-    var table = document.getElementById(table_id);
-    for (var i = 1, row; row = table.rows[i]; i++) {
-        if (selection.options[selection.selectedIndex].value
-                == "Submission Names") {
-            row.style = "display:table-row";
-        }
-        else {
-            if (row.cells[0].innerText !==
-                    selection.options[selection.selectedIndex].value) {
-                row.style = "display:none";
-            }
-            else {
-                row.style = "display:table-row";
-            }   
-        }
-    }
-}
-
 function run_sort(table_id) {
     table = document.getElementById(table_id);
     table.getElementsByTagName("th")[2].click();
@@ -510,10 +492,7 @@ function get_submissions(dropdown_id, table_id) {
     }
 }
 
-window.onload = run_sort('cLeader');
-run_sort('Leader');
-get_submissions('csubmission_names', 'cLeader');
-get_submissions('all_submission_names', 'Leader');
+window.onload = run_sort('Leader');
 
 </script>
 
