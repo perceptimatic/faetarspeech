@@ -52,24 +52,31 @@ Faetar has no standard written form. The data set is transcribed quasi-phonetica
 - Participants are provided with a dev kit that allows them to calculate scores on the dev and train sets.
 - To ensure that participants can be confident in their results before submission, while maintaining comparability across participants, we also propose standardized alternative splits within the train set, which participants can use to do held-out evaluations without relying only on the small dev set.
 - Participants must sign a data agreement preventing redistribution before accessing the data set.
+- Each research group may make **no more than four submissions** for evaluation.
 
 ### Tracks
 
 
 1. **Constrained ASR.** Participants should focus on the challenge of improving ASR architectures to work with small, poor-quality sets. May not use any external resources beyond the **train** set. No external pre-trained acoustic models or language models are allowed. The unlabelled portion of the Faetar challenge data set is not allowed either.
 
-The three other tracks are not mutually exclusive:
+Three other "thematic tracks" can be explored, and should not be considered mutually exclusive:
 
 2. **Using pre-trained acoustic models or language models.** Participants focus on the most effective way to make use of models pre-trained on other languages.
 3. **Using unlabelled data.** The challenge data also includes ~20 hrs of unlabelled data. Participants focus on finding the most effective way to make use of it.
 4. **Dirty data.** The training data was extracted and automatically aligned from long-form audio and partial transcriptions in “cluttered” word processor files, relying on (error-prone) VAD, scraping, and alignment. Participants focus on improving the pipeline for extracting useful training data, with the ultimate goal of improving performance. *Participants seeking to participate in the Dirty Data challenge should indicate this on the registration form.*
+
+Participants should indicate at the time of submission whether they are making a **Constrained ASR** submission, and, otherwise, which of the three thematic tracks they are submitting to (possibly more than one).
+
+Each research group may make **no more than four submissions total** for evaluation, across all tracks.
 
 
 ###  Criteria for judging submissions
 
 Submissions will be evaluated on phone error rate (PER) on the test set. Participants are provided with a dev kit allowing them to calculate the PER on dev and train, as well as reproduce the baselines. Bootstrap confidence intervals can also be calculated using the dev kit to demonstrate robustness.
 
-A winner or tie will be declared over all tracks: all submissions falling within a 95% confidence interval of the submission with the lowest PER will be considered to have won, with the submission having the numerically lowest PER being awarded a special distinction. The results of the challenge will also indicate the best approaches within each track.
+A winner or tie will be declared based on PER and confidence intervals. All submissions falling within a 95% confidence interval of the submission with the lowest PER will be considered to have won, with the submission having the numerically lowest PER being awarded a special distinction.
+
+(An) **overall winner(s)** will be declared, as well as (a) winner(s) of the **Constrained ASR** track. The results of the challenge will also indicate the best approaches within the three other subtracks.
 
 
 ### Data and licensing
@@ -99,91 +106,82 @@ Table 1 shows the distribution of data in the corpus, which consists of a **trai
 <tbody>
   <tr>
     <td>train</td>
-    <td><em>Training models (all tracks); <s>Constrained</s> track: no data beyond this set can be used for training</em></td>
+    <td><em>Training models (all tracks); <b>Constrained</b> track: no data beyond this set can be used for training</em></td>
     <td>4:30:17</td>
   </tr>
   <tr>
     <td>dev</td>
+    <td><em>Validation; held-out evaluation before submission to the challenge</em></td>
     <td>11:49</td>
-    <td>11:49</td>
-  </tr>
-  <tr>
-    <td>test</td>
-    <td>46:54</td>
-    <td>46:54</td>
   </tr>
   <tr>
     <td>unlab</td>
+    <td><em>Additional resource in <b>Unlabelled data</b> track.</em></td>
     <td>19:55:21</td>
-    <td>19:55:21</td>
+  </tr>
+  <tr>
+    <td>test</td>
+    <td><em>Final evaluation: not available to participants</em></td>
+    <td>46:54</td>
   </tr>
 </tbody></table>
 
-<!--
-  <tr>
-    <td>1h</td>
-    <td>Int.</td>
-    <td>11:08</td>
-    <td>13:44</td>
-    <td>32:50</td>
-    <td>0:51</td>
-    <td>58:34</td>
-  </tr>
-  <tr>
-    <td>10min</td>
-    <td>Int.</td>
-    <td>0:00</td>
-    <td>4:25</td>
-    <td>5:00</td>
-    <td>0:24</td>
-    <td>9:49</td>
-  </tr>
--->
 
-Additionally, the challenge data comes with a set of alternative splits within 
+#### Alternate splits
 
-Dirty data
+Because the **test** set is unavailable to challenge participants during the duration of the challenge, we recommend that participants not rely entirely on **dev** for held-out evaluation. To this end, we will also provide benchmark results (*to come*) based on the following alternative splits within **train** (provided):
+
+<table class="tg">
+<thead>
+  <tr>
+    <th>Split</th>
+    <th>Suggested usage</th>
+    <th>Amount</th>
+  </tr>
+</thead>
+<tbody>
+
+<tr>
+    <th>10 minutes</th>
+    <th><em>Hold out to use as additional validation/development data; or use as alternate train set to explore extreme low-data settings</em></th>
+    <th>9:49</th>
+</tr>
+<tr>
+    <th>{1 hour} - {10 minutes}</th>
+    <th><em>Hold out to use as additional validation/development data; or use as alternate train set to evaluate lower-data circumstances</em></th>
+    <th>48:45</th>
+</tr>
+<tr>
+    <th>{train} - {1 hour} - {10 minutes}</th>
+    <th><em>Use as alternate train set when evaluating on the above alternate split(s)</em></th>
+    <th>3:40:32</th>
+</tr>
+</tbody>
+</table>
+
+#### Dirty data
+
+The benchmark corpus was extracted and automatically aligned from long-form audio and (incomplete) transcriptions that were scraped from word processor files that often contained other, irrelevant material, then aligned to the utterance level (see [Ong et al. 2024](https://arxiv.org/abs/2409.08103) for more details). Participants in the **Dirty data** track will seek to improve on the process (scraping, segmenting, aligning), with the goal of **improving the quality of the train set**.
+
+The **dirty data** collection consists of the original source files for a subset of **train** that does not overlap with **test** or **dev**, along with the scripts that we used for the first stages of extraction. Please request the dirty data set on the registration form if you intend to use it. Baseline results for training on this subset will be provided (*to come*).
 
 ### Timeline 
-**FIXME**
 
-October 31, 2024: Release of data, opening of challenge
-February 1st, 2025: Participants must submit system description(s) and test decodings
-February 5th, 2025: Participants receive test scores from organizers, winners announced
-
-
-February 12th, 2025: Interspeech paper submission deadline
-February 19th, 2025: Interspeech paper update deadline
-May 21st, 2025: Interspeech paper acceptance notification
-August 17-25, 2025: Interspeech conference
-
-
-
-A rough proposed timeline is as follows:
-
-* October 14, 2024 - Submission of challenge proposal to Interspeech
-
-* Late October 2024 - Pre-release of challenge data with hidden test
-  transcriptions
-
-* November 18th 2024 - Acceptance/rejection of challenge session at Interspeech
-  (if rejected, we encourage participants to submit to the regular Interspeech
-  sessions)
-
-* End of January/beginning of February 2025 - participants should submit their
-  results for evaluation on test
-
-* February 12th, 2025 - Interspeech paper deadline
-    
-* August 17-25, 2025 - Interspeech conference
+- **October 31, 2024:** Release of data, opening of challenge
+- **February 1st, 2025:** Participants must submit system description(s) and test decodings
+- **February 5th, 2025:** Participants receive test scores from organizers, winners announced
+- **February 12th, 2025:** Interspeech paper submission deadline
+- **February 19th, 2025:** Interspeech paper update deadline
+- **May 21st, 2025:** Interspeech paper acceptance notification
+- **August 17-25, 2025:** Interspeech conference
 
 ### Submission Instructions
-**FIXME**
+
+*To be announced*
 
 ### Leaderboards
-**FIXME**
 
-#### Constrained Models
+#### Constrained Models only
 
 <fieldset>
 	<select id="csubmission_names"
