@@ -324,7 +324,6 @@ At the outset of the challenge, this will contain only the baseline model result
     <td>62.6</td>
   </tr>
   <tr>
-		<td>baseline</td> 
 		<td>Organizers (baseline)</td> 
     <td>Kaldi [] HMM-GMM Tri + 5-gram</td>
     <td>train</td>
@@ -367,6 +366,7 @@ At the outset of the challenge, this will contain only the baseline model result
   <tr>
 		<td>Organizers (baseline)</td> 
     <td>MMS []</td>
+		<td>train</td>
 		<td></td>
 		<td>x</td>
 		<td></td>
@@ -376,6 +376,7 @@ At the outset of the challenge, this will contain only the baseline model result
 	<tr>
 		<td>Organizers (baseline)</td> 
     <td>mHubert-147 []</td>
+		<td>train</td>
 		<td></td>
 		<td>x</td>
 		<td></td>
@@ -385,6 +386,7 @@ At the outset of the challenge, this will contain only the baseline model result
 	<tr>
 		<td>Organizers (baseline)</td> 
     <td>MMS [] continued pre-training</td>
+		<td>train</td>
 		<td></td>
 		<td>x</td>
 		<td>x</td>
@@ -395,6 +397,7 @@ At the outset of the challenge, this will contain only the baseline model result
 		<td>Organizers (baseline)</td> 
     <td>MMS [] self-training</td>
     <td>31.0</td>
+		<td>train</td>
 		<td></td>
 		<td>x</td>
 		<td>x</td>
@@ -404,6 +407,7 @@ At the outset of the challenge, this will contain only the baseline model result
 		<td>Organizers (baseline)</td> 
     <td>MMS [] pre-training + self-training</td>
     <td>30.5</td>
+		<td>train</td>
 		<td></td>
 		<td>x</td>
 		<td>x</td>
