@@ -119,11 +119,11 @@ The following table shows the distribution of data in the corpus, which consists
 </tbody></table>
 
 
-#### Alternate splits
+#### Alternate split
 
 
-For compatibility with ML-SUPERB, we have created two subsets of train called **1h** and **10min**. Additionally, since the **test** set is unavailable to challenge participants during the duration of the challenge, we recommend that participants not rely entirely on **dev** for held-out evaluation. In order to increase the amount of data available for held-out evaluation, we have also created the set **reduced_train** (train minus 1h), so that the set **1h** can be used as a validation set.
-For participants using the dirty data, we have also created a subset **********NAME********** of **train** which only contains utterances taken from the **dirty data** files. 
+Since the **test** set is unavailable to challenge participants during the duration of the challenge, we recommend that participants not rely entirely on **dev** for held-out evaluation. In order to increase the amount of data available for held-out evaluation, we have created an alternate split of the **train** set compraised of the sets **1h** and **reduced_train** (train minus 1h), so that the set **1h** can be used as a validation set.
+For participants using the dirty data, we have also created a subset **dirty_data_train** of **train** which only contains utterances taken from the **dirty data** files. 
 We will also provide benchmark results (*to come*) for the alternative subsets within **train**.
 The following table shows the distribution of the alternative splits:
 
@@ -140,11 +140,6 @@ The following table shows the distribution of the alternative splits:
     <td>1h</td>
     <td><em>Hold out to use as additional validation/development data; <strong>or</strong> use as alternate train set to evaluate lower-data circumstances</em></td>
     <td>58:34</td>
-</tr>
-<tr>
-    <td>10min</td>
-    <td><em>Hold out to use as additional validation/development data; <strong>or</strong> use as alternate train set to explore extreme low-data settings</em></td>
-    <td>9:49</td>
 </tr>
 <tr>
     <td>reduced_train (i.e. train minus 1h)</td>
