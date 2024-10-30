@@ -415,10 +415,16 @@ Questions should be directed to <em>faetarasrchallenge at gmail dot com</em>.
 ## References
 
 <a id="1">[1]</a> N. Nagy, "A multilingual corpus to explore variation in language contact situations," _RILA_, pp. 65–84, 2011.
+
 <a id="2">[2]</a> S. Watanabe, T. Hori, S. Karita, T. Hayashi, J. Nishitoba, Y. Unno, N. Enrique Yalta Soplin, J. Heymann, M. Wiesner, N. Chen, A. Renduchintala, and T. Ochiai, “ESPnet: End-to-end speech processing toolkit,” in Proc. Interspeech 2018, 2018, pp. 2207–2211.
+
 <a id="3">[3]</a> J. Shi, W. Chen, D. Berrebbi, H.-H. Wang, W.-P. Huang, E.-P. Hu, H.-L. Chuang, X. Chang, Y. Tang, S.-W. Li, A. Mohamed, H.-Y. Lee, and S. Watanabe, “Findings of the 2023 ML-SUPERB challenge: Pretraining and evaluation over more languages and beyond,” in ASRU, 2023, pp. 1–8.
+
 <a id="4">[4]</a> V. Pratap, A. Tjandra, B. Shi, P. Tomasello, A. Babu, S. Kundu, A. Elkahky, Z. Ni, A. Vyas, M. Fazel-Zarandi, A. Baevski, Y. Adi, X. Zhang, W.-N. Hsu, A. Conneau, and M. Auli, “Scaling speech technology to 1,000+ languages,” 2023.
+
 <a id="5">[5]</a> M. Z. Boito, V. Iyer, N. Lagos, L. Besacier, and I. Calapodescu, “mhubert-147: A compact multilingual hubert model,” arXiv preprint arXiv:2406.06371, 2024.
+
 <a id="6">[6]</a>  D. Povey, A. Ghoshal, G. Boulianne, L. Burget, O. Glembek, N. Goel, M. Hannemann, P. Motlicek, Y. Qian, P. Schwarz, J. Silovsky, G. Stemmer, and K. Vesely, “The Kaldi speech recognition toolkit,” in ASRU. Hilton Waikoloa Village, Big Island, Hawaii, US: IEEE Signal Processing Society, 2011.
+
 <a id="7">[7]</a>  S. F. Chen, D. Beeferman, and R. Rosenfeld, “Evaluation metrics for language models,” Jan. 2008.
 
