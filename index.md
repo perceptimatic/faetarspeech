@@ -74,7 +74,7 @@ Each research group may make **no more than four submissions total** for evaluat
 
 ## Criteria for Judging Submissions
 
-Submissions will be evaluated on phone error rate (PER) on the test set. Participants are provided with a dev kit allowing them to calculate the PER on dev and train, as well as reproduce the baselines. Bootstrap confidence intervals can also be calculated using the dev kit to demonstrate robustness.
+Submissions will be evaluated on phone error rate (PER) on the test set. Participants are provided with a [dev kit](#dev-kit) allowing them to calculate the PER on dev and train, as well as reproduce the baselines. Bootstrap confidence intervals can also be calculated using the dev kit to demonstrate robustness.
 
 A winner or tie will be declared based on PER and confidence intervals. All submissions falling within a 95% confidence interval of the submission with the lowest PER will be considered to have won, with the submission having the numerically lowest PER being awarded a special distinction.
 
@@ -119,7 +119,7 @@ The following table shows the distribution of data in the corpus, which consists
 </tbody></table>
 
 
-#### Alternate split
+#### Alternate splits
 
 
 Since the **test** set is unavailable to challenge participants during the duration of the challenge, we recommend that participants not rely entirely on **dev** for held-out evaluation. In order to increase the amount of data available for held-out evaluation, we have created an alternate split of the **train** set compraised of the sets **1h** and **reduced_train** (train minus 1h), so that the set **1h** can be used as a validation set.
