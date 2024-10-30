@@ -122,8 +122,7 @@ The following table shows the distribution of data in the corpus, which consists
 #### Alternate splits
 
 
-Since the **test** set is unavailable to challenge participants during the duration of the challenge, we recommend that participants not rely entirely on **dev** for held-out evaluation. In order to increase the amount of data available for held-out evaluation, we have created an alternate split of the **train** set compraised of the sets **1h** and **reduced_train** (train minus 1h), so that the set **1h** can be used as a validation set.
-For participants using the dirty data, we have also created a subset **dirty_data_train** of **train** which only contains utterances taken from the **dirty data** files. 
+Since the **test** set is unavailable to challenge participants during the duration of the challenge, we recommend that participants not rely entirely on **dev** for held-out evaluation. In order to increase the amount of data available for held-out evaluation, we have created an alternate split of the **train** set compraised of the sets **1h** and **reduced_train** (train minus 1h), so that the set **1h** can be used as a held-out evaluation set.
 We will also provide benchmark results (*to come*) for the alternative subsets within **train**.
 The following table shows the distribution of the alternative splits:
 
@@ -153,10 +152,9 @@ The following table shows the distribution of the alternative splits:
 
 The benchmark corpus was extracted and automatically aligned from long-form audio and (incomplete) transcriptions that were scraped from word processor files that often contained other, irrelevant material, then aligned to the utterance level (see [Ong et al. 2024](https://arxiv.org/abs/2409.08103) for more details). Participants in the **Dirty data** track will seek to improve on the process (scraping, segmenting, aligning), with the goal of **improving the quality of the train set**. The ultimate goal remains the same, of improving PER on the test set.
 
-The **dirty data** collection consists of the original source files for a subset of **train** that does not overlap with **test** or **dev**, along with some of the files that we used during the first stages of extraction and filtration of the data. Please request the dirty data set on the registration form if you intend to use it. Baseline results for training on this subset will be provided (*to come*).
+The **dirty data** collection consists of the original source files (audio and transcriptions) for a subset of **train** that does not overlap with **test** or **dev** (In the standard benchmark corpus, some of the full audio files were split by speaker between train and dev/test), some of the mapping files that we used during the first stages of extraction and filtration of the data, and a summary of the process that was used to extract the data. Please request the dirty data set on the registration form if you intend to use it.
 
-Files in the **unlab** portion of **dirty data** may have overlapping audio. Additionally, the following filecodes were removed since their audio was a duplicate (in whole or part) of another audio file in the corpus: he_w001, he_w004, he_w005, hl_w001, hl_w002, hl_w003, hl_w004, hl_w033, hl_w040, and hl_w041.
-Transcription files in the **train** portion of **dirty data** do not contain overlap between filecodes (e.g. the transcription files for hl_w029 and hl_w030 do not contain any overlap, but the transcription files of hl_w029 may overlap with each other), but some audio files are the same / may contain overlap.
+For participants using the dirty data, we have also created a reference subset **dirty_data_train** of **train** which only contains utterances taken from the **dirty data** files. Baseline results will be provided for this subset for reference. The improved training sets that participants will create from the dirty data are  expected to be different from **dirty_data_train**.
 
 ## Timeline 
 
@@ -235,7 +233,7 @@ At the outset of the challenge, this will contain only the baseline model result
   </tr>
   <tr>
 		<td>Organizers (baseline)</td> 
-    <td>Kaldi [] HMM-GMM Mono + 5-gram</td>
+    <td>Kaldi [6] HMM-GMM Mono + 5-gram Kneser-Ney [7]</td>
     <td>train</td>
     <td>x</td>
 		<td></td>
@@ -245,7 +243,7 @@ At the outset of the challenge, this will contain only the baseline model result
   </tr>
   <tr>
 		<td>Organizers (baseline)</td> 
-    <td>Kaldi [] HMM-GMM Tri + 5-gram</td>
+    <td>Kaldi [6] HMM-GMM Tri + 5-gram Kneser-Ney [7]</td>
     <td>train</td>
 		<td>x</td>
 		<td></td>
@@ -255,7 +253,7 @@ At the outset of the challenge, this will contain only the baseline model result
   </tr>
   <tr>
 		<td>Organizers (baseline)</td> 
-    <td>ESPnet ML-SUPERB []</td>
+    <td>ESPnet [2] ML-SUPERB [3]</td>
     <td>train</td>
 		<td>x</td>
 		<td></td>
@@ -265,7 +263,7 @@ At the outset of the challenge, this will contain only the baseline model result
   </tr>
   <tr>
 		<td>Organizers (baseline)</td> 
-    <td>ESPnet ML-SUPERB []</td>
+    <td>ESPnet [2] ML-SUPERB [3]</td>
     <td>1hr</td>
 		<td>x</td>
 		<td></td>
@@ -275,7 +273,7 @@ At the outset of the challenge, this will contain only the baseline model result
   </tr>
   <tr>
 		<td>Organizers (baseline)</td> 
-    <td>ESPnet ML-SUPERB []</td>
+    <td>ESPnet [2] ML-SUPERB [3]</td>
     <td>10m</td>
 		<td>x</td>
 		<td></td>
@@ -285,7 +283,7 @@ At the outset of the challenge, this will contain only the baseline model result
   </tr>
   <tr>
 		<td>Organizers (baseline)</td> 
-    <td>MMS []</td>
+    <td>MMS [4]</td>
 		<td>train</td>
 		<td></td>
 		<td>x</td>
@@ -295,7 +293,7 @@ At the outset of the challenge, this will contain only the baseline model result
   </tr>
 	<tr>
 		<td>Organizers (baseline)</td> 
-    <td>mHubert-147 []</td>
+    <td>mHubert-147 [5]</td>
 		<td>train</td>
 		<td></td>
 		<td>x</td>
@@ -305,7 +303,7 @@ At the outset of the challenge, this will contain only the baseline model result
   </tr>
 	<tr>
 		<td>Organizers (baseline)</td> 
-    <td>MMS [] continued pre-training</td>
+    <td>MMS [4] continued pre-training</td>
 		<td>train</td>
 		<td></td>
 		<td>x</td>
@@ -315,7 +313,7 @@ At the outset of the challenge, this will contain only the baseline model result
   </tr>
 	<tr>
 		<td>Organizers (baseline)</td> 
-    <td>MMS [] self-training</td>
+    <td>MMS [4] self-training</td>
 		<td>train</td>
 		<td></td>
 		<td>x</td>
@@ -325,7 +323,7 @@ At the outset of the challenge, this will contain only the baseline model result
   </tr>
 	<tr>
 		<td>Organizers (baseline)</td> 
-    <td>MMS [] pre-training + self-training</td>
+    <td>MMS [4] pre-training + self-training</td>
 		<td>train</td>
 		<td></td>
 		<td>x</td>
@@ -416,6 +414,11 @@ Questions should be directed to <em>faetarasrchallenge at gmail dot com</em>.
 
 ## References
 
-<a id="1">[1]</a> N. Nagy, "A multilingual corpus to explore variation in
-language contact situations," _RILA_, pp. 65–84, 2011.
+<a id="1">[1]</a> N. Nagy, "A multilingual corpus to explore variation in language contact situations," _RILA_, pp. 65–84, 2011.
+<a id="2">[2]</a> S. Watanabe, T. Hori, S. Karita, T. Hayashi, J. Nishitoba, Y. Unno, N. Enrique Yalta Soplin, J. Heymann, M. Wiesner, N. Chen, A. Renduchintala, and T. Ochiai, “ESPnet: End-to-end speech processing toolkit,” in Proc. Interspeech 2018, 2018, pp. 2207–2211.
+<a id="3">[3]</a> J. Shi, W. Chen, D. Berrebbi, H.-H. Wang, W.-P. Huang, E.-P. Hu, H.-L. Chuang, X. Chang, Y. Tang, S.-W. Li, A. Mohamed, H.-Y. Lee, and S. Watanabe, “Findings of the 2023 ML-SUPERB challenge: Pretraining and evaluation over more languages and beyond,” in ASRU, 2023, pp. 1–8.
+<a id="4">[4]</a> V. Pratap, A. Tjandra, B. Shi, P. Tomasello, A. Babu, S. Kundu, A. Elkahky, Z. Ni, A. Vyas, M. Fazel-Zarandi, A. Baevski, Y. Adi, X. Zhang, W.-N. Hsu, A. Conneau, and M. Auli, “Scaling speech technology to 1,000+ languages,” 2023.
+<a id="5">[5]</a> M. Z. Boito, V. Iyer, N. Lagos, L. Besacier, and I. Calapodescu, “mhubert-147: A compact multilingual hubert model,” arXiv preprint arXiv:2406.06371, 2024.
+<a id="6">[6]</a>  D. Povey, A. Ghoshal, G. Boulianne, L. Burget, O. Glembek, N. Goel, M. Hannemann, P. Motlicek, Y. Qian, P. Schwarz, J. Silovsky, G. Stemmer, and K. Vesely, “The Kaldi speech recognition toolkit,” in ASRU. Hilton Waikoloa Village, Big Island, Hawaii, US: IEEE Signal Processing Society, 2011.
+<a id="7">[7]</a>  S. F. Chen, D. Beeferman, and R. Rosenfeld, “Evaluation metrics for language models,” Jan. 2008.
 
