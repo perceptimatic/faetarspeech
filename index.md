@@ -233,7 +233,7 @@ At the outset of the challenge, this will contain only the baseline model result
   </tr>
   <tr>
 		<td>Organizers (baseline)</td> 
-    <td>Kaldi [6] HMM-GMM Mono + 5-gram Kneser-Ney [7]</td>
+    <td>Kaldi HMM-GMM Mono + 5-gram Kneser-Ney [6,7]</td>
     <td>train</td>
     <td>x</td>
 		<td></td>
@@ -243,7 +243,7 @@ At the outset of the challenge, this will contain only the baseline model result
   </tr>
   <tr>
 		<td>Organizers (baseline)</td> 
-    <td>Kaldi [6] HMM-GMM Tri + 5-gram Kneser-Ney [7]</td>
+    <td>Kaldi HMM-GMM Tri + 5-gram Kneser-Ney [6,7]</td>
     <td>train</td>
 		<td>x</td>
 		<td></td>
@@ -253,7 +253,7 @@ At the outset of the challenge, this will contain only the baseline model result
   </tr>
   <tr>
 		<td>Organizers (baseline)</td> 
-    <td>ESPnet [2] ML-SUPERB [3]</td>
+    <td>ESPnet ML-SUPERB [2,3]</td>
     <td>train</td>
 		<td>x</td>
 		<td></td>
@@ -263,7 +263,7 @@ At the outset of the challenge, this will contain only the baseline model result
   </tr>
   <tr>
 		<td>Organizers (baseline)</td> 
-    <td>ESPnet [2] ML-SUPERB [3]</td>
+    <td>ESPnet ML-SUPERB [2,3]</td>
     <td>1hr</td>
 		<td>x</td>
 		<td></td>
@@ -273,7 +273,7 @@ At the outset of the challenge, this will contain only the baseline model result
   </tr>
   <tr>
 		<td>Organizers (baseline)</td> 
-    <td>ESPnet [2] ML-SUPERB [3]</td>
+    <td>ESPnet ML-SUPERB [2,3]</td>
     <td>10m</td>
 		<td>x</td>
 		<td></td>
@@ -426,5 +426,5 @@ Questions should be directed to <em>faetarasrchallenge at gmail dot com</em>.
 
 <a id="6">[6]</a>  D. Povey, A. Ghoshal, G. Boulianne, L. Burget, O. Glembek, N. Goel, M. Hannemann, P. Motlicek, Y. Qian, P. Schwarz, J. Silovsky, G. Stemmer, and K. Vesely, “The Kaldi speech recognition toolkit,” in ASRU. Hilton Waikoloa Village, Big Island, Hawaii, US: IEEE Signal Processing Society, 2011.
 
-<a id="7">[7]</a>  S. F. Chen, D. Beeferman, and R. Rosenfeld, “Evaluation metrics for language models,” Jan. 2008.
+<a id="7">[7]</a>  M. Ong, S. Robertson, L. Peckham, A. J. J. de Aberasturi, P. Arkhangorodsky, R. Huo, A. Sakhardande, M. Hallap, N. Nagy, and E. Dunbar, “The faetar benchmark: Speech recognition in a very under-resourced language,” arXiv preprint arXiv:2409.08103, 2024.
 
