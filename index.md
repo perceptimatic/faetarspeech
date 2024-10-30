@@ -10,7 +10,7 @@ title: The Faetar Low-Resource ASR Challenge
 - [Data and Licensing](#data-and-licensing)
 - [Timeline](#timeline)
 - [Submission Instructions](#submission-instructions)
-- [Leaderboards](#leaderboards)
+- [Leaderboard](#leaderboard)
 - [How to Participate](#how-to-participate)
 - [Contact](#contact)
 - [Organizers](#organizers)
@@ -84,11 +84,6 @@ A winner or tie will be declared based on PER and confidence intervals. All subm
 The Faetar ASR Benchmark Corpus data used in the challenge is available without cost **under a restrictive license that prohibits re-distribution, among other things.** Please see the **Registration** section below to request access.
 
 Table 1 shows the distribution of data in the corpus, which consists of a **train** set, a **test** set, a small **dev** set, and an **unlab**elled set. 
-
-<style type="text/css">
-.tg th{background-color:lightblue}
-.tg th, .tg td {text-align:center}
-</style>
 
 <table><thead>
   <tr>
@@ -191,87 +186,13 @@ Please access the dev kit, permitting you to evaluate your system and replicate 
 
 At the outset of the challenge, this will contain only the baseline model results.  **Please see [Ong et al. 2024](https://arxiv.org/abs/2409.08103) for details about the baseline models.**
 
-<!--
-
-#### Constrained Models only
-
 <fieldset>
-	<select id="csubmission_names"
-        onchange="drop_filter('csubmission_names', 'cLeader')">
-  	<option>Submission Names</option>
-	</select>
-</fieldset>
 
-<table id="cLeader">
-  <tr>
-    <th>Research group</th>
-    <th>Description</th>
-    <th>Training set</th>
-    <th onclick="sortTable(2, 'cLeader')">PER on test</th>
-  </tr>
-  <tr>
-		<td>Organizers (baseline)</td> 
-    <td>Kaldi [] HMM-GMM Mono + 5-gram</td>
-    <td>train</td>
-    <td>62.6</td>
-  </tr>
-  <tr>
-		<td>Organizers (baseline)</td> 
-    <td>Kaldi [] HMM-GMM Tri + 5-gram</td>
-    <td>train</td>
-    <td>56.7</td>
-  </tr>
-  <tr>
-		<td>Organizers (baseline)</td> 
-    <td>ESPnet ML-SUPERB []</td>
-    <td>train</td>
-    <td>35.9</td>
-  </tr>
-  <tr>
-		<td>Organizers (baseline)</td> 
-    <td>ESPnet ML-SUPERB []</td>
-    <td>1hr (=50min + 10min)</td>
-    <td>37.4</td>
-  </tr>
-  <tr>
-		<td>Organizers (baseline)</td> 
-    <td>ESPnet ML-SUPERB []</td>
-    <td>10min</td>
-    <td>45.1</td>
-  </tr>
-</table>
-
--->
-
-<fieldset>
-<!--
-<div>
-	<select id="all_submission_names"
-        onchange="drop_box_filter('all_submission_names', 'Leader')">
-  	<option>Submission Names</option>
-	</select>
-</div>
--->
 <div>
 	<input type="checkbox" id="constrained" name="constrained"
         onclick="drop_box_filter('Leader')"/>
 	<label for="constrained">Constrained</label>
 </div>
-<!--
-<div>
-	<input type="checkbox" id="unconstrained" name="unconstrained"
-        onclick="drop_box_filter('all_submission_names', 'Leader')"/>
-	<label for="unconstrained">Unconstrained</label>
-</div>
-
-<hr> 
-
-<div>
-	<input type="checkbox" id="train_default" name="train_default"
-        onclick="drop_box_filter('all_submission_names', 'Leader')"/>
-	<label for="train_default">Default Train (no Unlab or Unclean)</label>
-</div>
--->
 
 <div>
 	<input type="checkbox" id="extr" name="extr"
@@ -293,13 +214,6 @@ At the outset of the challenge, this will contain only the baseline model result
 	<label for="dirty">Dirty data challenge</label>
 </div>
 
-<!--
-<div>
-	<input type="checkbox" id="no_extras" name="no_extras"
-        onclick="drop_box_filter('all_submission_names', 'Leader')"/>
-	<label for="no_extras">Clean</label>
-</div>
--->
 </fieldset>
 
 <table id="Leader">
@@ -311,7 +225,7 @@ At the outset of the challenge, this will contain only the baseline model result
 		<th>External pre-trained AM/LM</th>
 		<th>Uses unlab</th>
 		<th>Dirty data challenge</th>
-    <th onclick="sortTable(2, 'Leader')">PER on test</th>
+    <th onclick="sortTable(7, 'Leader')">PER on test</th>
   </tr>
   <tr>
 		<td>Organizers (baseline)</td> 
@@ -396,22 +310,22 @@ At the outset of the challenge, this will contain only the baseline model result
 	<tr>
 		<td>Organizers (baseline)</td> 
     <td>MMS [] self-training</td>
-    <td>31.0</td>
 		<td>train</td>
 		<td></td>
 		<td>x</td>
 		<td>x</td>
 		<td></td>
+        <td>31.0</td>
   </tr>
 	<tr>
 		<td>Organizers (baseline)</td> 
     <td>MMS [] pre-training + self-training</td>
-    <td>30.5</td>
 		<td>train</td>
 		<td></td>
 		<td>x</td>
 		<td>x</td>
 		<td></td>
+        <td>30.5</td>
   </tr>
 </table>
 
@@ -454,7 +368,7 @@ function sortTable(n, table_id) {
 function drop_box_filter(table_id) {
 
     let cb_const = document.getElementById('constrained').checked;    
-    let cb_extr = document.getElementById('extrinsic').checked; 
+    let cb_extr = document.getElementById('extr').checked; 
     let cb_unlab = document.getElementById('unlab').checked; 
     let cb_dirty = document.getElementById('dirty').checked; 
     
@@ -476,24 +390,7 @@ function drop_box_filter(table_id) {
 }
 function run_sort(table_id) {
     table = document.getElementById(table_id);
-    table.getElementsByTagName("th")[2].click();
-}
-
-function get_submissions(dropdown_id, table_id) {
-    let select = document.getElementById(dropdown_id);
-    var table = document.getElementById(table_id);
-    let submission_set = new Set();
-    for (var i = 1, row; row = table.rows[i]; i++) {
-        submission_name = row.cells[0].innerText;
-        submission_set.add(submission_name);
-
-    }
-    for (const submission of submission_set) {
-        let el = document.createElement("option");
-        el.textContent = submission;
-        el.value = submission;
-        select.appendChild(el)
-    }
+    table.getElementsByTagName("th")[7].click();
 }
 
 window.onload = run_sort('Leader');
