@@ -12,8 +12,6 @@ title: The Faetar Low-Resource ASR Challenge
 	- [Dirty Data](#dirty-data)
 - [Timeline](#timeline)
 - [How to Participate](#how-to-participate)
-- [Submission Instructions](#submission-instructions)
-- [How to Participate](#how-to-participate)
 	- [Dev kit](#dev-kit)
 	- [Registering/requesting data access](#registeringrequesting-data-access)
 	- [How to submit](#how-to-submit)
@@ -23,16 +21,16 @@ title: The Faetar Low-Resource ASR Challenge
 - [References](#references)
 
 
-Low-resource speech recognition has gained substantial attention in recent years, particularly with the advent of large multilingual speech foundation models and language models. This is welcome, as there are thousands of languages for which no ASR exists, and, for many of them, small collections of field or found recordings, often partially transcribed, do exist. Such technology would be transformative for linguists, educators, and  for many of the minoritized communities worldwide facing challenges to the survival of their language and culture, allowing them to valorize and make more accessible recorded speech, for the benefit of current and future speakers of the language. However, a clear picture of best practices when developing ASR systems in very low-resource contexts has not yet emerged.
+Low-resource speech recognition has gained substantial attention in recent years, particularly with the advent of large multilingual speech foundation models and language models. This is welcome, as there are thousands of languages which have existing small partially transcribed collections of field or found recordings, but no ASR systems. Such technology would be transformative for linguists, educators, and the numerous minoritized communities worldwide who face challenges to the survival of their languages and cultures. This technology would allow for recorded speech to be valorized and made more accessible, for the benefit of current and future speakers of these languages. However, a clear picture of best practices when developing ASR systems in very low-resource contexts has not yet emerged.
 
 The Faetar Low-Resource ASR Challenge aims to focus researchers’ attention on several issues which are common to many archival collections of speech data:
 
 * **noisy** field recordings
-* lack of standard orthography leading **noise in the transcriptions** in the form of transcriber inconsistencies
+* lack of standard orthography, leading to **noise in the transcriptions** in the form of transcriber inconsistencies
 * **only a few hours** of transcribed data
 * a larger collection of **untranscribed data**
-* **no additional data** in the language (textual or speech) that's easily available
-* **“dirty” transcriptions** in documents containing matter that needs to be filtered out
+* **no additional data** in the language (textual or speech) that is easily available
+* **“dirty” transcriptions** in documents, which contain matter that needs to be filtered out
 
 By focusing multiple research groups on a single corpus of this kind, we aim to gain deeper insights into these problems than can be achieved otherwise.
 
@@ -61,7 +59,7 @@ Faetar has no standard written form. The data set is transcribed quasi-phonetica
 ## Tracks
 
 
-1. **Constrained ASR.** Participants should focus on the challenge of improving ASR architectures to work with small, poor-quality sets. May not use any external resources beyond the **train** set. No external pre-trained acoustic models or language models are allowed. The unlabelled portion of the Faetar challenge data set is not allowed either.
+1. **Constrained ASR.** Participants should focus on the challenge of improving ASR architectures to work with small, poor-quality sets. Participants may not use any  resources to train / fine-tune their models beyond the files contained in the provided **train** set. No external pre-trained acoustic models or language models are allowed, and the use of the unlabelled portion of the Faetar challenge data set is not allowed either.
 
 Three other "thematic tracks" can be explored, and should not be considered mutually exclusive:
 
@@ -89,7 +87,7 @@ A winner or tie will be declared based on PER and confidence intervals. All subm
 
 The Faetar ASR Benchmark Corpus data used in the challenge is available without cost **under a restrictive license that prohibits re-distribution, among other things.** Please see the **Registration** section below to request access.
 
-Table 1 shows the distribution of data in the corpus, which consists of a **train** set, a **test** set, a small **dev** set, and an **unlab**elled set. 
+The following table shows the distribution of data in the corpus, which consists of a **train** set, a **test** set, a small **dev** set, and an **unlab**elled set. 
 
 <table><thead>
   <tr>
@@ -115,7 +113,7 @@ Table 1 shows the distribution of data in the corpus, which consists of a **trai
   </tr>
   <tr>
     <td>test</td>
-    <td><em>Final evaluation: not available to participants</em></td>
+    <td><em>Final evaluation: transcripts are unavailable to participants</em></td>
     <td>46:54</td>
   </tr>
 </tbody></table>
@@ -123,7 +121,11 @@ Table 1 shows the distribution of data in the corpus, which consists of a **trai
 
 #### Alternate splits
 
-Because the **test** set is unavailable to challenge participants during the duration of the challenge, we recommend that participants not rely entirely on **dev** for held-out evaluation. To this end, we will also provide benchmark results (*to come*) based on the following alternative splits within **train** (provided):
+
+For compatibility with ML-SUPERB, we have created two subsets of train called **1h** and **10min**. Additionally, since the **test** set is unavailable to challenge participants during the duration of the challenge, we recommend that participants not rely entirely on **dev** for held-out evaluation. In order to increase the amount of data available for held-out evaluation, we have also created the set **reduced_train** (train minus 1h), so that the set **1h** can be used as a validation set.
+For participants using the dirty data, we have also created a subset **********NAME********** of **train** which only contains utterances taken from the **dirty data** files. 
+We will also provide benchmark results (*to come*) for the alternative subsets within **train**.
+The following table shows the distribution of the alternative splits:
 
 <table>
 <thead>
@@ -135,17 +137,17 @@ Because the **test** set is unavailable to challenge participants during the dur
 </thead>
 <tbody>
 <tr>
-    <td>50 minutes</td>
+    <td>1h</td>
     <td><em>Hold out to use as additional validation/development data; <strong>or</strong> use as alternate train set to evaluate lower-data circumstances</em></td>
-    <td>48:45</td>
+    <td>58:34</td>
 </tr>
 <tr>
-    <td>10 minutes</td>
+    <td>10min</td>
     <td><em>Hold out to use as additional validation/development data; <strong>or</strong> use as alternate train set to explore extreme low-data settings</em></td>
     <td>9:49</td>
 </tr>
 <tr>
-    <td>Reduced train</td>
+    <td>reduced_train (i.e. train minus 1h)</td>
     <td><em>Use as alternate train set when evaluating on the above alternate split(s)</em></td>
     <td>3:40:32</td>
 </tr>
@@ -156,7 +158,10 @@ Because the **test** set is unavailable to challenge participants during the dur
 
 The benchmark corpus was extracted and automatically aligned from long-form audio and (incomplete) transcriptions that were scraped from word processor files that often contained other, irrelevant material, then aligned to the utterance level (see [Ong et al. 2024](https://arxiv.org/abs/2409.08103) for more details). Participants in the **Dirty data** track will seek to improve on the process (scraping, segmenting, aligning), with the goal of **improving the quality of the train set**. The ultimate goal remains the same, of improving PER on the test set.
 
-The **dirty data** collection consists of the original source files for a subset of **train** that does not overlap with **test** or **dev**, along with the scripts that we used for the first stages of extraction. Please request the dirty data set on the registration form if you intend to use it. Baseline results for training on this subset will be provided (*to come*).
+The **dirty data** collection consists of the original source files for a subset of **train** that does not overlap with **test** or **dev**, along with some of the files that we used during the first stages of extraction and filtration of the data. Please request the dirty data set on the registration form if you intend to use it. Baseline results for training on this subset will be provided (*to come*).
+
+Files in the **unlab** portion of **dirty data** may have overlapping audio. Additionally, the following filecodes were removed since their audio was a duplicate (in whole or part) of another audio file in the corpus: he_w001, he_w004, he_w005, hl_w001, hl_w002, hl_w003, hl_w004, hl_w033, hl_w040, and hl_w041.
+Transcription files in the **train** portion of **dirty data** do not contain overlap between filecodes (e.g. the transcription files for hl_w029 and hl_w030 do not contain any overlap, but the transcription files of hl_w029 may overlap with each other), but some audio files are the same / may contain overlap.
 
 ## Timeline 
 
@@ -261,12 +266,12 @@ At the outset of the challenge, this will contain only the baseline model result
 		<td></td>
 		<td></td>
 		<td></td>
-    <td>35.9</td>
+    <td>35.8</td>
   </tr>
   <tr>
 		<td>Organizers (baseline)</td> 
     <td>ESPnet ML-SUPERB []</td>
-    <td>1hr (=50m + 10m)</td>
+    <td>1hr</td>
 		<td>x</td>
 		<td></td>
 		<td></td>
@@ -331,7 +336,7 @@ At the outset of the challenge, this will contain only the baseline model result
 		<td>x</td>
 		<td>x</td>
 		<td></td>
-        <td>30.5</td>
+        <td>30.4</td>
   </tr>
 </table>
 
