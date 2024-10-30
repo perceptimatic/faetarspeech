@@ -8,10 +8,16 @@ title: The Faetar Low-Resource ASR Challenge
 - [Tracks](#tracks)
 - [Criteria for Judging Submissions](#criteria-for-judging-submissions)
 - [Data and Licensing](#data-and-licensing)
+	- [Alternate splits](#alternate-splits)
+	- [Dirty Data](#dirty-data)
 - [Timeline](#timeline)
-- [Submission Instructions](#submission-instructions)
-- [Leaderboard](#leaderboard)
 - [How to Participate](#how-to-participate)
+- [Submission Instructions](#submission-instructions)
+- [How to Participate](#how-to-participate)
+	- [Dev kit](#dev-kit)
+	- [Registering/requesting data access](#registeringrequesting-data-access)
+	- [How to submit](#how-to-submit)
+- [Leaderboard](#leaderboard)
 - [Contact](#contact)
 - [Organizers](#organizers)
 - [References](#references)
@@ -30,7 +36,7 @@ The Faetar Low-Resource ASR Challenge aims to focus researchers’ attention on 
 
 By focusing multiple research groups on a single corpus of this kind, we aim to gain deeper insights into these problems than can be achieved otherwise.
 
-### The Faetar language
+# The Faetar Language
 
 **Please see [Ong et al. 2024](https://arxiv.org/abs/2409.08103) for more details about the Faetar ASR Benchmark Corpus.**
 
@@ -43,7 +49,7 @@ Faetar has no standard written form. The data set is transcribed quasi-phonetica
 
 
 
-### Ground Rules
+# Ground Rules
 
 - Participants will make use of the training data provided (~4.5 hrs) and will submit phone-level decodings for train, dev and test audio.
 - Participants will not have access to the test transcriptions during the period of the challenge and organizers will perform the final evaluation on the test set.
@@ -52,7 +58,7 @@ Faetar has no standard written form. The data set is transcribed quasi-phonetica
 - Participants must sign a data agreement preventing redistribution before accessing the data set.
 - Each research group may make **no more than four submissions** for evaluation.
 
-### Tracks
+# Tracks
 
 
 1. **Constrained ASR.** Participants should focus on the challenge of improving ASR architectures to work with small, poor-quality sets. May not use any external resources beyond the **train** set. No external pre-trained acoustic models or language models are allowed. The unlabelled portion of the Faetar challenge data set is not allowed either.
@@ -68,7 +74,7 @@ Participants should indicate at the time of submission whether they are making a
 Each research group may make **no more than four submissions total** for evaluation, across all tracks.
 
 
-###  Criteria for judging submissions
+#  Criteria for Judging Submissions
 
 Submissions will be evaluated on phone error rate (PER) on the test set. Participants are provided with a dev kit allowing them to calculate the PER on dev and train, as well as reproduce the baselines. Bootstrap confidence intervals can also be calculated using the dev kit to demonstrate robustness.
 
@@ -77,7 +83,7 @@ A winner or tie will be declared based on PER and confidence intervals. All subm
 (An) **overall winner(s)** will be declared, as well as (a) winner(s) of the **Constrained ASR** track. The results of the challenge will also indicate the best approaches within the three other subtracks.
 
 
-### Data and licensing
+# Data and Licensing
 
 **Please see [Ong et al. 2024](https://arxiv.org/abs/2409.08103) for more details about the Faetar ASR Benchmark Corpus and a more detailed breakdown of the corpus.**
 
@@ -115,7 +121,7 @@ Table 1 shows the distribution of data in the corpus, which consists of a **trai
 </tbody></table>
 
 
-#### Alternate splits
+## Alternate splits
 
 Because the **test** set is unavailable to challenge participants during the duration of the challenge, we recommend that participants not rely entirely on **dev** for held-out evaluation. To this end, we will also provide benchmark results (*to come*) based on the following alternative splits within **train** (provided):
 
@@ -146,13 +152,13 @@ Because the **test** set is unavailable to challenge participants during the dur
 </tbody>
 </table>
 
-#### Dirty data
+## Dirty data
 
 The benchmark corpus was extracted and automatically aligned from long-form audio and (incomplete) transcriptions that were scraped from word processor files that often contained other, irrelevant material, then aligned to the utterance level (see [Ong et al. 2024](https://arxiv.org/abs/2409.08103) for more details). Participants in the **Dirty data** track will seek to improve on the process (scraping, segmenting, aligning), with the goal of **improving the quality of the train set**. The ultimate goal remains the same, of improving PER on the test set.
 
 The **dirty data** collection consists of the original source files for a subset of **train** that does not overlap with **test** or **dev**, along with the scripts that we used for the first stages of extraction. Please request the dirty data set on the registration form if you intend to use it. Baseline results for training on this subset will be provided (*to come*).
 
-### Timeline 
+# Timeline 
 
 - **October 31, 2024:** Release of data, opening of challenge
 - **February 1st, 2025:** Participants must submit system description(s) and test decodings
@@ -162,13 +168,13 @@ The **dirty data** collection consists of the original source files for a subset
 - **May 21st, 2025:** Interspeech paper acceptance notification
 - **August 17-25, 2025:** Interspeech conference
 
-### How to Participate
+# How to Participate
 
-#### Dev Kit
+## Dev kit
 
 Please access the dev kit, permitting you to evaluate your system and replicate baselines here (does not include the data) at [https://github.com/perceptimatic/faetar-dev-kit](https://github.com/perceptimatic/faetar-dev-kit).
 
-#### Registering/requesting data access
+## Registering/requesting data access
 
 *Requests for access to the data will be responded to within 24 hrs. You will receive a download link if your request is approved.*
 
@@ -178,11 +184,11 @@ Please access the dev kit, permitting you to evaluate your system and replicate 
     style="border: none; max-width:100%; max-height:100vh" allowfullscreen
     webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
 
-#### How to Submit
+## How to submit
 
 *To be announced*
 
-### Leaderboard
+# Leaderboard
 
 At the outset of the challenge, this will contain only the baseline model results.  **Please see [Ong et al. 2024](https://arxiv.org/abs/2409.08103) for details about the baseline models.**
 
@@ -397,18 +403,18 @@ window.onload = run_sort('Leader');
 
 </script>
 
-### Contact
+# Contact
 
 Questions should be directed to <em>faetarasrchallenge at gmail dot com</em>.
 
-### Organizers
+# Organizers
 
 - Ewan Dunbar, University of Toronto
 - Michael Ong, University of Toronto
 - Leo Peckham, University of Toronto
 - Naomi Nagy, University of Toronto
 
-### References
+# References
 
 <a id="1">[1]</a> N. Nagy, "A multilingual corpus to explore variation in
 language contact situations," _RILA_, pp. 65–84, 2011.
