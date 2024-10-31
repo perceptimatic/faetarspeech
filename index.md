@@ -34,6 +34,8 @@ The Faetar Low-Resource ASR Challenge aims to focus researchers’ attention on 
 
 By focusing multiple research groups on a single corpus of this kind, we aim to gain deeper insights into these problems than can be achieved otherwise.
 
+***The challenge will run from November 1st 2024 to February 1st 2025. We encourage participants to submit papers to Interspeech 2025 (main conference). See [Timeline](#timeline) for detailed timeline.***
+
 ## The Faetar Language
 
 **Please see [Ong et al. 2024](https://arxiv.org/abs/2409.08103) for more details about the Faetar ASR Benchmark Corpus.**
@@ -43,8 +45,6 @@ The challenge uses the Faetar ASR Benchmark Corpus. Faetar (pronounced [fajdar])
 Data were extracted from the Faetar collection of the Heritage Language Variation and Change in Toronto (HLVC) corpus [1]. The corpus contains 184 recordings of native Faetar speakers collected in Italy between 1992 and 1994 (the Homeland subset) and 37 recordings of first- and second-generation heritage Faetar speakers collected in Toronto between 2009 and 2010 (the Heritage subset). All come from field recordings, generally noisy, of semi-spontaneous speech. 
 
 Faetar has no standard written form. The data set is transcribed quasi-phonetically for linguistic purposes in IPA. The transcriptions are not always consistent, as different parts of the data set were transcribed for different purposes: sometimes the transcription is narrow and phonetic, while at other times the transcription is broad and phonemic.
-
-
 
 
 ## Ground Rules
@@ -158,7 +158,7 @@ For participants using the dirty data, we have also created a reference subset *
 
 ## Timeline 
 
-- **October 31, 2024:** Release of data, opening of challenge
+- **November 1st, 2024:** Release of data, opening of challenge
 - **February 1st, 2025:** Participants must submit system description(s) and test decodings
 - **February 5th, 2025:** Participants receive test scores from organizers, winners announced
 - **February 12th, 2025:** Interspeech paper submission deadline
@@ -184,7 +184,9 @@ Please access the dev kit, permitting you to evaluate your system and replicate 
 
 #### How to submit
 
-*To be announced*
+Each research group may make **no more than four submissions** for evaluation.
+
+*Details of submission process to be announced*
 
 ## Leaderboard
 
