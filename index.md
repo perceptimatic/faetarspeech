@@ -72,6 +72,13 @@ Participants should indicate at the time of submission whether they are making a
 Each research group may make **no more than four submissions total** for evaluation, across all tracks.
 
 
+## Co-submission to the ML-SUPERB Challenge
+
+Many participants in the Faetar Challenge may also wish to participate in the ML-SUPERB 2.0 2025 Challenge, which has been tentatively accepted as a special session at Interspeech 2025. The ML-SUPERB 2.0 benchmark focuses on developing approaches to ASR which are robust across languages and language varieties. Participants in the Faetar challenge with systems that can also be fruitfully evaluated on the ML-SUPERB 2.0 benchmark are strongly encouraged to submit their papers to the ML-SUPERB session at Interspeech. For example, a submission may attempt to make efficient use of the unlabelled set by using it as additional pre-training data for a multilingual speech foundation model, while also improving the architecture of the underlying model, leading the participants to seek to evaluate the improved model on the ML-SUPERB benchmark; other potential points of contact might include explorations of improving speech enhancement, language model fusion, speaker normalization, or other traditional ASR techniques which might be relevant to the challenges posed by the Faetar corpus.
+
+For more information, see the ML-SUPERB 2.0 website at: [https://multilingual.superbbenchmark.org/](https://multilingual.superbbenchmark.org/)
+
+
 ## Criteria for Judging Submissions
 
 Submissions will be evaluated on phone error rate (PER) on the test set. Participants are provided with a [dev kit](#dev-kit) allowing them to calculate the PER on dev and train, as well as reproduce the baselines. Bootstrap confidence intervals can also be calculated using the dev kit to demonstrate robustness.
