@@ -59,7 +59,7 @@ Faetar has no standard written form. The data set is transcribed quasi-phonetica
 ## Tracks
 
 
-- **Constrained ASR.** Participants should focus on the challenge of improving ASR architectures to work with small, poor-quality sets. Participants may not use any  resources to train / fine-tune their models beyond the files contained in the provided **train** set. No external pre-trained acoustic models or language models are allowed, and the use of the unlabelled portion of the Faetar challenge data set is not allowed either.
+- **Constrained ASR.** Participants should focus on the challenge of improving ASR architectures to work with small, poor-quality sets. Participants may not use any  resources to train / fine-tune their models beyond the files contained in the provided training data. No external pre-trained acoustic models or language models are allowed. Use of the unlabelled portion of the Faetar challenge data set is allowed (**unlab**) in addition to **train**, as long as this is indicated in the submission, and as long as no external resources (including pre-trained models) are used.
 
 Three other "thematic tracks" can be explored, and should not be considered mutually exclusive:
 
