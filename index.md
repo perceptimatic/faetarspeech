@@ -195,10 +195,8 @@ Each research group may make **no more than four submissions** for evaluation.
 
 The filenames of the test decoding submissions should contain the name of the team, the name of the model used, and be in the following format:
 
-the quick brown fox jumps over the lazy dog (utterance_a)
-
-pack my box with five dozen liquor jugs (utterance b)
-
+the quick brown fox jumps over the lazy dog (utterance_a) \
+pack my box with five dozen liquor jugs (utterance b) \
 ...(etc.)
 
 *Details of submission process to be announced*
