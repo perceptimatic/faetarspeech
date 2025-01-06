@@ -336,18 +336,6 @@ At the outset of the challenge, this will contain only the baseline model result
   </tr>
 	<tr>
 		<td>Organizers (baseline)</td> 
-    <td>MMS [4] continued pre-training</td>
-		<td>train</td>
-		<td></td>
-		<td>x</td>
-		<td>x</td>
-		<td></td>
-    <td>31.5</td>
-	<td>38.7</td>
-	<td></td>
-  </tr>
-	<tr>
-		<td>Organizers (baseline)</td> 
     <td>MMS [4] self-training</td>
 		<td>train</td>
 		<td></td>
