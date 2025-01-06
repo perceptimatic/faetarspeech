@@ -193,9 +193,7 @@ Please access the dev kit, permitting you to evaluate your system and replicate 
 
 Each research group may make **no more than four submissions** for evaluation.
 
-If you are registered for the challenge, you will receive a OneDrive link to a form where you will describe your models. Only one model should be described per submission of the form. If you have more than one model, submit the form multiple times. 
-
-You will also receive a link to a OneDrive folder where you can upload the test decodings.
+If you are registered for the challenge, you will receive a OneDrive link to a form where you will describe your models. Only one model should be described per submission of the form. If you have more than one model, submit the form multiple times.  You will also receive a link to a OneDrive folder where you can upload the test decodings.
 
 The test decoding submissions should be in the following format:
 
@@ -203,7 +201,6 @@ the quick brown fox jumps over the lazy dog (utterance_a) \
 pack my box with five dozen liquor jugs (utterance b) \
 ...(etc.)
 
-*Details of submission process to be announced*
 
 ## Leaderboard
 
