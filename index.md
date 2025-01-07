@@ -244,6 +244,7 @@ At the outset of the challenge, this will contain only the baseline model result
 
 </fieldset>
 
+
 <table id="Leader">
   <tr>
     <th>Research group</th>
@@ -254,6 +255,8 @@ At the outset of the challenge, this will contain only the baseline model result
 		<th>Uses unlab</th>
 		<th>Dirty data challenge</th>
     <th onclick="sortTable(7, 'Leader')">PER on test</th>
+	<th onclick="sortTable(8, 'Leader')">PER on dev</th>
+	<th onclick="sortTable(9, 'Leader')">PER on 1h</th>
   </tr>
   <tr>
 		<td>Organizers (baseline)</td> 
@@ -264,6 +267,8 @@ At the outset of the challenge, this will contain only the baseline model result
 		<td></td>
 		<td></td>
     <td>62.6</td>
+	<td>65.9</td>
+	<td></td>
   </tr>
   <tr>
 		<td>Organizers (baseline)</td> 
@@ -274,6 +279,8 @@ At the outset of the challenge, this will contain only the baseline model result
 		<td></td>
 		<td></td>
     <td>56.7</td>
+	<td>58.2</td>
+	<td></td>
   </tr>
   <tr>
 		<td>Organizers (baseline)</td> 
@@ -284,6 +291,8 @@ At the outset of the challenge, this will contain only the baseline model result
 		<td></td>
 		<td></td>
     <td>35.8</td>
+	<td>43.0</td>
+	<td></td>
   </tr>
   <tr>
 		<td>Organizers (baseline)</td> 
@@ -294,6 +303,8 @@ At the outset of the challenge, this will contain only the baseline model result
 		<td></td>
 		<td></td>
     <td>37.4</td>
+	<td>44.4</td>
+	<td></td>
   </tr>
   <tr>
 		<td>Organizers (baseline)</td> 
@@ -304,6 +315,8 @@ At the outset of the challenge, this will contain only the baseline model result
 		<td></td>
 		<td></td>
     <td>45.1</td>
+	<td>50.2</td>
+	<td></td>
   </tr>
   <tr>
 		<td>Organizers (baseline)</td> 
@@ -314,6 +327,8 @@ At the outset of the challenge, this will contain only the baseline model result
 		<td></td>
 		<td></td>
     <td>33.0</td>
+	<td>39.9</td>
+	<td></td>
   </tr>
 	<tr>
 		<td>Organizers (baseline)</td> 
@@ -324,16 +339,8 @@ At the outset of the challenge, this will contain only the baseline model result
 		<td></td>
 		<td></td>
     <td>33.6</td>
-  </tr>
-	<tr>
-		<td>Organizers (baseline)</td> 
-    <td>MMS [4] continued pre-training</td>
-		<td>train</td>
-		<td></td>
-		<td>x</td>
-		<td>x</td>
-		<td></td>
-    <td>31.5</td>
+	<td>41.1</td>
+	<td></td>
   </tr>
 	<tr>
 		<td>Organizers (baseline)</td> 
@@ -344,6 +351,8 @@ At the outset of the challenge, this will contain only the baseline model result
 		<td>x</td>
 		<td></td>
         <td>31.0</td>
+		<td>36.6</td>
+		<td></td>
   </tr>
 	<tr>
 		<td>Organizers (baseline)</td> 
@@ -354,6 +363,56 @@ At the outset of the challenge, this will contain only the baseline model result
 		<td>x</td>
 		<td></td>
         <td>30.4</td>
+		<td>36.4</td>
+		<td></td>
+  </tr>
+	<tr>
+		<td>Organizers (baseline)</td> 
+    <td>MMS [4] continued pre-training</td>
+		<td>train</td>
+		<td></td>
+		<td>x</td>
+		<td>x</td>
+		<td></td>
+    <td>31.5</td>
+	<td>38.7</td>
+	<td></td>
+  </tr>
+	<tr>
+		<td>Organizers (baseline)</td> 
+    <td>MMS [4]</td>
+		<td>reduced_train</td>
+		<td></td>
+		<td>x</td>
+		<td></td>
+		<td></td>
+    <td>33.8</td>
+	<td>37.9</td>
+	<td>34.5</td>
+  </tr>
+	<tr>
+		<td>Organizers (baseline)</td> 
+    <td>MMS [4] self-training</td>
+		<td>reduced_train</td>
+		<td></td>
+		<td>x</td>
+		<td>x</td>
+		<td></td>
+        <td>33.4</td>
+		<td>37.2</td>
+		<td>34.1</td>
+  </tr>
+	<tr>
+		<td>Organizers (baseline)</td> 
+    <td>mHubert-147 [5]</td>
+		<td>reduced_train</td>
+		<td></td>
+		<td>x</td>
+		<td></td>
+		<td></td>
+    <td>35.5</td>
+	<td>42.8</td>
+	<td>36.3</td>
   </tr>
 </table>
 
