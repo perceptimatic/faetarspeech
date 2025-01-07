@@ -268,7 +268,7 @@ At the outset of the challenge, this will contain only the baseline model result
 		<td></td>
     <td>62.6</td>
 	<td>65.9</td>
-	<td></td>
+	<td>NA</td>
   </tr>
   <tr>
 		<td>Organizers (baseline)</td> 
@@ -280,7 +280,7 @@ At the outset of the challenge, this will contain only the baseline model result
 		<td></td>
     <td>56.7</td>
 	<td>58.2</td>
-	<td></td>
+	<td>NA</td>
   </tr>
   <tr>
 		<td>Organizers (baseline)</td> 
@@ -292,7 +292,7 @@ At the outset of the challenge, this will contain only the baseline model result
 		<td></td>
     <td>35.8</td>
 	<td>43.0</td>
-	<td></td>
+	<td>NA</td>
   </tr>
   <tr>
 		<td>Organizers (baseline)</td> 
@@ -304,7 +304,7 @@ At the outset of the challenge, this will contain only the baseline model result
 		<td></td>
     <td>37.4</td>
 	<td>44.4</td>
-	<td></td>
+	<td>NA</td>
   </tr>
   <tr>
 		<td>Organizers (baseline)</td> 
@@ -328,7 +328,7 @@ At the outset of the challenge, this will contain only the baseline model result
 		<td></td>
     <td>33.0</td>
 	<td>39.9</td>
-	<td></td>
+	<td>NA</td>
   </tr>
 	<tr>
 		<td>Organizers (baseline)</td> 
@@ -340,7 +340,7 @@ At the outset of the challenge, this will contain only the baseline model result
 		<td></td>
     <td>33.6</td>
 	<td>41.1</td>
-	<td></td>
+	<td>NA</td>
   </tr>
 	<tr>
 		<td>Organizers (baseline)</td> 
@@ -352,7 +352,7 @@ At the outset of the challenge, this will contain only the baseline model result
 		<td></td>
         <td>31.0</td>
 		<td>36.6</td>
-		<td></td>
+		<td>NA</td>
   </tr>
 	<tr>
 		<td>Organizers (baseline)</td> 
@@ -364,7 +364,7 @@ At the outset of the challenge, this will contain only the baseline model result
 		<td></td>
         <td>30.4</td>
 		<td>36.4</td>
-		<td></td>
+		<td>NA</td>
   </tr>
 	<tr>
 		<td>Organizers (baseline)</td> 
@@ -376,7 +376,7 @@ At the outset of the challenge, this will contain only the baseline model result
 		<td></td>
     <td>31.5</td>
 	<td>38.7</td>
-	<td></td>
+	<td>NA</td>
   </tr>
 	<tr>
 		<td>Organizers (baseline)</td> 
