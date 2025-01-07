@@ -316,7 +316,7 @@ At the outset of the challenge, this will contain only the baseline model result
 		<td></td>
     <td>45.1</td>
 	<td>50.2</td>
-	<td></td>
+	<td>NA</td>
   </tr>
   <tr>
 		<td>Organizers (baseline)</td> 
