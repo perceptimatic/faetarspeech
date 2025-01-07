@@ -201,7 +201,7 @@ Each research group may submit up to **four models** for evaluation on the test 
 - **Model description:** Each research team should also have received a link to fill in a model description form. The short "model description" field will be added to the leaderboard section of the website A separate form should be submitted for each submission file uploaded to the OneDrive. 
 - **Draft paper (suggested):** In order to support our timely submission of a summary paper to Interspeech, we invite participants who are preparing papers to share more detailed system information in the form of a draft paper as soon as this is feasible. This draft will not be shared with anyone other than the organizers and will only be used for the purposes of accurately characterizing your system in the summary paper. You may share your draft by including a link to a preprint in the model description or by uploading a PDF to the OneDrive as soon as a draft is ready.
 
-Decodings for all files in the test set, for a single model, should be stored in a single plain-text file, with one file per line, and with the utterance name (file name prefix) following the decoding (examples given come from the dev set):
+Decodings for all files in the test set, for a single model, should be stored in a single plain-text file, with one file per line, and with the utterance name (file name prefix) following the decoding:
 
 ```
 i kidʒə teɪnə lə fotd əkra l (heF003_00000916_00001116_he011)
