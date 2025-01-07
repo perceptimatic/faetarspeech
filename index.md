@@ -438,7 +438,7 @@ function sortTable(n, table_id) {
       x = rows[i].getElementsByTagName("td")[n];
       y = rows[i + 1].getElementsByTagName("td")[n];
       if ((Number(x.innerHTML) > Number(y.innerHTML)) ||
-          (isNan(Number(x.innerHTML)))) { // Text sorts after numbers
+          (isNaN(Number(x.innerHTML)))) { // Text sorts after numbers
         // If so, mark as a switch and break the loop:
         shouldSwitch = true;
         break;
