@@ -58,14 +58,14 @@ Faetar has no standard written form. The data set is transcribed quasi-phonetica
 
 ## Tracks
 
+Note that some information has been updated; participants should pay close attention to the definition of the "Constrained" track. The information below should be considered authoritative.
 
-- **Constrained ASR.** Participants should focus on the challenge of improving ASR architectures to work with small, poor-quality sets. Participants may not use any  resources to train / fine-tune their models beyond the files contained in the provided training data. No external pre-trained acoustic models or language models are allowed. Use of the unlabelled portion of the Faetar challenge data set is allowed (**unlab**) in addition to **train**, as long as this is indicated in the submission, and as long as no external resources (including pre-trained models) are used.
+- **Constrained ASR.** Participants should focus on the challenge of improving ASR architectures to work with small, poor-quality sets. Participants may not use any  resources to train / fine-tune their models beyond the files contained in the provided training data. No external pre-trained acoustic models or language models are allowed.  No external pre-trained acoustic models or language models are allowed. Use of the unlabelled portion of the Faetar challenge data set is not allowed (**unlab**). *At submission time,* participants should not check the *External AM/LM* or *Unlab* boxes on the model description form.
+-  **Using pre-trained acoustic models or language models.** Participants focus on the most effective way to make use of models pre-trained on other languages. *At submission time,* participants should check *External AM/LM* on the model description form. 
+-  **Using unlabelled data.** The challenge data also includes ~20 hrs of unlabelled data (**unlab**). Participants focus on finding the most effective way to make use of it. *At submission time,* participants should check *Unlab* on the model description form (this checkbox is not mutually exclusive with the *External AM/LM* checkbox). 
+- **Dirty data.** The training data was extracted and automatically aligned from long-form audio and partial transcriptions in “cluttered” word processor files, relying on (error-prone) VAD, scraping, and alignment. Participants focus on improving the pipeline for extracting useful training data, with the ultimate goal of improving performance. *At submission time,* participants should check *Dirty Data* on the model description form.
 
-Three other "thematic tracks" can be explored, and should not be considered mutually exclusive:
-
--  **Using pre-trained acoustic models or language models.** Participants focus on the most effective way to make use of models pre-trained on other languages.
--  **Using unlabelled data.** The challenge data also includes ~20 hrs of unlabelled data. Participants focus on finding the most effective way to make use of it.
-- **Dirty data.** The training data was extracted and automatically aligned from long-form audio and partial transcriptions in “cluttered” word processor files, relying on (error-prone) VAD, scraping, and alignment. Participants focus on improving the pipeline for extracting useful training data, with the ultimate goal of improving performance. *Participants seeking to participate in the Dirty Data challenge should indicate this on the registration form.*
+ *Participants seeking to participate in the Dirty Data challenge should indicate this on the registration form.*
 
 Participants should indicate at the time of submission whether they are making a **Constrained ASR** submission, and, otherwise, which of the three thematic tracks they are submitting to (possibly more than one).
 
@@ -130,7 +130,9 @@ The following table shows the distribution of data in the corpus, which consists
 
 
 Since the **test** set is unavailable to challenge participants during the duration of the challenge, we recommend that participants not rely entirely on **dev** for held-out evaluation. In order to increase the amount of data available for held-out evaluation, we have created an alternate split of the **train** set compraised of the sets **1h** and **reduced_train** (train minus 1h), so that the set **1h** can be used as a held-out evaluation set.
-We will also provide benchmark results (*to come*) for the alternative subsets within **train**.
+We also provide baseline results for the alternative subsets within **train** (added to the leaderboard between January 6th and 14th; please check back if the result is not yet available).
+
+
 The following table shows the distribution of the alternative splits:
 
 <table>
@@ -191,15 +193,21 @@ Please access the dev kit, permitting you to evaluate your system and replicate 
 
 #### How to submit
 
-Each research group may make **no more than four submissions** for evaluation.
+We are happy to announce that submissions are now open for the Faetar ASR Challenge. Participants are responsible for submitting **decodings for the test set** and a **model description.** If possible, we ask participants to also upload a more detailed model description in the form of a **paper draft** in order to facilitate our writing a summary paper. 
 
-If you are registered for the challenge, you will receive a OneDrive link to a form where you will describe your models. Only one model should be described per submission of the form. If you have more than one model, submit the form multiple times.  You will also receive a link to a OneDrive folder where you can upload the test decodings.
+Each research group may submit up to **four models** for evaluation on the test set. Submissions must be received by **Saturday, February 1st 2025 (AoE)** in order to receive results on time. 
 
-The test decoding submissions should be in the following format:
+- **Test decodings:** Each research time should already have received a personalized OneDrive link which should be used to upload submissions (test decodings). There should be one submission file per model. See below for the submission format. It is the responsibility of participants to run the evaluation (using the dev kit) on subsets other than **test**.
+- **Model description:** Each research team should also have received a link to fill in a model description form. The short "model description" field will be added to the leaderboard section of the website A separate form should be submitted for each submission file uploaded to the OneDrive. 
+- **Draft paper (suggested):** In order to support our timely submission of a summary paper to Interspeech, we invite participants who are preparing papers to share more detailed system information in the form of a draft paper as soon as this is feasible. This draft will not be shared with anyone other than the organizers and will only be used for the purposes of accurately characterizing your system in the summary paper. You may share your draft by including a link to a preprint in the model description or by uploading a PDF to the OneDrive as soon as a draft is ready.
 
-the quick brown fox jumps over the lazy dog (utterance_a) \
-pack my box with five dozen liquor jugs (utterance b) \
-...(etc.)
+Decodings for all files in the test set, for a single model, should be stored in a single plain-text file, with one file per line, and with the utterance name (file name prefix) following the decoding (examples given come from the dev set):
+
+```
+i kidʒə teɪnə lə fotd əkra l (heF003_00000916_00001116_he011)
+faitan fu d ra fi (heF003_00001353_00001466_he011)
+...
+```
 
 
 ## Leaderboard
