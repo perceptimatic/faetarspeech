@@ -414,6 +414,18 @@ At the outset of the challenge, this will contain only the baseline model result
 	<td>42.8</td>
 	<td>36.3</td>
   </tr>
+	<tr>
+		<td>Organizers (baseline)</td> 
+    <td>mHubert-147 [5] self-training</td>
+		<td>reduced_train</td>
+		<td></td>
+		<td>x</td>
+		<td></td>
+		<td></td>
+    <td>35.1</td>
+	<td>42.3</td>
+	<td>35.6</td>
+  </tr>
 </table>
 
 <script>
