@@ -420,7 +420,7 @@ At the outset of the challenge, this will contain only the baseline model result
 		<td>reduced_train</td>
 		<td></td>
 		<td>x</td>
-		<td></td>
+		<td>x</td>
 		<td></td>
     <td>35.1</td>
 	<td>42.3</td>
