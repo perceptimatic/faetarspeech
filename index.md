@@ -258,6 +258,78 @@ At the outset of the challenge, this will contain only the baseline model result
 	<th onclick="sortTable(8, 'Leader')">PER on dev</th>
 	<th onclick="sortTable(9, 'Leader')">PER on 1h</th>
   </tr>
+<tr>
+		<td>SRIB</td> 
+    <td>Conformer based CTC (sys1)</td>
+    <td>train</td>
+		<td>x</td>
+		<td></td>
+		<td></td>
+		<td></td>
+    <td>50.8</td>
+	<td>NA</td>
+	<td>NA</td>
+  </tr>
+<tr>
+		<td>SRIB</td> 
+    <td>Conformer based CTC (sys2)</td>
+    <td>train</td>
+		<td>x</td>
+		<td></td>
+		<td></td>
+		<td></td>
+    <td>51.2</td>
+	<td>NA</td>
+	<td>NA</td>
+  </tr>
+<tr>
+		<td>SRIB</td> 
+    <td>Conformer based CTC (sys3)</td>
+    <td>train</td>
+		<td>x</td>
+		<td></td>
+		<td></td>
+		<td></td>
+    <td>51.6</td>
+	<td>NA</td>
+	<td>NA</td>
+  </tr>
+<tr>
+		<td>SRIB</td> 
+    <td>Conformer based CTC (sysA)</td>
+    <td>train</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>x</td>
+    <td>48.0</td>
+	<td>NA</td>
+	<td>NA</td>
+  </tr>
+<tr>
+		<td>SRIB</td> 
+    <td>Conformer based CTC (sysB)</td>
+    <td>train</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>x</td>
+    <td>48.8</td>
+	<td>NA</td>
+	<td>NA</td>
+  </tr>
+<tr>
+		<td>SRIB</td> 
+    <td>Conformer based CTC (sysC)</td>
+    <td>train</td>
+		<td>x</td>
+		<td></td>
+		<td></td>
+		<td></td>
+    <td>49.4</td>
+	<td>NA</td>
+	<td>NA</td>
+  </tr>
   <tr>
 		<td>Organizers (baseline)</td> 
     <td>Kaldi HMM-GMM Mono + 5-gram Kneser-Ney [6,7]</td>
