@@ -322,10 +322,10 @@ At the outset of the challenge, this will contain only the baseline model result
 		<td>SRIB</td> 
     <td>Conformer based CTC (sysC)</td>
     <td>train</td>
+		<td></td>
+		<td></td>
+		<td></td>
 		<td>x</td>
-		<td></td>
-		<td></td>
-		<td></td>
     <td>49.4</td>
 	<td>NA</td>
 	<td>NA</td>
