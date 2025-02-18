@@ -259,7 +259,7 @@ At the outset of the challenge, this will contain only the baseline model result
 	<th onclick="sortTable(9, 'Leader')">PER on 1h</th>
   </tr>
 <tr>
-		<td>SRIB</td> 
+		<td>Team A</td> 
     <td>Conformer based CTC (sys1)</td>
     <td>train</td>
 		<td>x</td>
@@ -271,7 +271,7 @@ At the outset of the challenge, this will contain only the baseline model result
 	<td>NA</td>
   </tr>
 <tr>
-		<td>SRIB</td> 
+		<td>Team A</td> 
     <td>Conformer based CTC (sys2)</td>
     <td>train</td>
 		<td>x</td>
@@ -283,7 +283,7 @@ At the outset of the challenge, this will contain only the baseline model result
 	<td>NA</td>
   </tr>
 <tr>
-		<td>SRIB</td> 
+		<td>Team A</td> 
     <td>Conformer based CTC (sys3)</td>
     <td>train</td>
 		<td>x</td>
@@ -295,7 +295,7 @@ At the outset of the challenge, this will contain only the baseline model result
 	<td>NA</td>
   </tr>
 <tr>
-		<td>SRIB</td> 
+		<td>Team A</td> 
     <td>Conformer based CTC (sysA)</td>
     <td>train</td>
 		<td></td>
@@ -307,7 +307,7 @@ At the outset of the challenge, this will contain only the baseline model result
 	<td>NA</td>
   </tr>
 <tr>
-		<td>SRIB</td> 
+		<td>Team A</td> 
     <td>Conformer based CTC (sysB)</td>
     <td>train</td>
 		<td></td>
@@ -319,7 +319,7 @@ At the outset of the challenge, this will contain only the baseline model result
 	<td>NA</td>
   </tr>
 <tr>
-		<td>SRIB</td> 
+		<td>Team A</td> 
     <td>Conformer based CTC (sysC)</td>
     <td>train</td>
 		<td></td>
