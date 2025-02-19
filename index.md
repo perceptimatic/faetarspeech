@@ -1,6 +1,6 @@
 ---
 layout: default
-title: The Faetar Low-Resource ASR Challenge
+title: The Faetar Low-Resource ASR Benchmark
 ---
 
 - [The Faetar Language](#the-faetar-language)
@@ -23,7 +23,7 @@ title: The Faetar Low-Resource ASR Challenge
 
 Low-resource speech recognition has gained substantial attention in recent years, particularly with the advent of large multilingual speech foundation models and language models. This is welcome, as there are thousands of languages which have existing small partially transcribed collections of field or found recordings, but no ASR systems. Such technology would be transformative for linguists, educators, and the numerous minoritized communities worldwide who face challenges to the survival of their languages and cultures. This technology would allow for recorded speech to be valorized and made more accessible, for the benefit of current and future speakers of these languages. However, a clear picture of best practices when developing ASR systems in very low-resource contexts has not yet emerged.
 
-The Faetar Low-Resource ASR Challenge aims to focus researchers’ attention on several issues which are common to many archival collections of speech data:
+The Faetar Low-Resource ASR Benchmark aims to focus researchers’ attention on several issues which are common to many archival collections of speech data:
 
 * **noisy** field recordings
 * lack of standard orthography, leading to **noise in the transcriptions** in the form of transcriber inconsistencies
@@ -34,7 +34,7 @@ The Faetar Low-Resource ASR Challenge aims to focus researchers’ attention on 
 
 By focusing multiple research groups on a single corpus of this kind, we aim to gain deeper insights into these problems than can be achieved otherwise.
 
-***The challenge will run from November 1st 2024 to February 1st 2025. We encourage participants to submit papers to Interspeech 2025 (main conference). See [Timeline](#timeline) for detailed timeline.***
+***The challenge phase (during which the test decodings are embargoed) has been extended in order to ensure that researchers have ample time to develop adequate systems. Please check back for further updates.***
 
 ## The Faetar Language
 
@@ -58,9 +58,9 @@ Faetar has no standard written form. The data set is transcribed quasi-phonetica
 
 ## Tracks
 
-Note that some information has been updated; participants should pay close attention to the definition of the "Constrained" track. The information below should be considered authoritative.
+In order to appear on the leaderboard, participants should make official submissions. Sub-areas of interest are:
 
-- **Constrained ASR.** Participants should focus on the challenge of improving ASR architectures to work with small, poor-quality sets. Participants may not use any  resources to train / fine-tune their models beyond the files contained in the provided training data. No external pre-trained acoustic models or language models are allowed.  No external pre-trained acoustic models or language models are allowed. Use of the unlabelled portion of the Faetar challenge data set is not allowed (**unlab**). *At submission time,* participants should not check the *External AM/LM* or *Unlab* boxes on the model description form.
+- **Constrained ASR.** Participants should focus on the challenge of improving ASR architectures to work with small, poor-quality sets. Participants may not use any  resources to train / fine-tune their models beyond the files contained in the provided training data. No external pre-trained acoustic models or language models are allowed.  No external pre-trained acoustic models or language models are allowed. Use of the unlabelled portion of the Faetar Benchmark data set is not allowed (**unlab**). *At submission time,* participants should not check the *External AM/LM* or *Unlab* boxes on the model description form.
 -  **Using pre-trained acoustic models or language models.** Participants focus on the most effective way to make use of models pre-trained on other languages. *At submission time,* participants should check *External AM/LM* on the model description form. 
 -  **Using unlabelled data.** The challenge data also includes ~20 hrs of unlabelled data (**unlab**). Participants focus on finding the most effective way to make use of it. *At submission time,* participants should check *Unlab* on the model description form (this checkbox is not mutually exclusive with the *External AM/LM* checkbox). 
 - **Dirty data.** The training data was extracted and automatically aligned from long-form audio and partial transcriptions in “cluttered” word processor files, relying on (error-prone) VAD, scraping, and alignment. Participants focus on improving the pipeline for extracting useful training data, with the ultimate goal of improving performance. *At submission time,* participants should check *Dirty Data* on the model description form.
@@ -72,27 +72,16 @@ Participants should indicate at the time of submission whether they are making a
 Each research group may make **no more than four submissions total** for evaluation, across all tracks.
 
 
-## Co-submission to the ML-SUPERB Challenge
-
-Many participants in the Faetar Challenge may also wish to participate in the ML-SUPERB 2.0 2025 Challenge, which has been tentatively accepted as a special session at Interspeech 2025. The ML-SUPERB 2.0 benchmark focuses on developing approaches to ASR which are robust across languages and language varieties. Participants in the Faetar challenge with systems that can also be fruitfully evaluated on the ML-SUPERB 2.0 benchmark are strongly encouraged to submit their papers to the ML-SUPERB session at Interspeech. For example, a submission may attempt to make efficient use of the unlabelled set by using it as additional pre-training data for a multilingual speech foundation model, while also improving the architecture of the underlying model, leading the participants to seek to evaluate the improved model on the ML-SUPERB benchmark; other potential points of contact might include explorations of improving speech enhancement, language model fusion, speaker normalization, or other traditional ASR techniques which might be relevant to the challenges posed by the Faetar corpus.
-
-For more information, see the ML-SUPERB 2.0 website at: [https://multilingual.superbbenchmark.org/](https://multilingual.superbbenchmark.org/)
-
-
 ## Criteria for Judging Submissions
 
 Submissions will be evaluated on phone error rate (PER) on the test set. Participants are provided with a [dev kit](#dev-kit) allowing them to calculate the PER on dev and train, as well as reproduce the baselines. Bootstrap confidence intervals can also be calculated using the dev kit to demonstrate robustness.
-
-A winner or tie will be declared based on PER and confidence intervals. All submissions falling within a 95% confidence interval of the submission with the lowest PER will be considered to have won, with the submission having the numerically lowest PER being awarded a special distinction.
-
-(An) **overall winner(s)** will be declared, as well as (a) winner(s) of the **Constrained ASR** track. The results of the challenge will also indicate the best approaches within the three other subtracks.
 
 
 ## Data and Licensing
 
 **Please see [Ong et al. 2024](https://arxiv.org/abs/2409.08103) for more details about the Faetar ASR Benchmark Corpus and a more detailed breakdown of the corpus.**
 
-The Faetar ASR Benchmark Corpus data used in the challenge is available without cost **under a restrictive license that prohibits re-distribution, among other things.** Please see the **Registration** section below to request access.
+The Faetar ASR Benchmark Corpus data is available without cost **under a restrictive license that prohibits re-distribution, among other things.** Please see the **Registration** section below to request access.
 
 The following table shows the distribution of data in the corpus, which consists of a **train** set, a **test** set, a small **dev** set, and an **unlab**elled set. 
 
@@ -129,8 +118,8 @@ The following table shows the distribution of data in the corpus, which consists
 #### Alternate splits
 
 
-Since the **test** set is unavailable to challenge participants during the duration of the challenge, we recommend that participants not rely entirely on **dev** for held-out evaluation. In order to increase the amount of data available for held-out evaluation, we have created an alternate split of the **train** set compraised of the sets **1h** and **reduced_train** (train minus 1h), so that the set **1h** can be used as a held-out evaluation set.
-We also provide baseline results for the alternative subsets within **train** (added to the leaderboard between January 6th and 14th; please check back if the result is not yet available).
+Since the **test** set is unavailable to challenge participants during the challenge phase, we recommend that participants not rely entirely on **dev** for held-out evaluation. In order to increase the amount of data available for held-out evaluation, we have created an alternate split of the **train** set compraised of the sets **1h** and **reduced_train** (train minus 1h), so that the set **1h** can be used as a held-out evaluation set.
+We also provide baseline results for the alternative subsets within **train**.
 
 
 The following table shows the distribution of the alternative splits:
@@ -167,13 +156,7 @@ For participants using the dirty data, we have also created a reference subset *
 
 ## Timeline 
 
-- **November 1st, 2024:** Release of data, opening of challenge
-- **February 1st, 2025:** Participants must submit system description(s) and test decodings
-- **February 5th, 2025:** Participants receive test scores from organizers, winners announced
-- **February 12th, 2025:** Interspeech paper submission deadline
-- **February 19th, 2025:** Interspeech paper update deadline
-- **May 21st, 2025:** Interspeech paper acceptance notification
-- **August 17-25, 2025:** Interspeech conference
+As of January 2025, the challenge phase has been extended. Please check back in spring of 2025 for further information.
 
 ## How to Participate
 
