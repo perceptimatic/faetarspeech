@@ -339,9 +339,9 @@ At the outset of the challenge, this will contain only the baseline model result
   </tr>
   <tr>
 		<td>Organizers (baseline)</td> 
-    <td>ESPnet ML-SUPERB [2,3]</td>
+    <td>ESPnet-MMS ML-SUPERB [2,3]</td>
     <td>train</td>
-		<td>x</td>
+		<td></td>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -351,9 +351,9 @@ At the outset of the challenge, this will contain only the baseline model result
   </tr>
   <tr>
 		<td>Organizers (baseline)</td> 
-    <td>ESPnet ML-SUPERB [2,3]</td>
+    <td>ESPnet-MMS ML-SUPERB [2,3]</td>
     <td>1hr</td>
-		<td>x</td>
+		<td></td>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -363,9 +363,9 @@ At the outset of the challenge, this will contain only the baseline model result
   </tr>
   <tr>
 		<td>Organizers (baseline)</td> 
-    <td>ESPnet ML-SUPERB [2,3]</td>
+    <td>ESPnet-MMS ML-SUPERB [2,3]</td>
     <td>10m</td>
-		<td>x</td>
+		<td></td>
 		<td></td>
 		<td></td>
 		<td></td>
