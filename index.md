@@ -4,6 +4,7 @@ title: The Faetar Low-Resource ASR Benchmark
 ---
 
 - [The Faetar Language](#the-faetar-language)
+- [Why is This Problem So Hard?](#why-is-this-problem-so-hard)
 - [Ground Rules](#ground-rules)
 - [Tracks](#tracks)
 - [Criteria for Judging Submissions](#criteria-for-judging-submissions)
@@ -34,7 +35,7 @@ The Faetar Low-Resource ASR Benchmark aims to focus researchers’ attention on 
 
 By focusing multiple research groups on a single corpus of this kind, we aim to gain deeper insights into these problems than can be achieved otherwise.
 
-***The challenge phase (during which the test decodings are embargoed) has been extended in order to ensure that researchers have ample time to develop adequate systems. Please check back for further updates.***
+***The challenge phase (during which the test decodings are embargoed) has been extended in order to ensure that researchers have ample time to develop adequate systems. As of August 19th, 2025, we have also posted several notes about our own explorations of what makes this data set so difficult. See [Why is This Problem So Hard?](#why-is-this-problem-so-hard) below.***
 
 ## The Faetar Language
 
@@ -46,6 +47,17 @@ Data were extracted from the Faetar collection of the Heritage Language Variatio
 
 Faetar has no standard written form. The data set is transcribed quasi-phonetically for linguistic purposes in IPA. The transcriptions are not always consistent, as different parts of the data set were transcribed for different purposes: sometimes the transcription is narrow and phonetic, while at other times the transcription is broad and phonemic.
 
+## Why is this Problem So Hard?
+
+The importance of this data set is to emphasize how many intersecting problems arise for traditional ASR pipelines when we deal with low-resource and minoritzed languages.  But which of these problems should we focus on here?  While we do not feel comfortable encouraging participants to use word error rate when comparing against phonetic gold transcriptions, it may be useful to calibrate expectations of performance in this task. In the context of exploring language modelling, we reported a **best WER of 79.1%** (without language modelling) in [Peckham et al. 2025](https://arxiv.org/abs/2508.11771).
+
+- **Audio quality.** The data is noisy. Informally, we performed experiments with speech enhancement. *However:* these gave marginal improvements, so we decided not include them in the paper. 
+- **Phonetic variability.** The gold transcriptions (even putting aside errors or inconsistencies) are phonetic, and extremely fine-grained, rather than being in terms of phonemes. In a language like Faetar, the phoneme inventory is still the object of substantial debate. Thus, unlike in languages with written standards, the transcriptions capture a lot of sub-lexical variability, and predicting this variability may be hard. *However:* In a new note on arXiv [Peckham et al. 2025](https://arxiv.org/abs/2508.11771) we explored replacing a subset of transcriptions, including test, with expert-curated lexical (as opposed to phonetic) transcriptions - the problem gets harder, not easier. See our discussion.
+- **Speaker variability.** There are 18 speakers in the test set, 7 of whom are heritage speakers, leaving room for substantial inter-speaker variability.
+- **Inconsistent phonetic transcriptions.** We also noted some errors and inconsistencies in the gold-standard transcriptions. *However:* See again our experiments in [Peckham et al. 2025](https://arxiv.org/abs/2508.11771), which suggest that "cleaning up" the transcriptions is of marginal value.
+- **Small (useful) training set.** The training data set is only 4.5h. Furthermore, roughly 60% of the training set comes from the "words" portion of the corpus, many of the utterances in which are speakers giving short utterances, often one-word, often the same words.
+
+In light of our preliminary experiments cleaning up both the audio and the transcriptions,  we suggest that making good use of small training data is still the principal challenge here - perhaps the most difficult challenge in current ASR. If we make a rough comparison to the results of the [ML-SUPERB 2.0](https://www.isca-archive.org/interspeech_2025/chen25h_interspeech.html) challenge (assuming normally distributed results), we estimate that **our reported best PER on the 1hr subset (31.6%) is in roughly the 58th percentile** of the performance of the best-performing system reported there. Thus, performance is fairly typical, if slightly on the bad side, for language resources of this size.
 
 ## Ground Rules
 
@@ -361,6 +373,7 @@ At the outset of the challenge, this will contain only the baseline model result
 	<td>44.4</td>
 	<td>NA</td>
   </tr>
+
   <tr>
 		<td>Organizers (baseline)</td> 
     <td>ESPnet-MMS ML-SUPERB [2,3]</td>
@@ -431,6 +444,18 @@ At the outset of the challenge, this will contain only the baseline model result
 		<td></td>
     <td>31.5</td>
 	<td>38.7</td>
+	<td>NA</td>
+  </tr>
+	<tr>
+		<td>Organizers (baseline)</td> 
+    <td>MMS [4] continued pre-training</td>
+		<td>1hr</td>
+		<td></td>
+		<td>x</td>
+		<td>x</td>
+		<td></td>
+    <td>31.6</td>
+	<td>39.4</td>
 	<td>NA</td>
   </tr>
 	<tr>
