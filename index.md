@@ -22,6 +22,11 @@ title: The Faetar Low-Resource ASR Benchmark
 - [References](#references)
 
 
+*Our Interspeech 2025 paper*: [**Ong et al 2025,** *The Faetar Speech Recognition Benchmark*](https://www.isca-archive.org/interspeech_2025/ong25_interspeech.pdf)
+
+*Report on further experiments (August 2025)*: [**Peckham et al 2025,** *Investigating Transcription Normalization in the Faetar ASR Benchmark*](https://arxiv.org/abs/2508.11771)
+
+
 Low-resource speech recognition has gained substantial attention in recent years, particularly with the advent of large multilingual speech foundation models and language models. This is welcome, as there are thousands of languages which have existing small partially transcribed collections of field or found recordings, but no ASR systems. Such technology would be transformative for linguists, educators, and the numerous minoritized communities worldwide who face challenges to the survival of their languages and cultures. This technology would allow for recorded speech to be valorized and made more accessible, for the benefit of current and future speakers of these languages. However, a clear picture of best practices when developing ASR systems in very low-resource contexts has not yet emerged.
 
 The Faetar Low-Resource ASR Benchmark aims to focus researchers’ attention on several issues which are common to many archival collections of speech data:
